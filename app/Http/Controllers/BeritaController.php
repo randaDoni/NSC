@@ -1,0 +1,46 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Models\berita;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
+class BeritaController extends Controller
+{
+    public function uploadNews(Request $request){
+        $validator = validator::make($request->all(),[
+            'judul' => 'required|min:3',
+            'deskripsi' => 'required',
+            'tipeBeasiswa' => 'required',
+            'tanggal' => 'required',
+            'gambar' => 'file|image|required'
+        ],[
+            'required' => ':attribute wajib diisi'
+        ]);
+        if($validator->fails()){
+            dd('salah');
+            //return redirect('/upload')->withErrors($validator)->withInput();
+        }else{
+            $extFile = $request->gambar->getClientOriginalExtension();
+            $namaFile = 'nsc-'.time().".".$extFile;
+            $path = $request->gambar->storeAs('uploads',$namaFile);
+            $publicPath = 'storage/'.$path;
+            DB::table('beritas')->insert([
+                "judul" => $request->judul,
+                "deskripsi" => $request->deskripsi,
+                "tipeBeasiswa" =>$request->tipeBeasiswa,
+                "tanggal"=>$request->tanggal,
+                "gambar"=>$publicPath,
+                "created_at" => now(),
+                "updated_at" => now()
+            ]);
+            return redirect('/');
+        }
+    }
+    public function berita(){
+        $berita = berita::all();
+        $selected = $berita->where('deskripsi','=','defefefefe')->first();
+        return view('news',['berita'=>$selected]) ;
+    }
+}
