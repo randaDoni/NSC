@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CollectionController;
 use App\Http\Controllers\CustomAuthController;
@@ -18,12 +19,12 @@ use App\Http\Controllers\BeritaController;
 Route::get('/', function () {
     return view('index');
 });
-Route::get('/login', function () {
-    return view('login');
-});
-Route::get('/register',function(){
-    return view('register');
-});
+// Route::get('/login', function () {
+//     return view('login');
+// });
+// Route::get('/register',function(){
+//     return view('register');
+// });
 Route::get('/post',function(){
     return view('post');
 });
@@ -55,9 +56,5 @@ Route::get('/kompetisi',function(){
 });
 Route::delete('/data_user/userdelete/{users}',[CollectionController::class,'destroy'])->name('user.delete');
 
-Route::get('dashboard', [CustomAuthController::class, 'dashboard']);
-Route::post('custom-login', [CustomAuthController::class, 'customLogin'])->name('login.custom');
-Route::get('signout', [CustomAuthController::class, 'signOut'])->name('signout');
-Route::get('dashboard', [CustomAuthController::class, 'dashboard']);
-Route::get('upload',[CollectionController::class, 'upload']);
-Route::post('/upload-news',[beritaController::class,'uploadNews']);
+Route::get('/login',[AuthController::class,'get_login'])->name('login');
+Route::get('/register',[AuthController::class,'get_register'])->name('register');

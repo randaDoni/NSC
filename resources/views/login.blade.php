@@ -24,7 +24,7 @@
 
             <div class="signin-form">
               <h2 class="form-title">Sign in</h2>
-              <form method="POST" class="register-form" action="{{url('/proses-login')}}" id="login-form">
+              <form method="POST" class="register-form" action="" id="login-form">
                 @csrf
                 <div class="form-group">
                   <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
