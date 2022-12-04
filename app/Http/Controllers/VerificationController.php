@@ -12,6 +12,6 @@ class VerificationController extends Controller
     }
     public function verify(EmailVerificationRequest $request){
         $request->fulfill();
-        return "selamat datang di dashboard";
+        return view('dashboardUser');
     }
 }
