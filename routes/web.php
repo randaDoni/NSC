@@ -58,3 +58,5 @@ Route::delete('/data_user/userdelete/{users}',[CollectionController::class,'dest
 
 Route::get('/login',[AuthController::class,'get_login'])->name('login');
 Route::get('/register',[AuthController::class,'get_register'])->name('register');
+Route::post('/login',[AuthController::class,'post_login']);
+Route::post('/register',[AuthController::class,'post_register']);
