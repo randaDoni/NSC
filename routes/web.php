@@ -64,3 +64,6 @@ Route::post('/login',[AuthController::class,'post_login']);
 Route::post('/register',[AuthController::class,'post_register']);
 Route::get('/email/verify/need-verification',[VerificationController::class,'notice'])->middleware('auth')->name('verification.notice');
 Route::get('/email/verify/{id}/{hash}',[VerificationController::class,'verify'])->middleware('auth','signed')->name('verification.verify');
+Route::middleware((['auth','auth.session','verified']))->group(function(){
+    Route::get('/dashboardUser/{id}',[BeritaController::class,'dashboardUser'])->name('dashboard.user');
+});
