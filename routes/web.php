@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CollectionController;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\VerificationController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -60,3 +62,5 @@ Route::get('/login',[AuthController::class,'get_login'])->name('login');
 Route::get('/register',[AuthController::class,'get_register'])->name('register');
 Route::post('/login',[AuthController::class,'post_login']);
 Route::post('/register',[AuthController::class,'post_register']);
+Route::get('/email/verify/need-verification',[VerificationController::class,'notice'])->middleware('auth')->name('verification.notice');
+Route::get('/email/verify/{id}/{hash}',[VerificationController::class,'verify'])->middleware('auth','signed')->name('verification.verify');
