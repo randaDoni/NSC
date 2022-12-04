@@ -6,6 +6,7 @@ use App\Http\Controllers\CollectionController;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\VerificationController;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,9 +38,7 @@ Route::get('/news',function(){
 Route::post('/proses-form',[CustomAuthController::class,'customRegister']);
 Route::post('/proses-login',[CollectionController::class,'prosesLogin']);
 
-Route::get('/dsbadmin',function(){
-    return view('admin.dashboard');
-});
+
 Route::get('/data_user',[CollectionController::class,'dataUser'])->name('user.data');
 Route::get('/post',function(){
     return view('admin.post');
@@ -66,4 +65,7 @@ Route::get('/email/verify/need-verification',[VerificationController::class,'not
 Route::get('/email/verify/{id}/{hash}',[VerificationController::class,'verify'])->middleware('auth','signed')->name('verification.verify');
 Route::middleware((['auth','auth.session','verified']))->group(function(){
     Route::get('/dashboardUser/{id}',[BeritaController::class,'dashboardUser'])->name('dashboard.user');
+    Route::get('/dsbadmin',function(){
+        return view('admin.dashboard');
+    })->name("dashboard.admin");
 });
