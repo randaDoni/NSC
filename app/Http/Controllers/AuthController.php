@@ -31,24 +31,6 @@ class AuthController extends Controller
         }else {
             dd($credentials);
         }
-
-        // return back()->withErrors([
-        //     'email' => 'The provided credentials do not match our records.',
-        // ])->onlyInput('email');
-    //     $verif = DB::table('users')
-    //     ->where(['email'=> ($request->email),'password'=> ($request->password)])
-    //     ->get()
-    //     ->count();
-    //     if ($verif > 0) {
-    //         $request->session()->regenerate();
-    //         $user = Auth::id();
-    //         dd($user);
-    //         // return redirect()->route('beasiswa');
-    //     }
-    //     dd($verif);
-    //     // return back()->withErrors([
-    //     //     'email' => 'The provided credentials do not match our records.',
-    //     // ])->onlyInput('email');
     }
     public function post_register(Request $request){
         $validator = validator::make($request->all(),[
@@ -75,7 +57,12 @@ class AuthController extends Controller
             //     "created_at" => now(),
             //     "updated_at" => now()
             // ]);
-            $user = User::create($request->except(['_token']));
+            $data = [
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' =>$request->password
+            ];
+            $user = User::create($data);
             event(new Registered($user));
             auth()->login($user);
             return redirect()->route('verification.notice')->with('succes','Akun berhasil dibuat','silahkan verfikasi Email anda');
