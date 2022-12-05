@@ -20,19 +20,17 @@ class AuthController extends Controller
     }
     public function post_login(Request $request){
         $credentials = $request->validate([
-            'email' => ['required', 'email'],
-            'password' => ['required'],
+            'email' => 'required|email',
+            'password' => 'required',
         ]);
-
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-
-            return redirect()->route('dashboard.admin');
+            return redirect()->route('index');
         }
-
-        return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
-        ])->onlyInput('email');
+        dd($credentials);
+        // return back()->withErrors([
+        //     'email' => 'The provided credentials do not match our records.',
+        // ])->onlyInput('email');
     }
     public function post_register(Request $request){
         $validator = validator::make($request->all(),[

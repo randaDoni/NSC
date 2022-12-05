@@ -31,7 +31,7 @@ Route::get('/', function () {
 Route::get('/post',function(){
     return view('post');
 });
-Route::get('/',[CollectionController::class,'poto']);
+Route::get('/',[CollectionController::class,'poto'])->name('index');
 Route::get('/news',function(){
     return view('news');
 });
@@ -63,7 +63,7 @@ Route::post('/login',[AuthController::class,'post_login']);
 Route::post('/register',[AuthController::class,'post_register']);
 Route::get('/email/verify/need-verification',[VerificationController::class,'notice'])->middleware('auth')->name('verification.notice');
 Route::get('/email/verify/{id}/{hash}',[VerificationController::class,'verify'])->middleware('auth','signed')->name('verification.verify');
-Route::middleware((['auth','auth.session','verified']))->group(function(){
+Route::middleware((['auth','verified']))->group(function(){
     Route::get('/dashboardUser/{id}',[BeritaController::class,'dashboardUser'])->name('dashboard.user');
     Route::get('/dsbadmin',function(){
         return view('admin.dashboard');
