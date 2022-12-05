@@ -21,7 +21,7 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 Route::get('/', function () {
     return view('index');
-});
+})->name('home');
 // Route::get('/login', function () {
 //     return view('login');
 // });
@@ -51,7 +51,7 @@ Route::get('/view',function(){
 });
 Route::get('/beasiswa',function(){
     return view('beasiswa');
-});
+})->name('beasiswa');
 Route::get('/kompetisi',function(){
     return view('kompetisi');
 });
@@ -59,11 +59,11 @@ Route::delete('/data_user/userdelete/{users}',[CollectionController::class,'dest
 
 Route::get('/login',[AuthController::class,'get_login'])->name('login');
 Route::get('/register',[AuthController::class,'get_register'])->name('register');
-Route::post('/login',[AuthController::class,'post_login']);
+Route::post('/login',[AuthController::class,'post_login'])->name('post.login');
 Route::post('/register',[AuthController::class,'post_register']);
 Route::get('/email/verify/need-verification',[VerificationController::class,'notice'])->middleware('auth')->name('verification.notice');
 Route::get('/email/verify/{id}/{hash}',[VerificationController::class,'verify'])->middleware('auth','signed')->name('verification.verify');
-Route::middleware((['auth','verified']))->group(function(){
+Route::middleware((['auth','auth.session','verified']))->group(function(){
     Route::get('/dashboardUser/{id}',[BeritaController::class,'dashboardUser'])->name('dashboard.user');
     Route::get('/dsbadmin',function(){
         return view('admin.dashboard');

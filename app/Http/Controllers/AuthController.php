@@ -19,18 +19,36 @@ class AuthController extends Controller
         return view('register');
     }
     public function post_login(Request $request){
-        $credentials = $request->validate([
-            'email' => 'required|email',
-            'password' => 'required',
+        $request->validate([
+            'email' => ['required', 'email'],
+            'password' => ['required'],
         ]);
+        $credentials = $request->only('email','password');
         if (Auth::attempt($credentials)) {
-            $request->session()->regenerate();
-            return redirect()->route('index');
+            $request->session();
+
+            return redirect()->intended('home');
+        }else {
+            dd($credentials);
         }
-        dd($credentials);
+
         // return back()->withErrors([
         //     'email' => 'The provided credentials do not match our records.',
         // ])->onlyInput('email');
+    //     $verif = DB::table('users')
+    //     ->where(['email'=> ($request->email),'password'=> ($request->password)])
+    //     ->get()
+    //     ->count();
+    //     if ($verif > 0) {
+    //         $request->session()->regenerate();
+    //         $user = Auth::id();
+    //         dd($user);
+    //         // return redirect()->route('beasiswa');
+    //     }
+    //     dd($verif);
+    //     // return back()->withErrors([
+    //     //     'email' => 'The provided credentials do not match our records.',
+    //     // ])->onlyInput('email');
     }
     public function post_register(Request $request){
         $validator = validator::make($request->all(),[
