@@ -23,7 +23,7 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link @yield('menuKompetisi')" href="/kompetisi">Kompetisi</a>
-              </li> 
+              </li>
             </ul>
           </div>
         </ul>
@@ -35,8 +35,8 @@
             </svg>
           </button>
         </form>
-        <form class="d-flex" action="{{ url('/register') }}">
-           
+        <form class="d-flex" action="{{url('/dsbuser') }}">
+
         <button class="btn rounded-pill" type="signin">
 
           <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" style="color:#132851;" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">

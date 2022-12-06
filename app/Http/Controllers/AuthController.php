@@ -69,6 +69,9 @@ class AuthController extends Controller
 
         }
     }
-
+    public function test(){
+        $id = Auth::id();
+        dd($id);
+    }
 
 }

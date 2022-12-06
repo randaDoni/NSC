@@ -1,7 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.master')
+@section('content')
+@section('menuHome','active')
 
-<head>
+
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
@@ -19,11 +20,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Cardo:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="dashboard/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="dashboard/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="dashboard/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link href="dashboard/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="dashboard/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="dashboard/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="dashboard/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="dashboard/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="dashboard/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="dashboard/aos/aos.css" rel="stylesheet">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
   <!-- Template Main CSS File -->
@@ -35,7 +36,7 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
-</head>
+
 
 <body>
   <!-- ======= Hero Section ======= -->
@@ -51,8 +52,8 @@
           </div>
           <div class="detail_profil d-flex justify-content-center">
             <div class="detail_profil_wrap text-center">
-              <h4><b class="title_nama" style="font-family: 'Merriweather', serif; font-size:30px;">adila</b></h4>
-              <p><i class="title_email">adila@gmail.com</i></p>
+              <h4><b class="title_nama" style="font-family: 'Merriweather', serif; font-size:30px;">{{$profile->name}}</b></h4>
+              <p><i class="title_email">{{$profile->email}}</i></p>
             </div>
           </div>
       </div>

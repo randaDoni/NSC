@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\berita;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 class BeritaController extends Controller
@@ -42,5 +44,11 @@ class BeritaController extends Controller
         $berita = berita::all();
         $selected = $berita->where('deskripsi','=','defefefefe')->first();
         return view('news',['berita'=>$selected]) ;
+    }
+    public function dashboardUser(){
+        $user = User::all();
+        $id = Auth::id();
+        $profile = $user->where('id','=',$id)->first();
+        return view('dashboardUser',['profile'=>$profile]);
     }
 }

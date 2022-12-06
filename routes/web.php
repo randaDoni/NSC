@@ -22,12 +22,6 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 Route::get('/', function () {
     return view('index');
 })->name('home');
-// Route::get('/login', function () {
-//     return view('login');
-// });
-// Route::get('/register',function(){
-//     return view('register');
-// });
 Route::get('/post',function(){
     return view('post');
 });
@@ -64,8 +58,9 @@ Route::post('/register',[AuthController::class,'post_register']);
 Route::get('/email/verify/need-verification',[VerificationController::class,'notice'])->middleware('auth')->name('verification.notice');
 Route::get('/email/verify/{id}/{hash}',[VerificationController::class,'verify'])->middleware('auth','signed')->name('verification.verify');
 Route::middleware((['auth','auth.session','verified']))->group(function(){
-    Route::get('/dashboardUser/{id}',[BeritaController::class,'dashboardUser'])->name('dashboard.user');
-    Route::get('/dsbadmin',function(){
-        return view('admin.dashboard');
-    })->name("dashboard.admin");
+    Route::get('/dashboarduser',[BeritaController::class,'dashboardUser'])->name('dashboard.user');
+    Route::get('/dsbuser',function(){
+        return view('dashboardUser');
+    })->name("dashboard.user");
+    Route::get('/test/{id}',[AuthController::class,'test']);
 });
