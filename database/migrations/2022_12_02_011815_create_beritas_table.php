@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('tipeBeasiswa');
             $table->date('tanggal');
             $table->string('gambar');
+            $table->string('id_akun');
             $table->timestamps();
         });
     }

@@ -35,17 +35,28 @@
             </svg>
           </button>
         </form>
-        <form class="d-flex" action="{{url('/dsbuser') }}">
 
-        <button class="btn rounded-pill" type="signin">
-
-          <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" style="color:#132851;" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
-            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
-          </svg>
-        </button>
-
+            <form class="d-flex" action="{{url('/dashboarduser') }}">
+                <button class="btn rounded-pill" type="signin">
+                <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" style="color:#132851;" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                </svg>
+                </button>
+            </form>
+       
+        @if (Auth::check())
+        <form class="d-flex" action="{{url('/logout') }}">
+            <button class="btn rounded-pill" type="logout">
+                <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="feather feather-log-out">
+                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4">
+                </path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+            </button>
         </form>
+        @endif
       </div>
     </div>
   </nav>

@@ -25,9 +25,8 @@ class AuthController extends Controller
         ]);
         $credentials = $request->only('email','password');
         if (Auth::attempt($credentials)) {
-            $request->session();
-
-            return redirect()->intended('home');
+            $request->session()->regenerate();
+            return redirect()->intended();
         }else {
             dd($credentials);
         }
@@ -69,9 +68,12 @@ class AuthController extends Controller
 
         }
     }
-    public function test(){
-        $id = Auth::id();
-        dd($id);
+    public function logout(Request $request){
+        Auth::logout();
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect('/');
     }
 
 }

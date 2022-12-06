@@ -51,4 +51,10 @@ class BeritaController extends Controller
         $profile = $user->where('id','=',$id)->first();
         return view('dashboardUser',['profile'=>$profile]);
     }
+    public function uploadFotoProfil(Request $request){
+            $extFile = $request->gambar->getClientOriginalExtension();
+            $namaFile = 'nsc-'.time().".".$extFile;
+            $path = $request->gambar->storeAs('uploads',$namaFile);
+            $publicPath = 'storage/'.$path;
+    }
 }
