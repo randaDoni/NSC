@@ -6,13 +6,12 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>PhotoFolio Bootstrap Template - Index</title>
+
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,12 +43,14 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="rounded-4 card_profile shadow-lg">
-          <div class="d-flex justify-content-center">
-            <div class="d-flex flex-column text-center">
-                <img class="foto_profil rounded-circle border border-light border-4" src="/img/profile.jpg" width="200px" height="200px">
-              <a href="/upload_foto.html"><i style="color: white;" class='bx bxs-edit bx-sm'></i></a>
-            </div>
-          </div>
+                <div class="d-flex justify-content-center ">
+                    <div class="d-flex flex-column text-center image-upload">
+                        <label for="file-input">
+                            <img class="foto_profil rounded-circle border border-light border-4" src="/img/profile.jpg" width="200px" height="200px">
+                        </label>
+                      <input id="file-input" type="file" />
+                    </div>
+                  </div>
           <div class="detail_profil d-flex justify-content-center">
             <div class="detail_profil_wrap text-center">
               <h4><b class="title_nama" style="font-family: 'Merriweather', serif; font-size:30px;">{{$profile->name}}</b></h4>
@@ -67,6 +68,7 @@
       <div class="container-fluid">
 
         <div class="row gy-4 justify-content-center">
+          @foreach ($user as $index => $row)
           <div class="col-xl-3 col-lg-4 col-md-6">
             <div class="card gallery-item h-100">
               <img src="assets/img/gallery/gallery-1.jpg" class="img-fluid" alt="">
@@ -75,47 +77,11 @@
               </div>
               <div class="gallery-links d-flex align-items-center justify-content-center">
                 <a href="assets/img/gallery/gallery-1.jpg" title="Gallery 1" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
-                <a href="gallery-single.html" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <a href="{{route('dashboard.user.show',$row->id)}}" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div>
-          </div><!-- End Gallery Item -->
-          <div class="col-xl-3 col-lg-4 col-md-6">
-            <div class="card gallery-item h-100">
-              <img src="assets/img/gallery/gallery-2.jpg" class="img-fluid" alt="">
-              <div class="card-body">
-                <h5 style="color:black" class="card-title">Programming System</h5>
-              </div>
-              <div class="gallery-links d-flex align-items-center justify-content-center">
-                <a href="assets/img/gallery/gallery-2.jpg" title="Gallery 2" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
-                <a href="gallery-single.html" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div>
-          </div><!-- End Gallery Item -->
-          <div class="col-xl-3 col-lg-4 col-md-6">
-            <div class="card gallery-item h-100">
-              <img src="assets/img/gallery/gallery-3.jpg" class="img-fluid" alt="">
-              <div class="card-body">
-                <h5 style="color:black" class="card-title">Programming System</h5>
-              </div>
-              <div class="gallery-links d-flex align-items-center justify-content-center">
-                <a href="assets/img/gallery/gallery-3.jpg" title="Gallery 3" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
-                <a href="gallery-single.html" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div>
-          </div><!-- End Gallery Item -->
-          <div class="col-xl-3 col-lg-4 col-md-6">
-            <div class="card gallery-item h-100">
-              <img src="assets/img/gallery/gallery-4.jpg" class="img-fluid" alt="">
-              <div class="card-body">
-                <h5 style="color:black" class="card-title">Programming System</h5>
-              </div>
-              <div class="gallery-links d-flex align-items-center justify-content-center">
-                <a href="assets/img/gallery/gallery-4.jpg" title="Gallery 4" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
-                <a href="gallery-single.html" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div>
-          </div><!-- End Gallery Item -->
-
+          </div>
+          @endforeach
         </div>
 
       </div>

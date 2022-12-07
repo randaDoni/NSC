@@ -59,6 +59,8 @@ Route::get('/email/verify/need-verification',[VerificationController::class,'not
 Route::get('/email/verify/{id}/{hash}',[VerificationController::class,'verify'])->middleware('auth','signed')->name('verification.verify');
 Route::middleware((['auth','auth.session','verified']))->group(function(){
     Route::get('/dashboarduser',[BeritaController::class,'dashboardUser'])->name('dashboard.user');
+    Route::get('/dashboarduser/{id}',[BeritaController::class,'dashboardUserShow'])->name('dashboard.user.show');
     Route::get('/test/{id}',[AuthController::class,'test']);
     Route::get('/logout',[AuthController::class,'logout']);
+    Route::get('/upload_foto_profil',[BeritaController::class,'uploadFotoProfil']);
 });

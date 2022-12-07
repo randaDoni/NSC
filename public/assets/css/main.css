@@ -15,7 +15,9 @@
   --font-primary: "Inter", sans-serif;
   --font-secondary: "Cardo", sans-serif;
 }
-
+.image-upload>input {
+    display: none;
+  }
 /* Colors */
 :root {
   --color-default: #fafafa;

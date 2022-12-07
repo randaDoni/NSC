@@ -49,12 +49,17 @@ class BeritaController extends Controller
         $user = User::all();
         $id = Auth::id();
         $profile = $user->where('id','=',$id)->first();
-        return view('dashboardUser',['profile'=>$profile]);
+        return view('dashboardUser',['profile'=>$profile,'user' => $user]);
+    }
+    public function dashboardUserShow($id){
+        $result = User::where('id',$id)->first();
+        dd($result);
     }
     public function uploadFotoProfil(Request $request){
-            $extFile = $request->gambar->getClientOriginalExtension();
-            $namaFile = 'nsc-'.time().".".$extFile;
-            $path = $request->gambar->storeAs('uploads',$namaFile);
-            $publicPath = 'storage/'.$path;
+            // $extFile = $request->gambar->getClientOriginalExtension();
+            // $namaFile = 'nsc-'.time().".".$extFile;
+            // $path = $request->gambar->storeAs('uploads',$namaFile);
+            // $publicPath = 'storage/'.$path;
+            dd('masuk ga');
     }
 }
