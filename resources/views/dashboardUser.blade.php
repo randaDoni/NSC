@@ -1,8 +1,6 @@
 @extends('layouts.master')
 @section('content')
 @section('menuHome','active')
-
-
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
@@ -44,12 +42,15 @@
       <div class="row justify-content-center">
         <div class="rounded-4 card_profile shadow-lg">
                 <div class="d-flex justify-content-center ">
-                    <div class="d-flex flex-column text-center image-upload">
-                        <label for="file-input">
-                            <img class="foto_profil rounded-circle border border-light border-4" src="/img/profile.jpg" width="200px" height="200px">
-                        </label>
-                      <input id="file-input" type="file" />
-                    </div>
+                        <form action="{{url('/upload_foto_profil')}}" method="post" enctype="multipart/form-data">
+                            @csrf
+                            <div class="d-flex flex-column text-center image-upload">
+                            <label for="file-input">
+                                <img class="foto_profil rounded-circle border border-light border-4" src="/img/profile.jpg" width="200px" height="200px">
+                            </label>
+                            <input id="file-input" type="file" />
+                            </div>
+                        </form>
                   </div>
           <div class="detail_profil d-flex justify-content-center">
             <div class="detail_profil_wrap text-center">

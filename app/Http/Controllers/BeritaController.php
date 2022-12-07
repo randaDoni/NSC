@@ -52,12 +52,18 @@ class BeritaController extends Controller
         return view('dashboardUser',['profile'=>$profile,'user' => $user]);
     }
     public function dashboardUserShow($id){
-        $result = User::where('id',$id)->first();
-        dd($result);
+        $user = User::all();
+        $profile = User::where('id',$id)->first();
+        return view('dashboardUser',['profile'=>$profile,'user' => $user]);
+    }
+    public function beritaUserShow($id){
+        $result = berita::where('id',$id)->first();
+        return view('post',[]);
     }
     public function uploadFotoProfil(Request $request){
+            // $user = User::name
             // $extFile = $request->gambar->getClientOriginalExtension();
-            // $namaFile = 'nsc-'.time().".".$extFile;
+            // $namaFile = '-'.time().".".$extFile;
             // $path = $request->gambar->storeAs('uploads',$namaFile);
             // $publicPath = 'storage/'.$path;
             dd('masuk ga');
