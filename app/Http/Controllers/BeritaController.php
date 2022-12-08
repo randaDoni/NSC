@@ -10,11 +10,10 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 class BeritaController extends Controller
 {
-    public function uploadNews(Request $request){
+    public function prosesUploadNews(Request $request){
         $validator = validator::make($request->all(),[
             'judul' => 'required|min:3',
             'deskripsi' => 'required',
-            'tipeBeasiswa' => 'required',
             'tanggal' => 'required',
             'gambar' => 'file|image|required'
         ],[
@@ -25,15 +24,19 @@ class BeritaController extends Controller
             //return redirect('/upload')->withErrors($validator)->withInput();
         }else{
             $extFile = $request->gambar->getClientOriginalExtension();
-            $namaFile = 'nsc-'.time().".".$extFile;
+            $namaFile = Auth::id().time().".".$extFile;
             $path = $request->gambar->storeAs('uploads',$namaFile);
             $publicPath = 'storage/'.$path;
             DB::table('beritas')->insert([
                 "judul" => $request->judul,
                 "deskripsi" => $request->deskripsi,
-                "tipeBeasiswa" =>$request->tipeBeasiswa,
+                "kategoriBeasiswa" =>$request->kategoriBeasiswa,
                 "tanggal"=>$request->tanggal,
                 "gambar"=>$publicPath,
+                "region"=>$request->region,
+                "linkPendaftaran"=>$request->region,
+                "id"=>Auth::id(),
+                "caption"=>$request->caption,
                 "created_at" => now(),
                 "updated_at" => now()
             ]);
@@ -49,23 +52,38 @@ class BeritaController extends Controller
         $user = User::all();
         $id = Auth::id();
         $profile = $user->where('id','=',$id)->first();
-        return view('dashboardUser',['profile'=>$profile,'user' => $user]);
+        return view('dashboardUser',['profile'=>$profile,'user' => $user,'id'=>$id]);
     }
     public function dashboardUserShow($id){
         $user = User::all();
         $profile = User::where('id',$id)->first();
-        return view('dashboardUser',['profile'=>$profile,'user' => $user]);
+        return view('dashboarduser',['profile'=>$profile,'user' => $user,'id'=>$id]);
     }
     public function beritaUserShow($id){
-        $result = berita::where('id',$id)->first();
+        $result = berita::where('id_news',$id)->first();
         return view('post',[]);
     }
-    public function uploadFotoProfil(Request $request){
-            // $user = User::name
-            // $extFile = $request->gambar->getClientOriginalExtension();
-            // $namaFile = '-'.time().".".$extFile;
-            // $path = $request->gambar->storeAs('uploads',$namaFile);
-            // $publicPath = 'storage/'.$path;
-            dd('masuk ga');
+    public function uploadFotoProfil(Request $request, $id){
+        $profile = User::where('id',$id)->first();
+        // $extFile = $request->gambar->getClientOriginalExtension();
+        // $namaFile = 'nsc-'.time().".".$extFile;
+        // $path = $request->gambar->storeAs('uploads',$namaFile);
+        // $publicPath = 'storage/'.$path;
+        dd($id);
+    }
+
+    public function newsShow($id_news){
+        $beritas = berita::all();
+        $user = User::all();
+        $news = berita::query();
+        $now = now();
+
+        $berita = $beritas->where('id_news','=',$id_news)->first();
+        $urutan = $news->where('tanggal','=', $now)->get();
+        $uploader = $user->where('id','=',$berita->id)->first();
+        return view('news',['berita'=>$berita,'urutan'=>$urutan,'uploader'=>$uploader]);
+    }
+    public function uploadNews(){
+        return view('upload');
     }
 }

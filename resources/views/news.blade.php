@@ -1,50 +1,39 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
-<head>
+@extends('layouts.master')
+@section('content')
 <title>Isi</title>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-<link rel="stylesheet" type="text/css" href="style1.css" media="screen" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="{{URL::asset('/style1.css')}}" media="screen" />
+<link rel="stylesheet" href="{{URL::asset('/dashboard/bootstrap/css/bootstrap.min.css')}}">
 
-</head>
+
 <br>
 <br>
-<body class="">
-<div id="site">
+<br>
+<body class="mt-8">
+<div id="site" class="mt-8">
   <div class="center-wrapper">
     <div class="main" id="main-two-columns">
       <div class="left" id="main-left">
         <div class="post">
-          <div class="post-title">
-            <h1><a href="#">Ini Judul</a></h1>
+          <div class="post-title text-primary">
+            <h1>{{$berita->judul}}</h1>
           </div>
-          <div class="post-date">18:11, Sunday, August 2, 2009 by Uploader</div>
+          <div class="post-date">{{$berita->tanggal}} by {{$uploader->name}}</div>
           <div class="card mt-3 mb-3" style="width: 33rem;">
-            <a href="#"><img src="news-image-big.jpg" class="card-img-top" alt="..."></a>
+            <a href="#"><img src="{{$berita->gambar}}" class="card-img-top" alt="..."></a>
             <div class="card-header">
-              <caption>ini caption</caption>
+              <caption>{{$berita->caption}}</caption>
             </div>
           </div>
         </div>
         <div class="post-body">
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo nam ratione hic pariatur iste, iusto delectus modi debitis a dolorum recusandae saepe ea quo voluptatem quod libero officiis adipisci excepturi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae distinctio, quidem nemo eos consequuntur facere ipsam qui quia iure culpa adipisci ad necessitatibus aut mollitia, voluptates ab, possimus placeat sed. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis, quod. Magni laboriosam culpa dignissimos non eligendi temporibus tenetur ad, ex harum hic eos saepe officia provident aut, ullam minima ut!</p>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui dolore dignissimos quae quidem nesciunt nihil error delectus enim fuga. Perspiciatis velit natus adipisci est ut commodi corrupti deleniti repellat rerum, assumenda eaque nemo repellendus nostrum excepturi dignissimos cupiditate alias animi.</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non magni molestiae nostrum quasi aliquam dicta iusto iure recusandae nihil, porro hic, explicabo libero labore. Soluta quidem, voluptatum commodi dignissimos quasi quod iure odit, nisi eos modi atque ipsum earum nihil enim dolores numquam nobis, quas explicabo ipsa possimus ratione autem quo. Sunt, eaque quasi id consequuntur accusamus numquam expedita aliquam.</p>
+          {{$berita->deskripsi}}
         </div>
-        <div class="content-separator"></div>
-        <div class="post"> <a href="#"><img src="news-image-small-1.jpg" alt="" class="left bordered" /></a>
-          <h3><a href="#">Article title</a></h3>
-          <p>Integer diam elit, condimentum ac semper ut, tincidunt non diam. Ut congue rutrum justo at commodo. Aenean euismod tincidunt lorem scelerisque euismod.</p>
-          <a href="#" class="more">Read more &#187;</a>
-          <div class="clearer">&nbsp;</div>
+        <div class="post-body">
+          <a href="{{$berita->linkPendaftaran}}"> Link Pendaftaran </a>
         </div>
-        <div class="content-separator"></div>
-        <div class="post"> <a href="#"><img src="news-image-small-2.jpg" alt="" class="left bordered" /></a>
-          <h3><a href="#">Second Article Title</a></h3>
-          <p>Sed congue lacinia leo, sed dignissim odio pharetra vel. Fusce a dignissim dui. Fusce semper porttitor enim dapibus venenatis.</p>
-          <a href="#" class="more">Read more &#187;</a>
-          <div class="clearer">&nbsp;</div>
-        </div>
+
+        {{-- iklan --}}
         <div class="content-separator"></div>
       </div>
       <div class="right sidebar" id="sidebar">
@@ -56,73 +45,21 @@
           </div>
           <div class="section-content">
             <ul class="nice-list">
+              @foreach ($urutan as $urutans)
               <li>
-                <div class="left"><a href="#">Aenean tempor arcu..</a></div>
-                <div class="right">20.49</div>
-                <div class="clearer">&nbsp;</div>
-              </li>
-              <li>
-                <div class="left"><a href="#">Justo interdum rutrum</a></div>
-                <div class="right">20:40</div>
-                <div class="clearer">&nbsp;</div>
-              </li>
-              <li>
-                <div class="left"><a href="#">In nec justo in urna</a></div>
-                <div class="right">19:56</div>
-                <div class="clearer">&nbsp;</div>
-              </li>
-              <li>
-                <div class="left"><a href="#">Accumsan condimentum</a></div>
-                <div class="right">19:15</div>
-                <div class="clearer">&nbsp;</div>
-              </li>
-              <li>
-                <div class="left"><a href="#">Etiam commodo biben...</a></div>
-                <div class="right">19:06</div>
-                <div class="clearer">&nbsp;</div>
-              </li>
-              <li>
-                <div class="left"><a href="#">Mauris euismod justo</a></div>
-                <div class="right">18:51</div>
+                <div class="left"><a href="#">{{$urutans->judul}}</a></div>
+                <div class="right">{{$urutans->tanggal}}</div>
                 <div class="clearer">&nbsp;</div>
               </li>
               <li><a href="#" class="more">Browse all &#187;</a></li>
+              @endforeach
             </ul>
           </div>
         </div>
-        <div class="section">
-          <div class="section-title">Most Viewed</div>
-          <div class="section-content">
-            <ul class="nice-list">
-              <li><span class="quiet">1.</span> <a href="#">Integer diam elit</a></li>
-              <li><span class="quiet">2.</span> <a href="#">Condimentum ac semper</a></li>
-              <li><span class="quiet">3.</span> <a href="#">Tincidunt non diam</a></li>
-              <li><span class="quiet">4.</span> <a href="#">Ut congue rutrum</a></li>
-              <li><span class="quiet">5.</span> <a href="#">Enim dapibus venenatis</a></li>
-              <li><span class="quiet">6.</span> <a href="#">Cras hendrerit iaculis</a></li>
-              <li><span class="quiet">7.</span> <a href="#">Duis mi lectus</a></li>
-              <li><span class="quiet">8.</span> <a href="#">Eleifend nec tortor</a></li>
-              <li><a href="#" class="more">Browse all &#187;</a></li>
-            </ul>
-          </div>
-        </div>
-        <!-- <div class="section network-section">
-          <div class="section-title">Network News</div>
-          <div class="section-content">
-            <ul class="nice-list">
-              <li><a href="#">Nullam eros</a></li>
-              <li><a href="#">Eleifend nec tortor</a></li>
-              <li><a href="#">Duis mi lectus</a></li>
-              <li><a href="#">Integer diam elit</a></li>
-              <li><a href="#">Enim dapibus venenatis</a></li>
-              <li><a href="#" class="more">Visit Network Site &#187;</a></li>
-            </ul>
-          </div>
-         </div>  -->
       </div>
       <div class="clearer">&nbsp;</div>
     </div>
-    <div id="dashboard">
+    {{-- <div id="dashboard">
       <div class="column left" id="column-1">
         <div class="column-content">
           <div class="column-title">About Simple Magazine</div>
@@ -161,6 +98,6 @@
       <div class="clearer">&nbsp;</div>
     </div>
   </div>
-</div>
+</div> --}}
 </body>
 </html>

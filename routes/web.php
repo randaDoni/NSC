@@ -25,10 +25,11 @@ Route::get('/', function () {
 Route::get('/post',function(){
     return view('post');
 });
-Route::get('/',[CollectionController::class,'poto'])->name('index');
-Route::get('/news',function(){
+Route::get('/news', function () {
     return view('news');
-});
+})->name('news');
+Route::get('/',[CollectionController::class,'poto'])->name('index');
+
 Route::post('/proses-form',[CustomAuthController::class,'customRegister']);
 Route::post('/proses-login',[CollectionController::class,'prosesLogin']);
 
@@ -62,5 +63,8 @@ Route::middleware((['auth','auth.session','verified']))->group(function(){
     Route::get('/dashboarduser/{id}',[BeritaController::class,'dashboardUserShow'])->name('dashboard.user.show');
     Route::get('/test/{id}',[AuthController::class,'test']);
     Route::get('/logout',[AuthController::class,'logout']);
-    Route::get('/upload_foto_profil',[BeritaController::class,'uploadFotoProfil']);
+    Route::get('/dashboarduser/{id}/upload_foto_profil',[BeritaController::class,'uploadFotoProfil'])->name('upload.foto.profil');
+    Route::get('/uploadNews',[BeritaController::class,'uploadNews'])->name('upload.news');
+    Route::post('/prosesUploadNews',[BeritaController::class,'prosesUploadNews'])->name('proses.upload.news');
 });
+Route::get('/news/{id_news}',[BeritaController::class,'newsShow'])->name('news.show');

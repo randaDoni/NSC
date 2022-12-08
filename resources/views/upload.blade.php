@@ -37,7 +37,7 @@
 
 
   <main id="main" data-aos="fade" data-aos-delay="1500">
-<form action="{{url('/upload-news')}}" method="POST" enctype="multipart/form-data">
+<form action="{{url('/prosesUploadNews')}}" method="POST" enctype="multipart/form-data">
     @csrf
     <!-- ======= Start Page Header ======= -->
     <div style="background-color: rgb(36, 126, 199);" class="page-header d-flex align-items-center">
@@ -59,6 +59,10 @@
             <div class="portfolio-description">
               <h2>Unggah Gambar</h2>
               <input type="file" class="form-control-file mb-3" style="background-color:transparent !important; color: black;" name="gambar" id="gambar">
+              <h2>Caption</h2>
+              <div class="input-group mt">
+                <textarea name="caption" style="background-color:transparent !important; color:black; height: 1cm;" class="form-control" aria-label="With textarea"></textarea>
+              </div>
               <h2>Deskripsi</h2>
               <div class="input-group mt">
                 <textarea name="deskripsi" style="background-color:transparent !important; color:black; height: 6cm;" class="form-control" aria-label="With textarea"></textarea>
@@ -71,22 +75,33 @@
               <nav>
                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
                   <button class="nav-link active" id="nav-beasiswa-tab" data-bs-toggle="tab" data-bs-target="#nav-beasiswa" type="button" role="tab" aria-controls="nav-beasiswa" aria-selected="true">Beasiswa</button>
-                  <button class="nav-link" id="nav-lomba-tab" data-bs-toggle="tab" data-bs-target="#nav-lomba" type="button" role="tab" aria-controls="nav-lomba" aria-selected="false">Lomba</button>
+                  {{-- <button class="nav-link" id="nav-lomba-tab" data-bs-toggle="tab" data-bs-target="#nav-lomba" type="button" role="tab" aria-controls="nav-lomba" aria-selected="false">Lomba</button> --}}
                 </div>
               </nav>
               <div class="tab-content" id="nav-tabContent">
                 <div class="tab-pane fade show active" id="nav-beasiswa" role="tabpanel" aria-labelledby="nav-beasiswa-tab">
                   <ul>
                     <li class="mt-1">Kategori Beasiswa <span>
-                      <input name="tipeBeasiswa" placeholder="Contoh : Beasiswa Kuliah S2" class="form-control mt-1" type="text" name="" id="">
-                    </span></li>
+                      <select class="selectpicker form-control" name="kategoriBeasiswa" id="countries" data-live-search="true">
+                        <option value="S1">Beasiswa Kuliah S1</option>
+                        <option value="S2">Beasiswa Kuliah S2</option>
+                        <option value="S3">Beasiswa Kuliah S3</option>
+                    </select>
+                    </span>
+                    </li>
                     <li>Tanggal Pendaftaran<span>
                       <input name="tanggal" type="date"class="form-control mt-1">
                     </span></li>
                     <li>Link Pendaftaran <span>
-                      <input type="text"class="form-control mt-1">
+                      <input type="text" name="linkPendaftaran"  class="form-control mt-1">
                     </span></li>
-                    <li><input type="submit" class="btn-visit align-self-start">UNGGAH</li>
+                    <li>Region<span>
+                      <select class="selectpicker form-control" name="region" id="countries" data-live-search="true">
+                        <option value="S1">Beasiswa Dalam Negeri</option>
+                        <option value="S2">Beasiswa Luar Negeri </option>
+                    </select>
+                    </span></li>
+                    <li><input type="submit" class="btn-visit align-self-start"></li>
                   </ul>
                 </div>
                 <div class="tab-pane fade" id="nav-lomba" role="tabpanel" aria-labelledby="nav-lomba-tab">

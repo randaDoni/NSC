@@ -33,6 +33,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'password',
         'remember_token',
     ];
+    protected $primarykey ="id_user";
 
     /**
      * The attributes that should be cast.

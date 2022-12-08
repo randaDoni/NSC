@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\User;
-
+use Illuminate\Support\Facades\DB;
 class UserSeeder extends Seeder
 {
     /**
@@ -22,6 +22,17 @@ class UserSeeder extends Seeder
             'password' => bcrypt("admin123"),
             'name' => 'Admin',
             'email_verified_at' => now(),
+        ]);
+        DB::table('beritas')->insert([
+            'judul' => 'sample judul',
+            'deskripsi' => 'sample deskripsi',
+            'caption' =>'sample caption',
+            'gambar' => 'sample.jpg',
+            'tanggal' => now(),
+            'region' => 'sample region',
+            'kategoriBeasiswa' => 's1',
+            'linkPendaftaran' => 'www.sample.com',
+            'id' => 1
         ]);
     }
 }

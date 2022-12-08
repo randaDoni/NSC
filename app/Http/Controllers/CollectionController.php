@@ -56,7 +56,7 @@ class CollectionController extends Controller
             return view('admin.data_user',['user'=>$user]);
         }
         public function destroy($users,Request $request){
-            User::where('id',$users)->first()->delete();
+            User::where('id_user',$users)->first()->delete();
             return redirect()->back();
         }
         public function upload(){
