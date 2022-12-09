@@ -1,13 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>PhotoFolio Bootstrap Template - Gallery Single</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+@extends('layouts.master')
+@section('content')
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -29,14 +21,14 @@
   <link href="main.css" rel="stylesheet">
 
 
-</head>
+
 
 <body>
 
   <!-- ======= Header ======= -->
 
 
-  <main id="main" data-aos="fade" data-aos-delay="1500">
+  <main id="main" data-aos="fade" data-aos-delay="1500" class="pt-3">
 <form action="{{url('/prosesUploadNews')}}" method="POST" enctype="multipart/form-data">
     @csrf
     <!-- ======= Start Page Header ======= -->
@@ -97,8 +89,8 @@
                     </span></li>
                     <li>Region<span>
                       <select class="selectpicker form-control" name="region" id="countries" data-live-search="true">
-                        <option value="S1">Beasiswa Dalam Negeri</option>
-                        <option value="S2">Beasiswa Luar Negeri </option>
+                        <option value="Beasiswa Dalam Negeri">Beasiswa Dalam Negeri</option>
+                        <option value="Beasiswa Luar Negeri">Beasiswa Luar Negeri </option>
                     </select>
                     </span></li>
                     <li><input type="submit" class="btn-visit align-self-start"></li>

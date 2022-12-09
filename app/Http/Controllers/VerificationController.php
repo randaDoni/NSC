@@ -12,6 +12,6 @@ class VerificationController extends Controller
     }
     public function verify(EmailVerificationRequest $request){
         $request->fulfill();
-        return route('dashboarduser');
+        return redirect('/dashboarduser');
     }
 }

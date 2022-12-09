@@ -19,9 +19,7 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-})->name('home');
+;
 Route::get('/post',function(){
     return view('post');
 });
@@ -68,3 +66,4 @@ Route::middleware((['auth','auth.session','verified']))->group(function(){
     Route::post('/prosesUploadNews',[BeritaController::class,'prosesUploadNews'])->name('proses.upload.news');
 });
 Route::get('/news/{id_news}',[BeritaController::class,'newsShow'])->name('news.show');
+Route::get('/',[BeritaController::class,'index'])->name('home');

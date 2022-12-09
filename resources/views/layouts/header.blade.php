@@ -1,7 +1,7 @@
 <section class="py-2">
   <nav class="navbar navbar-expand-lg fixed-top shadow-sm" style="background-color: rgb(255, 255, 255)">
       <div class="col-auto">
-        <a class="navbar-brand ms-2" href="index.blade.php">
+        <a class="navbar-brand ms-2" href="{{url('/')}}">
           <img src="assets/img/logos/NSC.gif" width="50" alt="logo" />
         </a>
       </div>
@@ -43,7 +43,7 @@
             </form>
 
         @if (Auth::check())
-        <form class="d-flex" action="{{url('/upload') }}">
+        <form class="d-flex" action="{{url('/uploadNews') }}">
             <button class="btn rounded-pill" type="logout">
               <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 24 24">
                 <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 13h-5v5h-2v-5h-5v-2h5v-5h2v5h5v2z"/></svg>

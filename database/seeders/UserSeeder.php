@@ -30,6 +30,7 @@ class UserSeeder extends Seeder
             'gambar' => 'sample.jpg',
             'tanggal' => now(),
             'region' => 'sample region',
+            'created_at'=>now(),
             'kategoriBeasiswa' => 's1',
             'linkPendaftaran' => 'www.sample.com',
             'id' => 1

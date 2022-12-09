@@ -25,8 +25,8 @@ class BeritaController extends Controller
         }else{
             $extFile = $request->gambar->getClientOriginalExtension();
             $namaFile = Auth::id().time().".".$extFile;
-            $path = $request->gambar->storeAs('uploads',$namaFile);
-            $publicPath = 'storage/'.$path;
+            $path = $request->gambar->storeAs('public',$namaFile);
+            $publicPath = 'storage/'.$namaFile;
             DB::table('beritas')->insert([
                 "judul" => $request->judul,
                 "deskripsi" => $request->deskripsi,
@@ -34,7 +34,7 @@ class BeritaController extends Controller
                 "tanggal"=>$request->tanggal,
                 "gambar"=>$publicPath,
                 "region"=>$request->region,
-                "linkPendaftaran"=>$request->region,
+                "linkPendaftaran"=>$request->linkPendaftaran,
                 "id"=>Auth::id(),
                 "caption"=>$request->caption,
                 "created_at" => now(),
@@ -51,8 +51,10 @@ class BeritaController extends Controller
     public function dashboardUser(){
         $user = User::all();
         $id = Auth::id();
+        $berita = berita::all();
         $profile = $user->where('id','=',$id)->first();
-        return view('dashboardUser',['profile'=>$profile,'user' => $user,'id'=>$id]);
+        $beritas = $berita->where('id','=',$id);
+        return view('dashboardUser',['profile'=>$profile,'user' => $user,'id'=>$id,'beritas'=>$beritas]);
     }
     public function dashboardUserShow($id){
         $user = User::all();
@@ -81,9 +83,13 @@ class BeritaController extends Controller
         $berita = $beritas->where('id_news','=',$id_news)->first();
         $urutan = $news->where('tanggal','=', $now)->get();
         $uploader = $user->where('id','=',$berita->id)->first();
-        return view('news',['berita'=>$berita,'urutan'=>$urutan,'uploader'=>$uploader]);
+        return view('news',['berita'=>$berita,'urutan'=>$urutan,'uploader'=>$uploader,'id_news'=>$id_news]);
     }
     public function uploadNews(){
         return view('upload');
+    }
+    public function index(){
+        $berita = berita::all();
+        return view('index',['berita'=>$berita]);
     }
 }

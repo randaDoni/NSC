@@ -61,16 +61,16 @@
       <div class="container-fluid">
 
         <div class="row gy-4 justify-content-center">
-          @foreach ($user as $index => $row)
+          @foreach ($beritas as $index => $row)
           <div class="col-xl-3 col-lg-4 col-md-6">
             <div class="card gallery-item h-100">
-              <img src="assets/img/gallery/gallery-1.jpg" class="img-fluid" alt="">
+              <img src="{{$row->gambar}}" class="img-fluid" alt="">
               <div class="card-body">
-                <h5 style="color:black" class="card-title">Programming System</h5>
+                <h5 style="color:black" class="card-title">{{$row->judul}}</h5>
               </div>
               <div class="gallery-links d-flex align-items-center justify-content-center">
                 <a href="assets/img/gallery/gallery-1.jpg" title="Gallery 1" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
-                <a href="{{route('dashboard.user.show',$row->id)}}" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <a href="{{route('news.show',$row->id)}}" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div>
           </div>
@@ -82,7 +82,7 @@
 
   </main><!-- End #main -->
 
-  <!-- ======= Footer ======= -->
+  {{-- <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
     <div class="container">
       <div class="copyright">
@@ -96,7 +96,7 @@
         Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
       </div>
     </div>
-  </footer><!-- End Footer -->
+  </footer><!-- End Footer --> --}}
 
   <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
