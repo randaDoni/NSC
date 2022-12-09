@@ -16,13 +16,13 @@ return new class extends Migration
         Schema::create('beritas', function (Blueprint $table) {
             $table->id('id_news')->unique();
             $table->string('judul');
-            $table->string('caption');
-            $table->string('deskripsi');
-            $table->date('tanggal');
-            $table->string('gambar');
             $table->string('kategoriBeasiswa');
             $table->string('region');
+            $table->date('tanggalPembukaan');
+            $table->date('tanggalPenutupan');
+            $table->string('gambar');
             $table->string('linkPendaftaran');
+            $table->string('deskripsi');
             $table->integer('id')->unsigned();
             $table->timestamps();
             $table->foreign('id')->references('id')->on('users')->onDelete('cascade');

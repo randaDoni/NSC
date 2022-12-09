@@ -81,7 +81,7 @@ class BeritaController extends Controller
         $now = now();
 
         $berita = $beritas->where('id_news','=',$id_news)->first();
-        $urutan = $news->where('tanggal','=', $now)->get();
+        $urutan = $news->where('tanggalPembukaan','=', $now)->get();
         $uploader = $user->where('id','=',$berita->id)->first();
         return view('news',['berita'=>$berita,'urutan'=>$urutan,'uploader'=>$uploader,'id_news'=>$id_news]);
     }

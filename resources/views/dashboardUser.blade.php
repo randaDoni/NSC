@@ -38,7 +38,7 @@
                             @csrf
                             <div class="d-flex flex-column text-center image-upload">
                             <label for="file-input">
-                                <img class="foto_profil rounded-circle border border-light border-4" src="/img/profile.jpg" width="200px" height="200px">
+                                <img class="foto_profil rounded-circle border border-light border-4" src="@if(!empty(Auth::user()->foto_profile)) {{asset('storage/'.Auth::user()->avatar)}} @else https://avatars.dicebear.com/api/initials/{{ Auth::user()->name  ?? null}}.svg?margin=10 @endif" width="200px" height="200px">
                             </label>
                             <input id="file-input" type="file" />
                             </div>

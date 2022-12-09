@@ -1,5 +1,5 @@
         <!--Footer Content-->
-          <section class="py-0 bg-dark fixed-bottom">
+          <section class="py-0 bg-dark ">
             <div class="container">
               <div class="row justify-content-md-between justify-content-evenly py-4">
                 <div class="col-12 col-sm-8 col-md-6 col-lg-auto text-center text-md-start">

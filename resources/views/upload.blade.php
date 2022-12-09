@@ -28,123 +28,99 @@
   <!-- ======= Header ======= -->
 
 
-  <main id="main" data-aos="fade" data-aos-delay="1500" class="pt-3">
-<form action="{{url('/prosesUploadNews')}}" method="POST" enctype="multipart/form-data">
-    @csrf
-    <!-- ======= Start Page Header ======= -->
-    <div style="background-color: rgb(36, 126, 199);" class="page-header d-flex align-items-center">
-      <div class="container position-relative">
-        <div class="row d-flex justify-content-center">
-          <div class="col-lg-6 text-center">
-            <h2>UNGGAH ARTIKEL</h2>
-            <input type="text" name="judul" placeholder="Judul" class="form-control"  style="font-size: 28px; background-color:transparent !important; color:white">
-          </div>
-        </div>
-      </div>
-    </div><!-- End Page Header -->
-
-    <!-- ======= Gallery Single Section ======= -->
-    <section id="gallery-single" class="gallery-single">
-      <div class="container">
-        <div class="row justify-content-between gy-4 mt-4">
-          <div class="col-lg-8">
-            <div class="portfolio-description">
-              <h2>Unggah Gambar</h2>
-              <input type="file" class="form-control-file mb-3" style="background-color:transparent !important; color: black;" name="gambar" id="gambar">
-              <h2>Caption</h2>
-              <div class="input-group mt">
-                <textarea name="caption" style="background-color:transparent !important; color:black; height: 1cm;" class="form-control" aria-label="With textarea"></textarea>
-              </div>
-              <h2>Deskripsi</h2>
-              <div class="input-group mt">
-                <textarea name="deskripsi" style="background-color:transparent !important; color:black; height: 6cm;" class="form-control" aria-label="With textarea"></textarea>
-              </div>
+<main id="main" data-aos="fade" data-aos-delay="1500" class="pt-3">
+  <h3 class="mt-3" style="margin-left: 25px" ><i class="fa-solid fa-table"></i> Input Beasiswa </h3>
+    <form action="{{url('/prosesUploadNews')}}" method="POST" enctype="multipart/form-data">
+@csrf
+<div class="pt-2 mb-5" style="margin-top: 10px;">
+    <div class="row justify-content-center">
+        <div class="col-lg-9">
+            <div class="card">
+            <div class="card-header"style="background-color: #102744">
+                <h3 class="text-white" style="text-align:center;">TAMBAH BERITA</h3>
             </div>
-          </div>
-          <div class="col-lg-3">
-            <div class="portfolio-info">
-              <h3 style="color: black;">Informasi Artikel</h3>
-              <nav>
-                <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                  <button class="nav-link active" id="nav-beasiswa-tab" data-bs-toggle="tab" data-bs-target="#nav-beasiswa" type="button" role="tab" aria-controls="nav-beasiswa" aria-selected="true">Beasiswa</button>
-                  {{-- <button class="nav-link" id="nav-lomba-tab" data-bs-toggle="tab" data-bs-target="#nav-lomba" type="button" role="tab" aria-controls="nav-lomba" aria-selected="false">Lomba</button> --}}
-                </div>
-              </nav>
-              <div class="tab-content" id="nav-tabContent">
-                <div class="tab-pane fade show active" id="nav-beasiswa" role="tabpanel" aria-labelledby="nav-beasiswa-tab">
-                  <ul>
-                    <li class="mt-1">Kategori Beasiswa <span>
-                      <select class="selectpicker form-control" name="kategoriBeasiswa" id="countries" data-live-search="true">
+             <div class="card-body">
+              {{-- form pertama --}}
+                    <div class="m-2">
+                      {{-- Beasiswa --}}
+                        <label class="form-label " for="judul">Judul</label>
+                        <input class="form-control" type="text" name="judul" class="form-control" >
+                        @error('judul')
+                        <div class="text-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    {{-- Kategori Beasiswa --}}
+                    <div class="m-2">
+                      <label class="form-label" for="kategoriBeasiswa">Kategori Beasiswa</label>
+                      <select class="selectpicker form-control" name="kategoriBeasiswa" id="kategoriBeasiswa" data-live-search="true">
                         <option value="S1">Beasiswa Kuliah S1</option>
                         <option value="S2">Beasiswa Kuliah S2</option>
                         <option value="S3">Beasiswa Kuliah S3</option>
                     </select>
-                    </span>
-                    </li>
-                    <li>Tanggal Pendaftaran<span>
-                      <input name="tanggal" type="date"class="form-control mt-1">
-                    </span></li>
-                    <li>Link Pendaftaran <span>
-                      <input type="text" name="linkPendaftaran"  class="form-control mt-1">
-                    </span></li>
-                    <li>Region<span>
-                      <select class="selectpicker form-control" name="region" id="countries" data-live-search="true">
-                        <option value="Beasiswa Dalam Negeri">Beasiswa Dalam Negeri</option>
-                        <option value="Beasiswa Luar Negeri">Beasiswa Luar Negeri </option>
-                    </select>
-                    </span></li>
-                    <li><input type="submit" class="btn-visit align-self-start"></li>
-                  </ul>
+                      @error('kategoriBeasiswa')
+                      <div class="text-danger">{{ $message }}</div>
+                      @enderror
+                  </div>
+                  {{-- Kategori Beasiswa --}}
+                  <div class="m-2">
+                    <label class="form-label" for="region">Region</label>
+                    <select class="selectpicker form-control" name="region" id="region" data-live-search="true">
+                      <option value="Beasiswa Dalam Negeri">Beasiswa Dalam Negeri</option>
+                      <option value="Beasiswa Luar Negeri">Beasiswa Luar Negeri </option>
+                  </select>
+                    @error('region')
+                    <div class="text-danger">{{ $message }}</div>
+                    @enderror
                 </div>
-                <div class="tab-pane fade" id="nav-lomba" role="tabpanel" aria-labelledby="nav-lomba-tab">
-                  <ul>
-                    <li class="mt-1">Kategori Lomba <span>
-                      <input placeholder="Contoh : Lomba Qiroah" class="form-control mt-1" type="text" name="" id="">
-                    </span></li>
-                    <li>Jenjang <span>
-                      <input placeholder="Contoh : SMA" class="form-control mt-1" type="text" name="" id="">
-                    </span></li>
-                    <li>Tanggal Pendaftaran<span>
-                      <input type="date"class="form-control mt-1">
-                    </span></li>
-                    <li>Link Pendaftaran <span>
-                      <input type="text"class="form-control mt-1">
-                    </span></li>
-                    <li><input type="submit" class="btn-visit align-self-start">UNGGAH</li>
-                  </ul>
+                  {{-- Tanggal Pendaftaran --}}
+                  <div class="m-2">
+                    <label class="form-label" for="tanggalPembukaan">Tanggal Pembukaan</label>
+                    <input class="form-control" type="date" name="tanggalPembukaan" aria-label="With textarea">
+                    @error('tanggalPembukaan')
+                    <div class="text-danger">{{ $message }}</div>
+                    @enderror
+                  </div>
+                  <div class="m-2">
+                    <label class="form-label" for="tanggalPenutupan">Tanggal Penutupan</label>
+                    <input class="form-control" type="date" name="tanggalPenutupan" aria-label="With textarea">
+                    @error('tanggalPenutupan')
+                    <div class="text-danger">{{ $message }}</div>
+                    @enderror
+                </div>
+                    {{-- Upload Gambar --}}
+                    <div class="m-2">
+                      <label class="form-label" for="gambar">Upload Gambar</label>
+                      <input class="form-control" type="file" name="gambar" id="gambar">
+                      @error('gambar')
+                      <div class="text-danger">{{ $message }}</div>
+                      @enderror
+                  </div>
+                  <div class="m-2">
+                    {{-- Link Pendaftaran --}}
+                      <label class="form-label" for="jenis">Link Pendaftaran</label>
+                      <input class="form-control" type="text" name="linkPendaftaran">
+                      @error('linkPendaftaran')
+                      <div class="text-danger">{{ $message }}</div>
+                      @enderror
+                  </div>
+                  {{-- Deskripsi --}}
+                  <div class="m-2">
+                    <label class="form-label" for="deskripsi">Deskripsi</label>
+                    <textarea class="form-control" type="text-field" name="deskripsi" aria-label="With textarea"></textarea>
+                    @error('deskripsi')
+                    <div class="text-danger">{{ $message }}</div>
+                    @enderror
+                </div>
+                <center>
+                <button class="btn mb-3 mt-3 text-white" style="background-color:#102744;" type="submit"name="tambah">Upload</button>
+                </center>
                 </div>
               </div>
             </div>
-          </div>
-
         </div>
-
-      </div>
-    </section><!-- End Gallery Single Section -->
-</form>
-  </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer" class="footer">
-    <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong><span>PhotoFolio</span></strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/photofolio-bootstrap-photography-website-template/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
     </div>
-  </footer><!-- End Footer -->
 
-  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <div id="preloader">
-    <div class="line"></div>
-  </div>
+  </form>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -156,20 +132,6 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <script>
-        $('.delete_file').hide();
-        $('#upload_costum').change(function(event) {
-            let tmppath = URL.createObjectURL(event.target.files[0])
-            $('.image > img').fadeIn('fast').attr('src',tmppath)
-            $('.delete_file').show();
-            $('.choose_file').hide();
-            $('.delete_file').click(function() {
-                $('.image > img').fadeIn('fast').attr('src','')
-              $('.delete_file').hide();
-            })
-        })
-    </script>
 
 </body>
-
 </html>

@@ -48,6 +48,9 @@ Route::get('/beasiswa',function(){
 Route::get('/kompetisi',function(){
     return view('kompetisi');
 });
+Route::get('/dashboardadmin',function(){
+    return view('admin.dashboard');
+});
 Route::delete('/data_user/userdelete/{users}',[CollectionController::class,'destroy'])->name('user.delete');
 
 Route::get('/login',[AuthController::class,'get_login'])->name('login');

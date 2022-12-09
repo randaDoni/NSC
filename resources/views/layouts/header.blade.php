@@ -2,7 +2,7 @@
   <nav class="navbar navbar-expand-lg fixed-top shadow-sm" style="background-color: rgb(255, 255, 255)">
       <div class="col-auto">
         <a class="navbar-brand ms-2" href="{{url('/')}}">
-          <img src="assets/img/logos/NSC.gif" width="50" alt="logo" />
+          <img src="{{url('/assets/img/logos/NSC.gif')}}" width="50" alt="logo" />
         </a>
       </div>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

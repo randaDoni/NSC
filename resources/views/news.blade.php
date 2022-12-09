@@ -20,7 +20,7 @@
           </div>
           <div class="post-date">{{$berita->tanggal}} by {{$uploader->name}}</div>
           <div class="card mt-3 mb-3" style="width: 33rem;">
-            <a href="#"><img src="{{$berita->gambar}}" class="card-img-top" alt="..."></a>
+            <a href="#"><img src="{{asset($berita->gambar)}}" class="card-img-top" alt="..."></a>
             <div class="card-header">
               <caption>{{$berita->caption}}</caption>
             </div>
@@ -30,7 +30,7 @@
           {{$berita->deskripsi}}
         </div>
         <div class="post-body">
-          <a href="{{$berita->linkPendaftaran}}"> Link Pendaftaran </a>
+          <a href="http://{{$berita->linkPendaftaran}}"> Link Pendaftaran </a>
         </div>
 
         {{-- iklan --}}
