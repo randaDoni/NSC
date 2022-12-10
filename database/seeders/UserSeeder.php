@@ -23,17 +23,17 @@ class UserSeeder extends Seeder
             'name' => 'Admin',
             'email_verified_at' => now(),
         ]);
-        DB::table('beritas')->insert([
-            'judul' => 'sample judul',
-            'deskripsi' => 'sample deskripsi',
-            'caption' =>'sample caption',
-            'gambar' => 'sample.jpg',
-            'tanggal' => now(),
-            'region' => 'sample region',
-            'created_at'=>now(),
-            'kategoriBeasiswa' => 's1',
-            'linkPendaftaran' => 'www.sample.com',
-            'id' => 1
-        ]);
+//         DB::table('beritas')->insert([
+//             'judul' => 'sample judul',
+//             'deskripsi' => 'sample deskripsi',
+//             'caption' =>'sample caption',
+//             'gambar' => 'sample.jpg',
+//             'tanggal' => now(),
+//             'region' => 'sample region',
+//             'created_at'=>now(),
+//             'kategoriBeasiswa' => 's1',
+//             'linkPendaftaran' => 'www.sample.com',
+//             'id' => 1
+//         ]);
     }
 }
