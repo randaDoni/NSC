@@ -1,6 +1,13 @@
 @extends('layouts.master')
 @section('content')
 @section('menuKompetisi','active')
+<style>
+  .beasiswa2:hover {
+  -ms-transform: scale(1.0); /* IE 9 */
+  -webkit-transform: scale(1.0); /* Safari 3-8 */
+  transform: scale(1.2); 
+}
+</style>
 
       <!-- ============================================-->
       <!-- Kompetisi Content di Home ============================-->
@@ -9,7 +16,7 @@
         <div class="container">
           <div class="row">
             <h1 class=" display-4 lh-lg fw-bold text-primary text-center font-sans-serif text-end mb-3">KOMPETISI</h1>
-            <div class="col-sm-6 col-lg-3 mb-4">
+            <div class="col-sm-6 beasiswa2 col-lg-3 mb-4">
               <div class="card p-2 h-100">
                 <div class="position-relative"><img class="w-100" src="assets/img/logos/umum.jpeg" alt="courses" />
                 </div>
@@ -23,7 +30,7 @@
                   </svg></a>
               </div>
             </div>
-            <div class="col-sm-6 col-lg-3 mb-4">
+            <div class="col-sm-6 beasiswa2 col-lg-3 mb-4">
               <div class="card p-2 h-100">
                 <div class="position-relative"><img class="w-100" src="assets/img/logos/mhs.jpeg" alt="courses" />
                 </div>
@@ -37,7 +44,7 @@
                   </svg></a>
               </div>
             </div>
-            <div class="col-sm-6 col-lg-3 mb-4">
+            <div class="col-sm-6 beasiswa2 col-lg-3 mb-4">
               <div class="card p-2 h-100">
                 <div class="position-relative"><img class="w-100" src="assets/img/logos/nasional.jpeg" alt="courses" />
                 </div>
@@ -51,7 +58,7 @@
                   </svg></a>
               </div>
             </div>
-            <div class="col-sm-6 col-lg-3 mb-4">
+            <div class="col-sm-6 beasiswa2 col-lg-3 mb-4">
               <div class="card p-2 h-100">
                 <div class="position-relative"><img class="w-100" src="assets/img/logos/inter.jpeg" alt="courses" />
                 </div>
@@ -65,7 +72,7 @@
                   </svg></a>
               </div>
             </div>
-            <div class="col-sm-6 col-lg-3 mb-4">
+            <div class="col-sm-6 beasiswa2 col-lg-3 mb-4">
                 <div class="card p-2 h-100">
                   <div class="position-relative"><img class="w-100" src="assets/img/logos/umum.jpeg" alt="courses" />
                   </div>
@@ -79,7 +86,7 @@
                     </svg></a>
                 </div>
               </div>
-              <div class="col-sm-6 col-lg-3 mb-4">
+              <div class="col-sm-6 beasiswa2 col-lg-3 mb-4">
                 <div class="card p-2 h-100">
                   <div class="position-relative"><img class="w-100" src="assets/img/logos/mhs.jpeg" alt="courses" />
                   </div>
@@ -93,7 +100,7 @@
                     </svg></a>
                 </div>
               </div>
-              <div class="col-sm-6 col-lg-3 mb-4">
+              <div class="col-sm-6 beasiswa2 col-lg-3 mb-4">
                 <div class="card p-2 h-100">
                   <div class="position-relative"><img class="w-100" src="assets/img/logos/nasional.jpeg" alt="courses" />
                   </div>
@@ -107,7 +114,7 @@
                     </svg></a>
                 </div>
               </div>
-              <div class="col-sm-6 col-lg-3 mb-4">
+              <div class="col-sm-6 beasiswa2 col-lg-3 mb-4">
                 <div class="card p-2 h-100">
                   <div class="position-relative"><img class="w-100" src="assets/img/logos/inter.jpeg" alt="courses" />
                   </div>

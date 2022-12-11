@@ -40,23 +40,23 @@
                   </div>
                 </div>
               </div>
-              <div class="row g-0">
-                <div class="col-3 position-relative">
-                  <div class="carousel-indicators justify-content-start custom-indicators">
-                    <button class="active" type="button" data-bs-target="#hero-carousel" data-bs-slide-to="0" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="2" aria-label="Slide 3"> </button>
-                  </div>
+              <div class="col-3 position-absolute start-100 py-0">
+                <div class="carousel-indicators custom-indicators">
+                  <button class="active" type="button" data-bs-target="#hero-carousel" data-bs-slide-to="0" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="2" aria-label="Slide 3"> </button>
                 </div>
+              </div>
+              <div class="row g-0">
                 <div class="col-9 position-relative">
                   <div class="card" style="background-color:#10203F;">
                     <div class="card-body border-bottom border-primary p-2 px-md-4 py-md-3 py-xl-4 p-sm-3">
                       <div class="d-md-flex flex-between-center">
                         <p class="mb-0 text-primary fs-2"><strong>250,998 </strong>Bersama Mencari Beasiswa dan Kompetisi</p>
-                        <a class="text-decoration-none text-end mt-3 text-light fw-bold" href="#!" role="button">Read More
-                          <svg class="bi bi-arrow-right text-primary ms-2" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+                        <a class="text-decoration-none text-end mt-3 text-light fw-bold" href="#!" role="button">
+                          {{-- <svg class="bi bi-arrow-right text-primary ms-2" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
-                          </svg></a>
+                          </svg></a> --}}
                       </div>
                     </div>
                   </div>
@@ -66,6 +66,24 @@
           </div>
           </div>
         </div>
+        </div>
+      </section>
+      {{-- ========================================== --}}
+      <section class="bg-primary mb-5 pt-5 pb-3">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="container ms-4" style=" text-align:left">
+              <h1 class="container ms-4">LETS MAKE IT HAPPEN!</h1>
+              <div class="card-body text-white d-flex" style="text-align: justify">
+                <h5 class="ms-4"> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam provident deleniti dolores magnam, odit laboriosam impedit qui quaerat, 
+                  ipsam perferendis rerum! Numquam ex officiis vitae error! Facilis dicta quam modi! Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus aliquid eligendi non iure ullam quod aliquam quae molestias, obcaecati, omnis et veniam laborum deserunt possimus dolorem quia, voluptas voluptatibus qui!</h5>
+              </div>
+            </div>
+            <button type="button position-absolute start-0" class="btn btn-light d-flex " style="margin-left: 12%">Sign Up Here</button>
+          </div>
+          <div class="col-sm-5">
+            <img src="assets/img/logos/NSC.gif" alt="" style="width:65%; height:65%;">
+          </div>
         </div>
       </section>
 
@@ -99,144 +117,11 @@
         <!-- <section> close ============================-->
         <!-- ============================================-->
 
-      <!-- ============================================-->
-      <!-- Beasiswa Content di Home ============================-->
-      <section class="py-5 bg-primary">
 
-        <div class="container">
-          <div class="row">
-            <h1 class="display-4 lh-lg fw-bold text-light font-sans-serif text-start mb-3">BEASISWA POPULER</h1>
-            <div class="col-sm-6 col-lg-3 mb-4">
-              <div class="card p-2 h-100">
-                <div class="position-relative"><img class="w-100" src="assets/img/logos/s1.jpeg" alt="courses" />
-                </div>
-                <div class="card-body px-0 py-3">
-                  <h5 class="mb-0 ms-1 font-sans-serif fw-bold fs-md-0 fs-lg-1">Beasiswa S1</h5>
-                  <a class="ms-1 text-muted fs--1 stretched-link text-decoration-none" href="#!">Ikuti Informasi Beasiswa S1</a>
-                </div>
-                <a class="text-decoration-none text-end mt-3 text-primary mb-2" href="#!" role="button">Read More
-                  <svg class="bi bi-arrow-right text-primary ms-1 me-2" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
-                  </svg></a>
-              </div>
-            </div>
-            <div class="col-sm-6 col-lg-3 mb-4">
-              <div class="card p-2 h-100">
-                <div class="position-relative"><img class="w-100" src="assets/img/logos/s2.jpeg" alt="courses" />
-                </div>
-                <div class="card-body px-0 py-3">
-                  <h5 class="mb-0 ms-1 font-sans-serif fw-bold fs-md-0 fs-lg-1">Beasiswa S2</h5>
-                  <a class="ms-1 text-muted fs--1 stretched-link text-decoration-none" href="#!">Ikuti Informasi Beasiswa S2</a>
-                </div>
-                <a class="text-decoration-none text-end mt-3 text-primary mb-2" href="#!" role="button">Read More
-                  <svg class="bi bi-arrow-right text-primary ms-1 me-2" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
-                  </svg></a>
-              </div>
-            </div>
-            <div class="col-sm-6 col-lg-3 mb-4">
-              <div class="card p-2 h-100">
-                <div class="position-relative"><img class="w-100" src="assets/img/logos/s3.jpeg" alt="courses" />
-                </div>
-                <div class="card-body px-0 py-3">
-                  <h5 class="mb-0 ms-1 font-sans-serif fw-bold fs-md-0 fs-lg-1">Beasiswa S3</h5>
-                  <a class="ms-1 text-muted fs--1 stretched-link text-decoration-none" href="#!">Ikuti Informasi Beasiswa S3</a>
-                </div>
-                <a class="text-decoration-none text-end mt-3 text-primary mb-2" href="#!" role="button">Read More
-                  <svg class="bi bi-arrow-right text-primary ms-1 me-2" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
-                  </svg></a>
-              </div>
-            </div>
-            <div class="col-sm-6 col-lg-3 mb-4">
-              <div class="card p-2 h-100">
-                <div class="position-relative"><img class="w-100" src="assets/img/logos/ln.jpeg" alt="courses" />
-                </div>
-                <div class="card-body px-0 py-3">
-                  <h5 class="mb-0 ms-1 font-sans-serif fw-bold fs-md-0 fs-lg-1">Beasiswa Luar Negeri</h5>
-                  <a class="ms-1 text-muted fs--1 stretched-link text-decoration-none" href="#!">Ikuti Informasi Beasiswa Luar Negeri</a>
-                </div>
-                <a class="text-decoration-none text-end mt-3 text-primary mb-2" href="#!" role="button">Read More
-                  <svg class="bi bi-arrow-right text-primary ms-1 me-2" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
-                  </svg></a>
-              </div>
-            </div>
 
-        <!-- end of .container-->
+       
 
-      </section>
-      <!-- <section> close ============================-->
-      <!-- ============================================-->
-
-      <!-- ============================================-->
-      <!-- Kompetisi Content di Home ============================-->
-      <section class="py-5 bg-light">
-
-        <div class="container">
-          <div class="row">
-            <h1 class=" display-4 lh-lg fw-bold text-primary font-sans-serif text-end mb-3">KOMPETISI POPULER</h1>
-            <div class="col-sm-6 col-lg-3 mb-4">
-              <div class="card p-2 h-100">
-                <div class="position-relative"><img class="w-100" src="assets/img/logos/umum.jpeg" alt="courses" />
-                </div>
-                <div class="card-body px-0 py-3">
-                  <h5 class="mb-0 ms-1 font-sans-serif fw-bold fs-md-0 fs-lg-1">Kompetisi Umum</h5>
-                  <a class="ms-1 text-muted fs--1 stretched-link text-decoration-none" href="#!">Artistic</a>
-                </div>
-                <a class="text-decoration-none text-end mt-3 text-primary mb-2" href="#!" role="button">Read More
-                  <svg class="bi bi-arrow-right text-primary ms-1 me-2" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
-                  </svg></a>
-              </div>
-            </div>
-            <div class="col-sm-6 col-lg-3 mb-4">
-              <div class="card p-2 h-100">
-                <div class="position-relative"><img class="w-100" src="assets/img/logos/mhs.jpeg" alt="courses" />
-                </div>
-                <div class="card-body px-0 py-3">
-                  <h5 class="mb-0 ms-1 font-sans-serif fw-bold fs-md-0 fs-lg-1">Kompetisi Mahasiswa</h5>
-                  <a class="ms-1 text-muted fs--1 stretched-link text-decoration-none" href="#!">Mathematic</a>
-                </div>
-                <a class="text-decoration-none text-end mt-3 text-primary mb-2" href="#!" role="button">Read More
-                  <svg class="bi bi-arrow-right text-primary ms-1 me-2" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
-                  </svg></a>
-              </div>
-            </div>
-            <div class="col-sm-6 col-lg-3 mb-4">
-              <div class="card p-2 h-100">
-                <div class="position-relative"><img class="w-100" src="assets/img/logos/nasional.jpeg" alt="courses" />
-                </div>
-                <div class="card-body px-0 py-3">
-                  <h5 class="mb-0 ms-1 font-sans-serif fw-bold fs-md-0 fs-lg-1">Kompetisi Nasional</h5>
-                  <a class="ms-1 text-muted fs--1 stretched-link text-decoration-none" href="#!">Electric</a>
-                </div>
-                <a class="text-decoration-none text-end mt-3 text-primary mb-2" href="#!" role="button">Read More
-                  <svg class="bi bi-arrow-right text-primary ms-1 me-2" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
-                  </svg></a>
-              </div>
-            </div>
-            <div class="col-sm-6 col-lg-3 mb-4">
-              <div class="card p-2 h-100">
-                <div class="position-relative"><img class="w-100" src="assets/img/logos/inter.jpeg" alt="courses" />
-                </div>
-                <div class="card-body px-0 py-3">
-                  <h5 class="mb-0 ms-1 font-sans-serif fw-bold fs-md-0 fs-lg-1">Kompetisi Internasional</h5>
-                  <a class="ms-1 text-muted fs--1 stretched-link text-decoration-none" href="#!">Chemistry</a>
-                </div>
-                <a class="text-decoration-none text-end mt-3 text-primary mb-2" href="#!" role="button">Read More
-                  <svg class="bi bi-arrow-right text-primary ms-1 me-2" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
-                  </svg></a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- end of .container-->
-
-      </section>
+      {{-- beasiswa populer hapus --}}
       <!-- <section> close ============================-->
       <!-- ============================================-->
 

@@ -1,7 +1,14 @@
 @extends('layouts.master')
 @section('content')
 @section('menuHome','active')
-
+<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+<style>
+  .besiswa1:hover {
+  -ms-transform: scale(1.0); /* IE 9 */
+  -webkit-transform: scale(1.0); /* Safari 3-8 */
+  transform: scale(1.2); 
+}
+</style>
       <!-- ============================================-->
       <!-- Beasiswa Content di Home ============================-->
       <section class="py-5 bg-primary">
@@ -9,11 +16,11 @@
         <div class="container">
           <div class="row">
             <h1 class="display-4 lh-lg fw-bold text-light text-center font-sans-serif text-start mb-3">BEASISWA</h1>
-            <div class="col-sm-6 col-lg-3 mb-4">
-              <div class="card p-2 h-100">
+            <div class="col-sm-6 besiswa1 gambar1 col-lg-3 mb-4">
+              <div class="card  p-2 h-100">
                 <div class="position-relative"><img class="w-100" src="assets/img/logos/s1.jpeg" alt="courses" />
                 </div>
-                <div class="card-body px-0 py-3">
+                <div class="card-body  gambar1 px-0 py-3">
                   <h5 class="mb-0 ms-1 font-sans-serif fw-bold fs-md-0 fs-lg-1">Beasiswa S1</h5>
                   <a class="ms-1 text-muted fs--1 stretched-link text-decoration-none" href="#!">Ikuti Informasi Beasiswa S1</a>
                 </div>
@@ -23,7 +30,7 @@
                   </svg></a>
               </div>
             </div>
-            <div class="col-sm-6 col-lg-3 mb-4">
+            <div class="col-sm-6 besiswa1 col-lg-3 mb-4">
               <div class="card p-2 h-100">
                 <div class="position-relative"><img class="w-100" src="assets/img/logos/s2.jpeg" alt="courses" />
                 </div>
@@ -37,7 +44,7 @@
                   </svg></a>
               </div>
             </div>
-            <div class="col-sm-6 col-lg-3 mb-4">
+            <div class="col-sm-6 besiswa1 col-lg-3 mb-4">
               <div class="card p-2 h-100">
                 <div class="position-relative"><img class="w-100" src="assets/img/logos/s3.jpeg" alt="courses" />
                 </div>
@@ -51,7 +58,7 @@
                   </svg></a>
               </div>
             </div>
-            <div class="col-sm-6 col-lg-3 mb-4">
+            <div class="col-sm-6 besiswa1 col-lg-3 mb-4">
               <div class="card p-2 h-100">
                 <div class="position-relative"><img class="w-100" src="assets/img/logos/ln.jpeg" alt="courses" />
                 </div>
@@ -65,7 +72,7 @@
                   </svg></a>
               </div>
             </div>
-            <div class="col-sm-6 col-lg-3 mb-4">
+            <div class="col-sm-6 besiswa1 col-lg-3 mb-4">
                 <div class="card p-2 h-100">
                   <div class="position-relative"><img class="w-100" src="assets/img/logos/s1.jpeg" alt="courses" />
                   </div>
@@ -79,7 +86,7 @@
                     </svg></a>
                 </div>
               </div>
-              <div class="col-sm-6 col-lg-3 mb-4">
+              <div class="col-sm-6  besiswa1 col-lg-3 mb-4">
                 <div class="card p-2 h-100">
                   <div class="position-relative"><img class="w-100" src="assets/img/logos/s2.jpeg" alt="courses" />
                   </div>
@@ -93,7 +100,7 @@
                     </svg></a>
                 </div>
               </div>
-              <div class="col-sm-6 col-lg-3 mb-4">
+              <div class="col-sm-6 besiswa1 col-lg-3 mb-4">
                 <div class="card p-2 h-100">
                   <div class="position-relative"><img class="w-100" src="assets/img/logos/s3.jpeg" alt="courses" />
                   </div>
@@ -107,7 +114,7 @@
                     </svg></a>
                 </div>
               </div>
-              <div class="col-sm-6 col-lg-3 mb-4">
+              <div class="col-sm-6 besiswa1 col-lg-3 mb-4">
                 <div class="card p-2 h-100">
                   <div class="position-relative"><img class="w-100" src="assets/img/logos/ln.jpeg" alt="courses" />
                   </div>
@@ -123,11 +130,5 @@
               </div>
 
         <!-- end of .container-->
-
-      </section>
-      <!-- <section> close ============================-->
-      <!-- ============================================-->
-          </section>
-@endsection
           <!-- <section> close ============================-->
           <!-- ============================================-->
