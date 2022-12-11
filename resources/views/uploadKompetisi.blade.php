@@ -49,7 +49,7 @@
                         <div class="text-danger">{{ $message }}</div>
                         @enderror
                     </div>
-                    {{-- Kategori Kompetisi --}}
+                    {{-- Tingkat Kompetisi --}}
                     <div class="m-2">
                       <label class="form-label" for="tingkatKompetisi">Tingkat Kompetisi</label>
                       <select class="selectpicker form-control" name="tingkatKompetisi" id="tingkatKompetisi" data-live-search="true">
@@ -81,6 +81,7 @@
                     </div>
                 </div>
                 </div>
+                {{-- Tangal Pengumuman --}}
                   <div class="m-2">
                     <label class="form-label" for="tanggalPengumuman">Pengumuman Pemenang</label>
                     <input class="form-control" type="date" name="tanggalPengumuman" aria-label="With textarea">
