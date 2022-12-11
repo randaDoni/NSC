@@ -21,7 +21,7 @@
             </div>
           </div>
           <div class="post-body">
-            <h6>Tanggal Pendaftaran : {{$berita->PembukaanPendaftaran}} s/d {{$berita->PenutupanPendaftaran}}</h6>
+            <h6>Tanggal Pendaftaran : {{$berita->PembukaanPendaftaran}} s/d {{$berita->PenutupanPendaftaran}} by {{$uploader->name}}</h6>
             <h6>Pengumuman : {{$berita->tanggalPengumuman}} </h6>
             <h6>Tingkat Kompetisi : {{$berita->tingkatKompetisi}}</h6>
             <hr>
