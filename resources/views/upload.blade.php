@@ -63,12 +63,12 @@
                   </div>
                   {{-- Jenis Beasiswa --}}
                   <div class="m-2">
-                    <label class="form-label" for="kategoriBeasiswa">Jenis Beasiswa</label>
+                    <label class="form-label" for="jenisBeasiswa">Jenis Beasiswa</label>
                     <select class="selectpicker form-control" name="jenisBeasiswa" id="jenisBeasiswa" data-live-search="true">
                       <option value="penuh">Beasiswa Penuh</option>
                       <option value="sebagian">Beasiswa Sebagian</option>
                   </select>
-                    @error('kategoriBeasiswa')
+                    @error('jenisBeasiswa')
                     <div class="text-danger">{{ $message }}</div>
                     @enderror
                 </div>
@@ -94,8 +94,8 @@
                   @enderror
                   </div>
                   <div class="col-md-6">
-                  <input class="form-control" type="date" name="tanggalPembukaan" aria-label="With textarea">
-                  @error('tanggalPembukaan')
+                  <input class="form-control" type="date" name="tanggalPenutupan" aria-label="With textarea">
+                  @error('tanggalPenutupan')
                   <div class="text-danger">{{ $message }}</div>
                   @enderror
                   </div>
