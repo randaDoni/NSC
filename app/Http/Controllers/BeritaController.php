@@ -20,11 +20,10 @@ class BeritaController extends Controller
             'required' => ':attribute wajib diisi'
         ]);
         if($validator->fails()){
-            dd('salah');
-            //return redirect('/upload')->withErrors($validator)->withInput();
+            return redirect('/upload')->withErrors($validator)->withInput();
         }else{
             $extFile = $request->gambar->getClientOriginalExtension();
-            $namaFile = Auth::id().time().".".$extFile;
+            $namaFile = Auth::id().'beasiswa'.time().".".$extFile;
             $path = $request->gambar->storeAs('public',$namaFile);
             $publicPath = 'storage/'.$namaFile;
             DB::table('beritas')->insert([
@@ -92,4 +91,40 @@ class BeritaController extends Controller
         $berita = berita::all();
         return view('index',['berita'=>$berita]);
     }
+    public function uploadKompetisi(){
+        return view('uploadKompetisi');
+    }
+    public function prosesUploadKompetisi(Request $request){
+        $validator = validator::make($request->all(),[
+            'judul' => 'required|min:3',
+            'deskripsi' => 'required',
+            'tanggal' => 'required',
+            'gambar' => 'file|image|required'
+        ],[
+            'required' => ':attribute wajib diisi'
+        ]);
+        if($validator->fails()){
+            return redirect('/upload')->withErrors($validator)->withInput();
+        }else{
+            $extFile = $request->gambar->getClientOriginalExtension();
+            $namaFile = Auth::id().'kompetisi'.time().".".$extFile;
+            $path = $request->gambar->storeAs('public',$namaFile);
+            $publicPath = 'storage/'.$namaFile;
+            DB::table('kompetisis')->insert([
+                "judul" => $request->judul,
+                "tingkatKompetisi" => $request->tingkatKompetisi,
+                "PembukaanPendaftaran" => $request->PembukaanPendaftaran,
+                "tanggalPengumuman" => $request->tanggalPengumuman,
+                "deskripsi" => $request->deskripsi,
+                "tanggal"=> now(),
+                "gambar"=>$publicPath,
+                "linkPendaftaran"=>$request->linkPendaftaran,
+                "id"=>Auth::id(),
+                "caption"=>$request->caption,
+                "created_at" => now(),
+                "updated_at" => now()
+            ]);
+            return redirect('/');
+    }
 }
+};

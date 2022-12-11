@@ -50,7 +50,7 @@
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <a class="dropdown-item d-flex" href="{{url('/uploadNews') }}" >Beasiswa</a>
-            <a class="dropdown-item d-flex" href="{{url('/') }}">Kompetisi</a>
+            <a class="dropdown-item d-flex" href="{{url('/uploadKompetisi') }}">Kompetisi</a>
           </div>
         </div>
         @endif

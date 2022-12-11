@@ -69,13 +69,14 @@
         </div>
       </section>
       {{-- ========================================== --}}
+      @if (!Auth::check())
       <section class="bg-primary mb-5 pt-5 pb-3">
         <div class="row">
           <div class="col-sm-6">
             <div class="container ms-4" style=" text-align:left">
               <h1 class="container ms-4">LETS MAKE IT HAPPEN!</h1>
               <div class="card-body text-white d-flex" style="text-align: justify">
-                <h5 class="ms-4"> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam provident deleniti dolores magnam, odit laboriosam impedit qui quaerat, 
+                <h5 class="ms-4"> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam provident deleniti dolores magnam, odit laboriosam impedit qui quaerat,
                   ipsam perferendis rerum! Numquam ex officiis vitae error! Facilis dicta quam modi! Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus aliquid eligendi non iure ullam quod aliquam quae molestias, obcaecati, omnis et veniam laborum deserunt possimus dolorem quia, voluptas voluptatibus qui!</h5>
               </div>
             </div>
@@ -86,6 +87,8 @@
           </div>
         </div>
       </section>
+      @endif
+
 
       <!-- ============================================-->
       <!-- <section> begin ============================-->
@@ -119,7 +122,7 @@
 
 
 
-       
+
 
       {{-- beasiswa populer hapus --}}
       <!-- <section> close ============================-->

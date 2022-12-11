@@ -67,6 +67,8 @@ Route::middleware((['auth','auth.session','verified']))->group(function(){
     Route::get('/dashboarduser/{id}/upload_foto_profil',[BeritaController::class,'uploadFotoProfil'])->name('upload.foto.profil');
     Route::get('/uploadNews',[BeritaController::class,'uploadNews'])->name('upload.news');
     Route::post('/prosesUploadNews',[BeritaController::class,'prosesUploadNews'])->name('proses.upload.news');
+    Route::get('/uploadKompetisi',[BeritaController::class,'uploadKompetisi'])->name('upload.kompetisi');
+    Route::post('/prosesUploadKompetisi',[BeritaController::class,'prosesUploadKompetisi'])->name('proses.upload.kompetisi');
 });
 Route::get('/news/{id_news}',[BeritaController::class,'newsShow'])->name('news.show');
 Route::get('/',[BeritaController::class,'index'])->name('home');

@@ -24,17 +24,31 @@ class UserSeeder extends Seeder
             'email_verified_at' => now(),
         ]);
 
-        // DB::table('beritas')->insert([
-        //     'judul' => 'sample judul',
-        //     'deskripsi' => 'sample deskripsi',
-        //     'caption' =>'sample caption',
-        //     'gambar' => 'sample.jpg',
-        //     'tanggalPembukaan' => now(),
-        //     'region' => 'sample region',
-        //     'created_at'=>now(),
-        //     'kategoriBeasiswa' => 's1',
-        //     'linkPendaftaran' => 'www.sample.com',
-        //     'id' => 1
-        // ]);
+        DB::table('beritas')->insert([
+            'judul' => 'sample judul',
+            'deskripsi' => 'sample deskripsi',
+            'gambar' => 'sample.jpg',
+            'tanggalPembukaan' => now(),
+            'tanggalPenutupan' => now(),
+            'region' => 'sample region',
+            'created_at'=>now(),
+            'kategoriBeasiswa' => 's1',
+            'linkPendaftaran' => 'www.sample.com',
+            'id' => 1
+        ]);
+        DB::table('kompetisis')->insert([
+            'judul' => 'sample judul kompetisi',
+            'tingkatKompetisi' => 'umum',
+            'PembukaanPendaftaran' => now(),
+            'PenutupanPendaftaran' => now(),
+            'tanggalPengumuman' =>now(),
+            'gambar' => 'sample.jpg',
+            'linkPendaftaran' => 'www.sample.com',
+            'deskripsi' => 'sample deskripsi kompetisi',
+            'id' => 1
+
+
+
+        ]);
     }
 }
