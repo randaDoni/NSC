@@ -61,7 +61,18 @@
                       <div class="text-danger">{{ $message }}</div>
                       @enderror
                   </div>
-                  {{-- Kategori Beasiswa --}}
+                  {{-- Jenis Beasiswa --}}
+                  <div class="m-2">
+                    <label class="form-label" for="jenisBeasiswa">Jenis Beasiswa</label>
+                    <select class="selectpicker form-control" name="jenisBeasiswa" id="jenisBeasiswa" data-live-search="true">
+                      <option value="penuh">Beasiswa Penuh</option>
+                      <option value="sebagian">Beasiswa Sebagian</option>
+                  </select>
+                    @error('jenisBeasiswa')
+                    <div class="text-danger">{{ $message }}</div>
+                    @enderror
+                </div>
+                  {{-- Kawasan Beasiswa --}}
                   <div class="m-2">
                     <label class="form-label" for="region">Region</label>
                     <select class="selectpicker form-control" name="region" id="region" data-live-search="true">
@@ -73,20 +84,23 @@
                     @enderror
                 </div>
                   {{-- Tanggal Pendaftaran --}}
-                  <div class="m-2">
-                    <label class="form-label" for="tanggalPembukaan">Tanggal Pembukaan</label>
-                    <input class="form-control" type="date" name="tanggalPembukaan" aria-label="With textarea">
-                    @error('tanggalPembukaan')
-                    <div class="text-danger">{{ $message }}</div>
-                    @enderror
+                <div class="m-2">
+                  <label class="form-label" for="date">Tanggal Pendaftaran</label>
+                  <div class="row">
+                  <div class="col-md-6">
+                  <input class="form-control" type="date" name="tanggalPembukaan" aria-label="With textarea">
+                  @error('tanggalPembukaan')
+                  <div class="text-danger">{{ $message }}</div>
+                  @enderror
                   </div>
-                  <div class="m-2">
-                    <label class="form-label" for="tanggalPenutupan">Tanggal Penutupan</label>
-                    <input class="form-control" type="date" name="tanggalPenutupan" aria-label="With textarea">
-                    @error('tanggalPenutupan')
-                    <div class="text-danger">{{ $message }}</div>
-                    @enderror
-                </div>
+                  <div class="col-md-6">
+                  <input class="form-control" type="date" name="tanggalPenutupan" aria-label="With textarea">
+                  @error('tanggalPenutupan')
+                  <div class="text-danger">{{ $message }}</div>
+                  @enderror
+                  </div>
+              </div>
+              </div>
                     {{-- Upload Gambar --}}
                     <div class="m-2">
                       <label class="form-label" for="gambar">Upload Gambar</label>
@@ -133,5 +147,6 @@
   <script src="assets/js/main.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
+  
 </body>
 </html>

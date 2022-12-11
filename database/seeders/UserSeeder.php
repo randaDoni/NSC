@@ -23,6 +23,7 @@ class UserSeeder extends Seeder
             'name' => 'Admin',
             'email_verified_at' => now(),
         ]);
+
         // DB::table('beritas')->insert([
         //     'judul' => 'sample judul',
         //     'deskripsi' => 'sample deskripsi',
