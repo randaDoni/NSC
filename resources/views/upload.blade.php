@@ -26,64 +26,65 @@
 <body>
 
   <!-- ======= Header ======= -->
-
+  
 
 <main id="main" data-aos="fade" data-aos-delay="1500" class="pt-3">
-  <h3 class="mt-3" style="margin-left: 25px" ><i class="fa-solid fa-table"></i> Input Beasiswa </h3>
-    <form action="{{url('/prosesUploadNews')}}" method="POST" enctype="multipart/form-data">
+  <h3 class="mt-3" style="margin-left: 25px" ><i class="fa-solid fa-table"></i> Input Informasi Kompetisi </h3>
+    <form action="{{url('/prosesUploadKompetisi')}}" method="POST" enctype="multipart/form-data">
 @csrf
 <div class="pt-2 mb-5" style="margin-top: 10px;">
     <div class="row justify-content-center">
         <div class="col-lg-9">
             <div class="card">
             <div class="card-header"style="background-color: #102744">
-                <h3 class="text-white" style="text-align:center;">TAMBAH BERITA</h3>
+                <h3 class="text-white" style="text-align:center;">TAMBAH INFORMASI KOMPETISI</h3>
             </div>
              <div class="card-body">
               {{-- form pertama --}}
                     <div class="m-2">
-                      {{-- Beasiswa --}}
+                      {{-- Kompetisi --}}
                         <label class="form-label " for="judul">Judul</label>
                         <input class="form-control" type="text" name="judul" class="form-control" >
                         @error('judul')
                         <div class="text-danger">{{ $message }}</div>
                         @enderror
                     </div>
-                    {{-- Kategori Beasiswa --}}
+                    {{-- Kategori Kompetisi --}}
                     <div class="m-2">
-                      <label class="form-label" for="kategoriBeasiswa">Kategori Beasiswa</label>
-                      <select class="selectpicker form-control" name="kategoriBeasiswa" id="kategoriBeasiswa" data-live-search="true">
-                        <option value="S1">Beasiswa Kuliah S1</option>
-                        <option value="S2">Beasiswa Kuliah S2</option>
-                        <option value="S3">Beasiswa Kuliah S3</option>
+                      <label class="form-label" for="tingkatKompetisi">Tingkat Kompetisi</label>
+                      <select class="selectpicker form-control" name="tingkatKompetisi" id="tingkatKompetisi" data-live-search="true">
+                        <option value="umum">Umum</option>
+                        <option value="SD">SD/Sederajat</option>
+                        <option value="SMP">SMP/Sederajat</option>
+                        <option value="SMA">SMA/SMK/MA/Sederajat</option>
+                        <option value="S1">D1/D2/D3/D4/S1</option>
                     </select>
-                      @error('kategoriBeasiswa')
+                      @error('tingkatKompetisi')
                       <div class="text-danger">{{ $message }}</div>
                       @enderror
                   </div>
-                  {{-- Kategori Beasiswa --}}
+                  {{-- Tanggal Kompetisi --}}
                   <div class="m-2">
-                    <label class="form-label" for="region">Region</label>
-                    <select class="selectpicker form-control" name="region" id="region" data-live-search="true">
-                      <option value="Beasiswa Dalam Negeri">Beasiswa Dalam Negeri</option>
-                      <option value="Beasiswa Luar Negeri">Beasiswa Luar Negeri </option>
-                  </select>
-                    @error('region')
+                    <label class="form-label" for="date">Tanggal Pendaftaran</label>
+                    <div class="row">
+                    <div class="col-md-6">
+                    <input class="form-control" type="date" name="PembukaanPendaftaran" aria-label="With textarea">
+                    @error('PembukaanPendaftaran')
                     <div class="text-danger">{{ $message }}</div>
                     @enderror
+                    </div>
+                    <div class="col-md-6">
+                    <input class="form-control" type="date" name="PenutupanPendaftaran" aria-label="With textarea">
+                    @error('PenutupanPendaftaran')
+                    <div class="text-danger">{{ $message }}</div>
+                    @enderror
+                    </div>
                 </div>
-                  {{-- Tanggal Pendaftaran --}}
+                </div>
                   <div class="m-2">
-                    <label class="form-label" for="tanggalPembukaan">Tanggal Pembukaan</label>
-                    <input class="form-control" type="date" name="tanggalPembukaan" aria-label="With textarea">
-                    @error('tanggalPembukaan')
-                    <div class="text-danger">{{ $message }}</div>
-                    @enderror
-                  </div>
-                  <div class="m-2">
-                    <label class="form-label" for="tanggalPenutupan">Tanggal Penutupan</label>
-                    <input class="form-control" type="date" name="tanggalPenutupan" aria-label="With textarea">
-                    @error('tanggalPenutupan')
+                    <label class="form-label" for="tanggalPengumuman">Pengumuman Pemenang</label>
+                    <input class="form-control" type="date" name="tanggalPengumuman" aria-label="With textarea">
+                    @error('tanggalPengumuman')
                     <div class="text-danger">{{ $message }}</div>
                     @enderror
                 </div>
