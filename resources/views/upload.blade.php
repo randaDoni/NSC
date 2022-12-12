@@ -112,7 +112,7 @@
                   <div class="m-2">
                     {{-- Link Pendaftaran --}}
                       <label class="form-label" for="jenis">Link Pendaftaran</label>
-                      <input class="form-control" type="text" name="linkPendaftaran">
+                      <input class="form-control" type="text" name="linkPendaftaran" placeholder="https://www.example.com">
                       @error('linkPendaftaran')
                       <div class="text-danger">{{ $message }}</div>
                       @enderror
@@ -147,6 +147,6 @@
   <script src="assets/js/main.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
-  
+
 </body>
 </html>

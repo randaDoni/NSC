@@ -42,6 +42,10 @@
                 </button>
             </form>
 
+        @if (Auth::id() == 1)
+        <a href="/dashboardadmin"><button class="btn mb-3 mt-3 text-white" style="background-color:#102744;" type="submit"name="tambah">Dashboard Admin</button></a>
+        @endif
+
         @if (Auth::check())
         <div class="dropdown">
           <button class="btn rounded-pill" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

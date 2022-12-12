@@ -76,11 +76,10 @@
             <div class="container ms-4" style=" text-align:left">
               <h1 class="container ms-4">LETS MAKE IT HAPPEN!</h1>
               <div class="card-body text-white d-flex" style="text-align: justify">
-                <h5 class="ms-4"> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam provident deleniti dolores magnam, odit laboriosam impedit qui quaerat,
-                  ipsam perferendis rerum! Numquam ex officiis vitae error! Facilis dicta quam modi! Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus aliquid eligendi non iure ullam quod aliquam quae molestias, obcaecati, omnis et veniam laborum deserunt possimus dolorem quia, voluptas voluptatibus qui!</h5>
+                <h5 class="ms-4"> NSC merupakan platform yang berisi kumpulan berita <br class="d-none d-sm-block" />atau informasi mengenai beasiswa maupun kompetisi <br class="d-none d-sm-block" />yang akan diselenggarakan kedepannya di seluruh Indonesia<br class="d-none d-sm-block" /></p>
               </div>
             </div>
-            <button type="button position-absolute start-0" class="btn btn-light d-flex " style="margin-left: 12%">Sign Up Here</button>
+           <a href="{{url('/register')}}"><button type="button position-absolute start-0" class="btn btn-light d-flex " style="margin-left: 12%">Sign Up Here</button></a>
           </div>
           <div class="col-sm-5">
             <img src="assets/img/logos/NSC.gif" alt="" style="width:65%; height:65%;">
@@ -100,23 +99,24 @@
                 <div class="mb-4">
                   <h1 class="header-title display-4 fw-bold text-primary font-sans-serif header text-center">RECENT POST</h1>
                 </div>
-                <div class="row">
+                <div class="row justify-content-center">
 
                   @foreach ( $berita as $beritas )
                   <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
                     <div class="card border-100 h-100 shadow">
                       <div class="card-body p-4 h-100"><img class="w-100" src="{{$beritas->gambar}}" alt="" />
-                        <div class="d-flex justify-content-between mt-3 border-bottom border-100 py-2"><span class="badge bg-soft-info rounded-1 text-info fw-normal p-2">Essay</span>
+                        <div class="d-flex justify-content-between mt-3 border-bottom border-100 py-2"><span class="badge bg-soft-info rounded-1 text-info fw-normal p-2">{{$beritas->jenisBerita}}</span>
                           <p class="mb-0 text-500">{{$beritas->created_at}}</p>
                         </div>
                         <h3 class="fw-normal fs-lg-1 fs-xxl-2 lh-sm mt-3">{{$beritas->judul}}</h3><a class="text-secondary stretched-link" href="{{route('news.show',$beritas->id_news)}}">Read More</a>
                       </div>
                     </div>
                   </div>
+
                   @endforeach
-          </div>
-          <!-- end of .container-->
-        </section>
+                </div>
+                <!-- end of .container-->
+              </section>
         <!-- <section> close ============================-->
         <!-- ============================================-->
 

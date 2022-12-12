@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('content')
-@section('menuHome','active')
+@section('menuHome')
 <body>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -26,7 +26,7 @@
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
   <!-- Template Main CSS File -->
-  <link href="  /assets/css/main.css" rel="stylesheet">
+  <link href="{{URL::asset('/assets/css/main.css')}}" rel="stylesheet">
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="hero d-flex flex-column justify-content-center align-items-center" data-aos="fade" data-aos-delay="1500">

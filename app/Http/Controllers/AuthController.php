@@ -34,7 +34,7 @@ class AuthController extends Controller
     public function post_register(Request $request){
         $validator = validator::make($request->all(),[
             'name' => 'required|min:3|max:50',
-            'email' => 'required|email',
+            'email' => 'required|email|unique:users',
             'password' => 'required|size:8',
             'password_confirmation' => 'required_with:password|same:password|size:8'
         ],[

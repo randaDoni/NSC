@@ -34,21 +34,20 @@ class UserSeeder extends Seeder
             'created_at'=>now(),
             'kategoriBeasiswa' => 's1',
             'linkPendaftaran' => 'www.sample.com',
-            'id' => 1
+            'id' => 1,
+            "jenisBerita" => "beasiswa"
         ]);
-        DB::table('kompetisis')->insert([
+        DB::table('beritas')->insert([
             'judul' => 'sample judul kompetisi',
             'tingkatKompetisi' => 'umum',
-            'PembukaanPendaftaran' => now(),
-            'PenutupanPendaftaran' => now(),
+            'tanggalPembukaan' => now(),
+            'tanggalPenutupan' => now(),
             'tanggalPengumuman' =>now(),
             'gambar' => 'sample.jpg',
             'linkPendaftaran' => 'www.sample.com',
             'deskripsi' => 'sample deskripsi kompetisi',
-            'id' => 1
-
-
-
+            'id' => 1,
+            "jenisBerita" => "Kompetisi"
         ]);
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\berita;
+use App\Models\kompetisi;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -14,13 +15,16 @@ class BeritaController extends Controller
         $validator = validator::make($request->all(),[
             'judul' => 'required|min:3',
             'deskripsi' => 'required',
-            'tanggal' => 'required',
-            'gambar' => 'file|image|required'
+            'tanggalPembukaan' => 'required',
+            'tanggalPenutupan' => 'required',
+            'gambar' => 'file|image|required',
+            'linkPendaftaran' => ' required',
+
         ],[
             'required' => ':attribute wajib diisi'
         ]);
         if($validator->fails()){
-            return redirect('/upload')->withErrors($validator)->withInput();
+            return redirect('/uploadNews')->withErrors($validator)->withInput();
         }else{
             $extFile = $request->gambar->getClientOriginalExtension();
             $namaFile = Auth::id().'beasiswa'.time().".".$extFile;
@@ -35,9 +39,9 @@ class BeritaController extends Controller
                 "region"=>$request->region,
                 "linkPendaftaran"=>$request->linkPendaftaran,
                 "id"=>Auth::id(),
-                "caption"=>$request->caption,
                 "created_at" => now(),
-                "updated_at" => now()
+                "updated_at" => now(),
+                "jenisBerita" => "beasiswa"
             ]);
             return redirect('/');
         }
@@ -63,14 +67,6 @@ class BeritaController extends Controller
     public function beritaUserShow($id){
         $result = berita::where('id_news',$id)->first();
         return view('post',[]);
-    }
-    public function uploadFotoProfil(Request $request, $id){
-        $profile = User::where('id',$id)->first();
-        // $extFile = $request->gambar->getClientOriginalExtension();
-        // $namaFile = 'nsc-'.time().".".$extFile;
-        // $path = $request->gambar->storeAs('uploads',$namaFile);
-        // $publicPath = 'storage/'.$path;
-        dd($id);
     }
 
     public function newsShow($id_news){
@@ -98,33 +94,76 @@ class BeritaController extends Controller
         $validator = validator::make($request->all(),[
             'judul' => 'required|min:3',
             'deskripsi' => 'required',
-            'tanggal' => 'required',
-            'gambar' => 'file|image|required'
+            'tanggalPembukaan' => 'required',
+            'tanggalPenutupan' => 'required',
+            'gambar' => 'file|image|required',
+            'linkPendaftaran' => ' required',
         ],[
             'required' => ':attribute wajib diisi'
         ]);
         if($validator->fails()){
-            return redirect('/upload')->withErrors($validator)->withInput();
+            return redirect('/uploadKompetisi')->withErrors($validator)->withInput();
         }else{
             $extFile = $request->gambar->getClientOriginalExtension();
             $namaFile = Auth::id().'kompetisi'.time().".".$extFile;
             $path = $request->gambar->storeAs('public',$namaFile);
             $publicPath = 'storage/'.$namaFile;
-            DB::table('kompetisis')->insert([
+            DB::table('beritas')->insert([
                 "judul" => $request->judul,
                 "tingkatKompetisi" => $request->tingkatKompetisi,
-                "PembukaanPendaftaran" => $request->PembukaanPendaftaran,
+                "tanggalPembukaan" => $request->PembukaanPendaftaran,
+                "tanggalPenutupan" => $request->PenutupanPendaftaran,
                 "tanggalPengumuman" => $request->tanggalPengumuman,
                 "deskripsi" => $request->deskripsi,
                 "tanggal"=> now(),
                 "gambar"=>$publicPath,
                 "linkPendaftaran"=>$request->linkPendaftaran,
                 "id"=>Auth::id(),
-                "caption"=>$request->caption,
                 "created_at" => now(),
-                "updated_at" => now()
+                "updated_at" => now(),
+                "jenisBerita" => "Kompetisi"
             ]);
             return redirect('/');
+            }
+        }
+    public function beasiswaS1(){
+        $beasiswa = berita::all();
+        $berita = $beasiswa->where('kategoriBeasiswa','s1');
+        return view('listBeasiswaDanKompetisi',['berita' => $berita]);
     }
-}
+    public function beasiswaS2(){
+        $beasiswa = berita::all();
+        $berita = $beasiswa->where('kategoriBeasiswa','s2');
+        return view('listBeasiswaDanKompetisi',['berita' => $berita]);
+    }
+    public function beasiswaS3(){
+        $beasiswa = berita::all();
+        $berita = $beasiswa->where('kategoriBeasiswa','s3');
+        return view('listBeasiswaDanKompetisi',['berita' => $berita]);
+    }
+    public function luarNegeri(){
+        $beasiswa = berita::all();
+        $berita = $beasiswa->where('kategoriBeasiswa','Beasiswa Luar Negeri');
+        return view('listBeasiswaDanKompetisi',['berita' => $berita]);
+    }
+    public function kompetisiUmum(){
+        $beasiswa = berita::all();
+        $berita = $beasiswa->where('tingkatKompetisi','umum');
+        return view('listBeasiswaDanKompetisi',['berita' => $berita]);
+    }
+    public function kompetisiSMP(){
+        $beasiswa = berita::all();
+        $berita = $beasiswa->where('tingkatKompetisi','SMP');
+        return view('listBeasiswaDanKompetisi',['berita' => $berita]);
+    }
+    public function kompetisiSMA(){
+        $beasiswa = berita::all();
+        $berita = $beasiswa->where('tingkatKompetisi','SMA');
+        return view('listBeasiswaDanKompetisi',['berita' => $berita]);
+    }
+    public function kompetisiS1(){
+        $beasiswa = berita::all();
+        $berita = $beasiswa->where('tingkatKompetisi','S1');
+        return view('listBeasiswaDanKompetisi',['berita' => $berita]);
+    }
 };

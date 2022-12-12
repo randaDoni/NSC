@@ -26,7 +26,7 @@
 <body>
 
   <!-- ======= Header ======= -->
-  
+
 
 <main id="main" data-aos="fade" data-aos-delay="1500" class="pt-3">
   <h3 class="mt-3" style="margin-left: 25px" ><i class="fa-solid fa-table"></i> Input Informasi Kompetisi </h3>
@@ -54,7 +54,6 @@
                       <label class="form-label" for="tingkatKompetisi">Tingkat Kompetisi</label>
                       <select class="selectpicker form-control" name="tingkatKompetisi" id="tingkatKompetisi" data-live-search="true">
                         <option value="umum">Umum</option>
-                        <option value="SD">SD/Sederajat</option>
                         <option value="SMP">SMP/Sederajat</option>
                         <option value="SMA">SMA/SMK/MA/Sederajat</option>
                         <option value="S1">D1/D2/D3/D4/S1</option>
@@ -68,13 +67,13 @@
                     <label class="form-label" for="date">Tanggal Pendaftaran</label>
                     <div class="row">
                     <div class="col-md-6">
-                    <input class="form-control" type="date" name="PembukaanPendaftaran" aria-label="With textarea">
+                    <input class="form-control" type="date" name="tanggalPembukaan" aria-label="With textarea">
                     @error('PembukaanPendaftaran')
                     <div class="text-danger">{{ $message }}</div>
                     @enderror
                     </div>
                     <div class="col-md-6">
-                    <input class="form-control" type="date" name="PenutupanPendaftaran" aria-label="With textarea">
+                    <input class="form-control" type="date" name="tanggalPenutupan" aria-label="With textarea">
                     @error('PenutupanPendaftaran')
                     <div class="text-danger">{{ $message }}</div>
                     @enderror
@@ -100,7 +99,7 @@
                   <div class="m-2">
                     {{-- Link Pendaftaran --}}
                       <label class="form-label" for="jenis">Link Pendaftaran</label>
-                      <input class="form-control" type="text" name="linkPendaftaran">
+                      <input class="form-control" type="text" name="linkPendaftaran" placeholder="https://www.example.com">
                       @error('linkPendaftaran')
                       <div class="text-danger">{{ $message }}</div>
                       @enderror
@@ -114,7 +113,7 @@
                     @enderror
                 </div>
                 <center>
-                <button class="btn mb-3 mt-3 text-white" style="background-color:#102744;" type="submit"name="tambah">Upload</button>
+                <button class="btn mb-3 mt-3 text-white" style="background-color:#102744;" type="submit" name="tambah">Upload</button>
                 </center>
                 </div>
               </div>

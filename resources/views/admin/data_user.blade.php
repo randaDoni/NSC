@@ -124,7 +124,6 @@
                                         <th>No</th>
                                         <th>Nama</th>
                                         <th>email</th>
-                                        <th>Password</th>
                                         <th>Option</th>
                                       </tr>
                                     </thead>
@@ -134,7 +133,6 @@
                                         <th>{{$loop->iteration}}</th>
                                         <td>{{$users->name}}</td>
                                         <td>{{$users->email}}</td>
-                                        <td>{{$users->password}}</td>
                                         <td>
                                             <form action="{{route('user.delete',['users' =>$users->id])}}" method="POST">
                                             @method('delete')

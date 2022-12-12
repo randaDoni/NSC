@@ -15,17 +15,21 @@ return new class extends Migration
     {
         Schema::create('beritas', function (Blueprint $table) {
             $table->id('id_news')->unique();
-            $table->string('judul');
-            $table->string('kategoriBeasiswa');
-            $table->string('region');
-            $table->date('tanggalPembukaan');
-            $table->date('tanggalPenutupan');
-            $table->string('gambar');
-            $table->string('linkPendaftaran');
-            $table->string('deskripsi');
+            $table->string('judul')->nullable();
+            $table->string('kategoriBeasiswa')->nullable();
+            $table->string('region')->nullable();
+            $table->date('tanggalPembukaan')->nullable();
+            $table->date('tanggalPenutupan')->nullable();
+            $table->string('gambar')->nullable();
+            $table->string('tingkatKompetisi')->nullable();
+            $table->string('linkPendaftaran')->nullable();
+            $table->string('tanggalPengumuman')->nullable();
+            $table->string('deskripsi')->nullable();
             $table->integer('id')->unsigned();
             $table->timestamps();
+            $table->string('tanggal')->nullable()->nullable();
             $table->foreign('id')->references('id')->on('users')->onDelete('cascade');
+            $table->string("jenisBerita");
         });
     }
 

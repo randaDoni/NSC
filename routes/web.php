@@ -70,5 +70,13 @@ Route::middleware((['auth','auth.session','verified']))->group(function(){
     Route::get('/uploadKompetisi',[BeritaController::class,'uploadKompetisi'])->name('upload.kompetisi');
     Route::post('/prosesUploadKompetisi',[BeritaController::class,'prosesUploadKompetisi'])->name('proses.upload.kompetisi');
 });
+Route::get('/beasiswaS1',[BeritaController::class,'beasiswaS1'])->name('beasiswa.s1');
+Route::get('/beasiswaS2',[BeritaController::class,'beasiswaS2'])->name('beasiswa.s2');
+Route::get('/beasiswaS3',[BeritaController::class,'beasiswaS3'])->name('beasiswa.s3');
+Route::get('/luarNegeri',[BeritaController::class,'luarNegeri'])->name('luar.negeri');
+Route::get('/kompetisiUmum',[BeritaController::class,'kompetisiUmum'])->name('kompetisi.umum');
+Route::get('/kompetisiSMP',[BeritaController::class,'kompetisiSMP'])->name('kompetisi.SMP');
+Route::get('/kompetisiSMA',[BeritaController::class,'kompetisiSMA'])->name('kompetisi.SMA');
+Route::get('/kompetisiS1',[BeritaController::class,'kompetisiS1'])->name('kompetisi.S1');
 Route::get('/news/{id_news}',[BeritaController::class,'newsShow'])->name('news.show');
 Route::get('/',[BeritaController::class,'index'])->name('home');
