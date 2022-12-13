@@ -30,6 +30,7 @@ return new class extends Migration
             $table->string('tanggal')->nullable()->nullable();
             $table->foreign('id')->references('id')->on('users')->onDelete('cascade');
             $table->string("jenisBerita");
+            $table->string('approve')->nullable();
         });
     }
 

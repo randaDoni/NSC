@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CollectionController;
@@ -20,9 +21,7 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 */
 
 ;
-Route::get('/post',function(){
-    return view('post');
-});
+
 Route::get('/news', function () {
     return view('news');
 })->name('news');
@@ -80,3 +79,9 @@ Route::get('/kompetisiSMA',[BeritaController::class,'kompetisiSMA'])->name('komp
 Route::get('/kompetisiS1',[BeritaController::class,'kompetisiS1'])->name('kompetisi.S1');
 Route::get('/news/{id_news}',[BeritaController::class,'newsShow'])->name('news.show');
 Route::get('/',[BeritaController::class,'index'])->name('home');
+
+Route::controller(AdminController::class)->group(function(){
+    Route::get('/post','adminPost');
+    Route::post('/beritaAccept/beritasupdate/{beritas}','beritaAccept')->name('berita.accept');
+    Route::post('/beritaDecline/beritasdecline/{beritas}','beritaDecline')->name('berita.decline');
+});

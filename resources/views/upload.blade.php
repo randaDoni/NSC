@@ -120,7 +120,7 @@
                   {{-- Deskripsi --}}
                   <div class="m-2">
                     <label class="form-label" for="deskripsi">Deskripsi</label>
-                    <textarea class="form-control" type="text-field" name="deskripsi" aria-label="With textarea"></textarea>
+                    <textarea class="form-control" type="text-field" id="summernote" name="deskripsi" aria-label="With textarea"></textarea>
                     @error('deskripsi')
                     <div class="text-danger">{{ $message }}</div>
                     @enderror
@@ -146,7 +146,17 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
+<!-- include summernote css/js -->
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+<script>
+  $(document).ready(function() {
+      $('#summernote').summernote();
+  });
+</script>
 
 </body>
 </html>
