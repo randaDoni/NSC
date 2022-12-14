@@ -56,8 +56,10 @@ class BeritaController extends Controller
         $id = Auth::id();
         $berita = berita::all();
         $profile = $user->where('id','=',$id)->first();
-        $beritas = $berita->where('id','=',$id);
-        return view('dashboardUser',['profile'=>$profile,'user' => $user,'id'=>$id,'beritas'=>$beritas]);
+        $null = $berita->where('id','=',$id)->where('approve','');
+        $approve = $berita->where('id','=',$id)->where('approve','1');
+        $decline = $berita->where('id','=',$id)->where('approve','0');
+        return view('dashboardUser',['profile'=>$profile,'user' => $user,'id'=>$id,'null'=>$null,'approve'=>$approve,'decline'=>$decline]);
     }
     public function dashboardUserShow($id){
         $user = User::all();
