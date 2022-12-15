@@ -1,7 +1,8 @@
 @extends('layouts.master')
 @section('content')
 @section('menuHome','active')
-      <div class="py-7 py-sm-8 py-lg-10 py-xxl-9 py-xxl-11" style="background-color:#10203F;"></div>
+      <div class="py-7 py-sm-8 py-lg-10 py-xxl-9 py-xxl-11" style="background-image: url('{{ asset('img/bg.jpg')}}');">>
+      </div>
       <section class="mb-n9 mb-lg-n11 p-0" style="transform: translateY(calc(-50% - 25px));">
         <div class="container-fluid">
           <div class="position-relative hero-carousel-container" id="heroCarouselContainer">
@@ -65,7 +66,7 @@
       </section>
       {{-- ========================================== --}}
       @if (!Auth::check())
-      <section class="bg-primary mb-5 pt-5 pb-3">
+      <section class=" mb-5 pt-5 pb-3" style="background-image: url('{{ asset('img/bg.jpg')}}');" >
         <div class="row">
           <div class="col-sm-7">
             <div class="container ms-4" style=" text-align:left">
