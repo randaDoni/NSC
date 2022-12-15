@@ -4,13 +4,9 @@
 <body>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-
   <meta content="" name="description">
   <meta content="" name="keywords">
-
   <!-- Favicons -->
-
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -75,59 +71,46 @@
               </div>
             </div>
           </div>
-          @endforeach
-          <h1 class="header-title display-4 fw-bold text-primary font-sans-serif header text-center">APPROVED</h1>
-          @foreach ($approve as $approves => $row)
-          <div class="col-xl-3 col-lg-4 col-md-6">
-            <div class="card gallery-item h-100">
-              <img src="{{$row->gambar}}" class="img-fluid" alt="">
-              <div class="card-body">
-                <h5 style="color:black" class="card-title">{{$row->judul}}</h5>
-              </div>
-              <div class="gallery-links d-flex align-items-center justify-content-center">
-                <a href="assets/img/gallery/gallery-1.jpg" title="Gallery 1" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
-                <a href="{{route('news.show',$row->id)}}" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div>
-          </div>
-          @endforeach
-          <h1 class="header-title display-4 fw-bold text-primary font-sans-serif header text-center">DECLINED</h1>
-          @foreach ($decline as $declines => $row)
-          <div class="col-xl-3 col-lg-4 col-md-6">
-            <div class="card gallery-item h-100">
-              <img src="{{$row->gambar}}" class="img-fluid" alt="">
-              <div class="card-body">
-                <h5 style="color:black" class="card-title">{{$row->judul}}</h5>
-              </div>
-              <div class="gallery-links d-flex align-items-center justify-content-center">
-                <a href="assets/img/gallery/gallery-1.jpg" title="Gallery 1" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
-                <a href="{{route('news.show',$row->id)}}" class="details-link"><i class="bi bi-link-45deg"></i></a>
+          <div class="container">
+            <h1 class="header-title display-4 fw-bold text-primary font-sans-serif header text-center">APPROVED</h1>
+            @foreach ($approve as $approves => $row)
+            <div class="col-xl-3 col-lg-4 col-md-6">
+              <div class="card gallery-item h-100">
+                <img src="{{$row->gambar}}" class="img-fluid" alt="">
+                <div class="card-body">
+                  <h5 style="color:black" class="card-title">{{$row->judul}}</h5>
+                </div>
+                <div class="gallery-links d-flex align-items-center justify-content-center">
+                  <a href="assets/img/gallery/gallery-1.jpg" title="Gallery 1" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                  <a href="{{route('news.show',$row->id)}}" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
               </div>
             </div>
+            @endforeach
+            <h1 class="header-title display-4 fw-bold text-primary font-sans-serif header text-center">DECLINED</h1>
+            @foreach ($decline as $declines => $row)
+            <div class="col-xl-3 col-lg-4 col-md-6">
+              <div class="card gallery-item h-100">
+                <img src="{{$row->gambar}}" class="img-fluid" alt="">
+                <div class="card-body">
+                  <h5 style="color:black" class="card-title">{{$row->judul}}</h5>
+                </div>
+                <div class="gallery-links d-flex align-items-center justify-content-center">
+                  <a href="assets/img/gallery/gallery-1.jpg" title="Gallery 1" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                  <a href="{{route('news.show',$row->id)}}" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div>
+            @endforeach
           </div>
-          @endforeach
+          
+
         </div>
 
       </div>
     </section><!-- End Gallery Section -->
 
   </main><!-- End #main -->
-
-  {{-- <!-- ======= Footer ======= -->
-  <footer id="footer" class="footer">
-    <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong><span>PhotoFolio</span></strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/photofolio-bootstrap-photography-website-template/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
-    </div>
-  </footer><!-- End Footer --> --}}
 
   <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 

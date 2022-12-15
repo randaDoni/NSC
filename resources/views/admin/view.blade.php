@@ -62,7 +62,7 @@
                   <ul class="list-unstyled components">
                      <li class="active"><a href="/data_user"><i class="fa fa-briefcase blue1_color"></i> <span>Data User</span></a></li>
                      <li class="active"><a href="/post"><i class="fa fa-map purple_color2"></i> <span>Post</span></a></li>
-                     <li class="active"><a href="/logout"><i class="fa fa-cog yellow_color"></i> <span>Logout</span></a></li>
+                     
                   </ul>
                </div>
             </nav>
@@ -76,7 +76,7 @@
                         <button type="button" id="sidebarCollapse" class="sidebar_toggle"><i class="fa fa-bars"><svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
                            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
                          </svg></i></button>
-                        
+
                         <div class="right_topbar">
                            <div class="icon_info">
                               <ul>
@@ -87,7 +87,7 @@
                               <ul class="user_profile_dd">
                                  <li>
                                     <img class="img-responsive rounded-circle" style="width: 35px; height: 35px;" src="assets/img/logos/tubes.png" alt="#" /><span class="name_user">NSC</span>
-                                    
+
                                  </li>
                               </ul>
                            </div>
@@ -147,7 +147,7 @@
       <!-- select country -->
       <script src="js/jsadmin/bootstrap-select.js"></script>
       <!-- owl carousel -->
-      <script src="js/jsadmin/owl.carousel.js"></script> 
+      <script src="js/jsadmin/owl.carousel.js"></script>
       <!-- chart js -->
       <script src="js/jsadmin/Chart.min.js"></script>
       <script src="js/jsadmin/Chart.bundle.min.js"></script>
