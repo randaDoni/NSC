@@ -68,6 +68,8 @@ Route::middleware((['auth','auth.session','verified']))->group(function(){
     Route::post('/prosesUploadNews',[BeritaController::class,'prosesUploadNews'])->name('proses.upload.news');
     Route::get('/uploadKompetisi',[BeritaController::class,'uploadKompetisi'])->name('upload.kompetisi');
     Route::post('/prosesUploadKompetisi',[BeritaController::class,'prosesUploadKompetisi'])->name('proses.upload.kompetisi');
+    Route::get('/updateBeritabyUser/{id_news}',[BeritaController::class,'updateBerita'])->name('update.berita');
+    Route::post('/prosesUpdateBeasiswa/{id_news}',[BeritaController::class,'prosesUpdateBerita'])->name('proses.update.berita');
 });
 Route::get('/beasiswaS1',[BeritaController::class,'beasiswaS1'])->name('beasiswa.s1');
 Route::get('/beasiswaS2',[BeritaController::class,'beasiswaS2'])->name('beasiswa.s2');

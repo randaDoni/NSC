@@ -38,7 +38,7 @@
                   <h5 class="mb-0 ms-1 font-sans-serif fw-bold fs-md-0 fs-lg-1">Beasiswa S2</h5>
                   <a class="ms-1 text-muted fs--1 stretched-link text-decoration-none" href="{{url('/beasiswaS2')}}">Ikuti Informasi Beasiswa S2</a>
                 </div>
-                <a class="text-decoration-none text-end mt-3 text-primary mb-2" href="{{url('/beasiswaS3')}}" role="button">Read More
+                <a class="text-decoration-none text-end mt-3 text-primary mb-2" href="{{url('/beasiswaS2')}}" role="button">Read More
                   <svg class="bi bi-arrow-right text-primary ms-1 me-2" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
                   </svg></a>
@@ -52,12 +52,12 @@
                   <h5 class="mb-0 ms-1 font-sans-serif fw-bold fs-md-0 fs-lg-1">Beasiswa S3</h5>
                   <a class="ms-1 text-muted fs--1 stretched-link text-decoration-none" href="{{url('/beasiswaS3')}}">Ikuti Informasi Beasiswa S3</a>
                 </div>
-                <a class="text-decoration-none text-end mt-3 text-primary mb-2" href="{{url('/beasiswa3')}}" role="button">Read More
+                <a class="text-decoration-none text-end mt-3 text-primary mb-2" href="{{url('/beasiswaS3')}}" role="button">Read More
                   <svg class="bi bi-arrow-right text-primary ms-1 me-2" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
                   </svg></a>
               </div>
             </div>
-            
-           
+
+
 
