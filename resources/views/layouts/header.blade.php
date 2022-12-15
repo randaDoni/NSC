@@ -13,13 +13,13 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link text-dark @yield('menuHome')" href="/">Home</a>
+                <a class="nav-link @yield('menuHome')" href="/">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-dark @yield('menuBeasiswa')" href="/beasiswa">Beasiswa</a>
+                <a class="nav-link @yield('menuBeasiswa')" href="/beasiswa">Beasiswa</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-dark  @yield('menuKompetisi')" href="/kompetisi">Kompetisi</a>
+                <a class="nav-link @yield('menuKompetisi')" href="/kompetisi">Kompetisi</a>
               </li>
             </ul>
           </div>
@@ -46,8 +46,8 @@
                 <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 13h-5v5h-2v-5h-5v-2h5v-5h2v5h5v2z"/></svg>
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item text-dark d-flex" href="{{url('/uploadNews') }}" >Beasiswa</a>
-            <a class="dropdown-item text-dark d-flex" href="{{url('/uploadKompetisi') }}">Kompetisi</a>
+            <a class="dropdown-item d-flex" href="{{url('/uploadNews') }}" >Beasiswa</a>
+            <a class="dropdown-item d-flex" href="{{url('/uploadKompetisi') }}">Kompetisi</a>
           </div>
         </div>
         @endif
