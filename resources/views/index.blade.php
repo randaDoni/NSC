@@ -48,16 +48,11 @@
                 </div>
               </div>
               <div class="row g-0">
-                <div class="col-9 position-relative">
+                <div class="col-12 position-relative">
                   <div class="card" style="background-color:#10203F;">
                     <div class="card-body border-bottom border-primary p-2 px-md-4 py-md-3 py-xl-4 p-sm-3">
-                      <div class="d-md-flex flex-between-center">
-                        <p class="mb-0 text-primary fs-2"><strong>250,998 </strong>Bersama Mencari Beasiswa dan Kompetisi</p>
-                        <a class="text-decoration-none text-end mt-3 text-light fw-bold" href="#!" role="button">
-                          {{-- <svg class="bi bi-arrow-right text-primary ms-2" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
-                          </svg></a> --}}
-                      </div>
+                      <div class="d-md-flex flex-between-center" >
+                        <p class="mb-0 text-primary fs-2"><strong>Bersama Kami Mencari Beasiswa dan Kompetisi</strong></p>
                     </div>
                   </div>
                 </div>
@@ -72,17 +67,17 @@
       @if (!Auth::check())
       <section class="bg-primary mb-5 pt-5 pb-3">
         <div class="row">
-          <div class="col-sm-6">
+          <div class="col-sm-7">
             <div class="container ms-4" style=" text-align:left">
-              <h1 class="container ms-4">LETS MAKE IT HAPPEN!</h1>
+              <h1 class="container ms-4 text-white">LETS MAKE IT HAPPEN!</h1>
               <div class="card-body text-white d-flex" style="text-align: justify">
                 <h5 class="ms-4"> NSC merupakan platform yang berisi kumpulan berita <br class="d-none d-sm-block" />atau informasi mengenai beasiswa maupun kompetisi <br class="d-none d-sm-block" />yang akan diselenggarakan kedepannya di seluruh Indonesia<br class="d-none d-sm-block" /></p>
               </div>
             </div>
-           <a href="{{url('/register')}}"><button type="button position-absolute start-0" class="btn btn-light d-flex " style="margin-left: 12%">Sign Up Here</button></a>
+           <a href="{{url('/register')}}"><button type="button position-absolute start-0" class="btn btn-light d-flex " style="margin-left: 10%">Sign Up Here</button></a>
           </div>
           <div class="col-sm-5">
-            <img src="assets/img/logos/NSC.gif" alt="" style="width:65%; height:65%;">
+            <img src="assets/img/logos/NSC.gif" alt="" style="width:350px; height:350px;">
           </div>
         </div>
       </section>
