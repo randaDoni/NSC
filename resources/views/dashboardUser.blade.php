@@ -70,13 +70,14 @@
                 <h5 style="color:black" class="card-title">{{$row->judul}}</h5>
               </div>
               <div class="gallery-links d-flex align-items-center justify-content-center">
-                <a href="assets/img/gallery/gallery-1.jpg" title="Gallery 1" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                <a href="{{url('/updateBeritabyUser/{id}',$row->id)}}" title="Gallery 1" class="glightbox preview-link"><i class="bi bi-link-45deg"></i></a>
                 <a href="{{route('news.show',$row->id)}}" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div>
           </div>
           @endforeach
           <h1 class="header-title display-4 fw-bold text-primary font-sans-serif header text-center">APPROVED</h1>
+
           @foreach ($approve as $approves => $row)
           <div class="col-xl-3 col-lg-4 col-md-6">
             <div class="card gallery-item h-100">
@@ -85,7 +86,7 @@
                 <h5 style="color:black" class="card-title">{{$row->judul}}</h5>
               </div>
               <div class="gallery-links d-flex align-items-center justify-content-center">
-                <a href="assets/img/gallery/gallery-1.jpg" title="Gallery 1" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                <a href="{{route('update.berita',$row->id)}}" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 <a href="{{route('news.show',$row->id)}}" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div>
@@ -100,8 +101,9 @@
                 <h5 style="color:black" class="card-title">{{$row->judul}}</h5>
               </div>
               <div class="gallery-links d-flex align-items-center justify-content-center">
-                <a href="assets/img/gallery/gallery-1.jpg" title="Gallery 1" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                <a href="{{route('update.berita',$row->id)}}" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 <a href="{{route('news.show',$row->id)}}" class="details-link"><i class="bi bi-link-45deg"></i></a>
+
               </div>
             </div>
           </div>

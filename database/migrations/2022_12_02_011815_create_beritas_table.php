@@ -25,6 +25,7 @@ return new class extends Migration
             $table->string('linkPendaftaran')->nullable();
             $table->string('tanggalPengumuman')->nullable();
             $table->string('deskripsi')->nullable();
+            $table->string('jenisBeasiswa')->nullable();
             $table->integer('id')->unsigned();
             $table->timestamps();
             $table->string('tanggal')->nullable()->nullable();
