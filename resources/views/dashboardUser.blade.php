@@ -86,7 +86,7 @@
                 <h5 style="color:black" class="card-title">{{$row->judul}}</h5>
               </div>
               <div class="gallery-links d-flex align-items-center justify-content-center">
-                <a href="{{route('update.berita',$row->id)}}" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <a href="{{route('update.berita',$row->id)}}" class="details-link"><i class="bi bi-arrow-up-circle"></i></a>
                 <a href="{{route('news.show',$row->id)}}" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div>
