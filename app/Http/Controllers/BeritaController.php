@@ -89,8 +89,15 @@ class BeritaController extends Controller
     public function uploadNews(){
         return view('upload');
     }
-    public function index(){
-        $berita = berita::all()->where('approve','1');
+    public function index(Request $request){
+        $search = $request->search;
+
+        $berita = new berita();
+        $berita = $berita->where("approve","1");
+        if(!empty($search)){
+            $berita = $berita->where("judul","like","%".$search."%");
+        }
+        $berita = $berita->paginate(1);
         return view('index',['berita'=>$berita]);
     }
     public function uploadKompetisi(){

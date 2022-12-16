@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
+use Auth;
+
 class CollectionController extends Controller
 {
         public function index(){
@@ -61,5 +63,53 @@ class CollectionController extends Controller
         }
         public function upload(){
             return view('upload');
+        }
+        public function editUser(){
+            return view('edituser');
+        }
+        public function updateUser(Request $request){
+            $validator = validator::make($request->all(),[
+                'name' => 'required|min:3',
+                'email' => 'required|email|unique:users,email,'.Auth::user()->id,
+                'foto_profile' => 'nullable|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+                'password' => 'confirmed'
+            ],[
+                'required' => ':attribute wajib diisi'
+            ]);
+
+            if($validator->fails()){
+                return redirect()->back()->withErrors($validator)->withInput();
+            }
+
+            $name = $request->name;
+            $email = $request->email;
+            $password = $request->password;
+            $foto_profile = $request->file("foto_profile");
+
+            $result = Auth::user();
+
+            if(!empty($password)){
+                $password = bcrypt($password);
+            }
+            else{
+                $password = $result->password;
+            }
+
+            if(!empty($foto_profile)){
+                $extFile = $foto_profile->getClientOriginalExtension();
+                $namaFile = Auth::id().'profile'.time().".".$extFile;
+                $path = $foto_profile->storeAs('public',$namaFile);
+                $publicPath = 'storage/'.$namaFile;
+                $foto_profile = $publicPath;
+            }
+
+            $result->update([
+                'name' => $name,
+                'email' => $email,
+                'password' => $password,
+                'foto_profile' => $foto_profile,
+            ]);
+
+            return redirect()->back();
         }
     }

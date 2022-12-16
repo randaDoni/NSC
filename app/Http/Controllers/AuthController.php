@@ -25,10 +25,17 @@ class AuthController extends Controller
         ]);
         $credentials = $request->only('email','password');
         if (Auth::attempt($credentials)) {
+            if(!Auth::user()->hasRole([
+                User::ROLE_USER,
+                User::ROLE_ADMINISTRATOR,
+            ])){
+                Auth::logout();
+                return redirect('/login');
+            }
             $request->session()->regenerate();
             return redirect()->intended();
         }else {
-            dd($credentials);
+            return redirect('/login');
         }
     }
     public function post_register(Request $request){
@@ -62,6 +69,7 @@ class AuthController extends Controller
                 'password' =>bcrypt($request->password)
             ];
             $user = User::create($data);
+            $user->assignRole(User::ROLE_USER);
             event(new Registered($user));
             auth()->login($user);
             return redirect()->route('verification.notice')->with('succes','Akun berhasil dibuat','silahkan verfikasi Email anda');

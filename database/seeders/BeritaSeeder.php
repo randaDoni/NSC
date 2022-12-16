@@ -6,7 +6,8 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
-class UserSeeder extends Seeder
+
+class BeritaSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,14 +16,6 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        User::firstOrCreate([
-            'email' => 'admin@gmail.com',
-        ],[
-            'email' => 'admin@gmail.com',
-            'password' => bcrypt("admin123"),
-            'name' => 'Admin',
-            'email_verified_at' => now(),
-        ]);
 
         DB::table('beritas')->insert([
             'judul' => 'sample judul',

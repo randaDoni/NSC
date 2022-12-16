@@ -38,7 +38,7 @@
                             @csrf
                             <div class="d-flex flex-column text-center image-upload">
                             <label for="file-input">
-                                <img class="foto_profil rounded-circle border border-light border-4" src="@if(!empty(Auth::user()->foto_profile)) {{asset('storage/'.Auth::user()->avatar)}} @else https://avatars.dicebear.com/api/initials/{{ Auth::user()->name  ?? null}}.svg?margin=10 @endif" width="200px" height="200px">
+                                <img class="foto_profil rounded-circle border border-light border-4" src="@if(!empty(Auth::user()->foto_profile)) {{asset(Auth::user()->foto_profile)}} @else https://avatars.dicebear.com/api/initials/{{ Auth::user()->name  ?? null}}.svg?margin=10 @endif" width="200px" height="200px">
                             </label>
                             <input id="file-input" type="file" />
                             </div>
@@ -46,8 +46,9 @@
                   </div>
           <div class="detail_profil d-flex justify-content-center">
             <div class="detail_profil_wrap text-center">
-              <h4><b class="title_nama" style="font-family: 'Merriweather', serif; font-size:30px;">{{$profile->name}}</b></h4>
-              <p><i class="title_email">{{$profile->email}}</i></p>
+              <a href="/dashboarduser/edit"><h4><b class="title_nama" style="font-family: 'Merriweather', serif; font-size:30px;">{{$profile->name}}</b></h4>
+                <p><i class="title_email">{{$profile->email}}</i></p>
+                <p><i class="title_email">{{Auth::user()->getRoleNames()->implode(", ")}}</i></p></a>
             </div>
           </div>
       </div>
@@ -61,9 +62,10 @@
       <div class="container-fluid">
 
         <div class="row gy-4 justify-content-center">
+          @if(count($null) >= 1)
           <h1 class="header-title display-4 fw-bold text-primary font-sans-serif header text-center">WAITING RESPONSE</h1>
+          @endif
           @foreach ($null as $nulls => $row)
-          {{$row->id_news}}
           <div class="col-xl-3 col-lg-4 col-md-6">
             <div class="card gallery-item h-100">
               <img src="{{$row->gambar}}" class="img-fluid" alt="">
@@ -83,7 +85,10 @@
             </div>
           </div>
           @endforeach
+
+          @if(count($approve) >= 1)
           <h1 class="header-title display-4 fw-bold text-primary font-sans-serif header text-center">APPROVED</h1>
+          @endif
 
           @foreach ($approve as $approves => $row)
           <div class="col-xl-3 col-lg-4 col-md-6">
@@ -107,7 +112,11 @@
             </div>
           </div>
           @endforeach
+
+          @if(count($decline) >= 1)
           <h1 class="header-title display-4 fw-bold text-primary font-sans-serif header text-center">DECLINED</h1>
+          @endif
+
           @foreach ($decline as $declines => $row)
           <div class="col-xl-3 col-lg-4 col-md-6">
             <div class="card gallery-item h-100">
@@ -118,7 +127,6 @@
               <div class="gallery-links d-flex align-items-center justify-content-center">
                 <a href="{{route('update.berita',$row->id)}}" class="details-link"><i class="bi bi-arrow-up-circle"></i></a>
                 <a href="{{route('delete.news',['id_news' =>$row->id_news])}}">
-                    {{$row->id_news}}
                     <form action="{{route('delete.news',['id_news' =>$row->id_news])}}" method="POST">
                         @method('delete')
                         @csrf

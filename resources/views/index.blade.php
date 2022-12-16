@@ -113,6 +113,11 @@
                   @endforeach
                 </div>
                 <!-- end of .container-->
+                <div class="row">
+                    <div class="col-12">
+                        {!!$berita->links()!!}
+                    </div>
+                </div>
               </section>
         <!-- <section> close ============================-->
         <!-- ============================================-->
