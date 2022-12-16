@@ -7,6 +7,10 @@
             <div class="row">
               <div class="col-12">
                 <div class="mb-4">
+                  <br>
+                  <br>
+                  <br>
+                  <br>
                   <h1 class="header-title display-4 fw-bold text-primary font-sans-serif header text-center">RECENT POST</h1>
                 </div>
                 <div class="row justify-content-center">
@@ -23,5 +27,7 @@
             </div>
         @endforeach
                 </div>
+                <br>
+                <br>
             </section>
 @endsection
