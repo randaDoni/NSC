@@ -23,18 +23,18 @@
                   </ul>
                 </div>
                 <div class="carousel-inner" id="heroCarouselInner">
-                  <div class="carousel-item active"><img class="d-block w-100" src="assets/img/gallery/header-slider-1.png" height="500" alt="..." />
+                  <div class="carousel-item active"><img class="d-block w-100 img-fluid" src="assets/img/gallery/header-slider-1.png" height="500" alt="..." />
                     <div class="carousel-caption d-none d-sm-block">
                       <h1 class="display-4 text-light text-start fw-light fs-2 fs-md-3 fs-lg-4 fs-xl-5">Jika mimpimu <strong>BELUM TERCAPAI </strong>, jangan ubah mimpimu, tapi <strong>ubahlah strategimu.</strong>
                       <br class="" style="align-right">-Bj.Habibie </h1>
                     </div>
                   </div>
-                  <div class="carousel-item"><img class="d-block w-100" src="assets/img/gallery/beasiswa.jpg" height="500" alt="..." />
+                  <div class="carousel-item"><img class="d-block w-100 img-fluid" src="assets/img/gallery/beasiswa.jpg" height="500" alt="..." />
                     <div class="carousel-caption d-none d-sm-block">
                       <h1 class="display-4 text-light text-start fw-light fs-2 fs-md-3 fs-lg-4 fs-xl-5">Temukan beasiswa impianmu di <strong>NSC</strong><br class="d-none d-xxl-block" />eksplor banyak beasiswa yang ada di Indonesia</h1>
                     </div>
                   </div>
-                  <div class="carousel-item"><img class="d-block w-100" src="assets/img/gallery/kompetisi.jpg" height="500" alt="..." />
+                  <div class="carousel-item"><img class="d-block w-100 img-fluid" src="assets/img/gallery/kompetisi.jpg" height="500" alt="..." />
                     <div class="carousel-caption d-none d-sm-block">
                       <h1 class="display-4 text-light text-start fw-light fs-2 fs-md-3 fs-lg-4 fs-xl-5"><strong>Tantang dirimu</strong> dengan mengikuti <strong>KOMPETISI</strong><br />agar mimpimu semakin mudah dicapai</h1>
                     </div>
@@ -84,7 +84,7 @@
       </section>
       @endif
 
-      
+
 
       <!-- ============================================-->
       <!-- <section> begin ============================-->
