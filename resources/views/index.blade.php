@@ -23,7 +23,7 @@
                   </ul>
                 </div>
                 <div class="carousel-inner" id="heroCarouselInner">
-                  <div class="carousel-item active"><img class="d-block w-100 img-fluid" src="assets/img/gallery/header-slider-1.png" height="500" alt="..." />
+                  <div class="carousel-item active"><img class="d-block w-100 img-fluid" src="assets/img/gallery/header-slider-1.jpg" height="500" alt="..." />
                     <div class="carousel-caption d-none d-sm-block">
                       <h1 class="display-4 text-light text-start fw-light fs-2 fs-md-3 fs-lg-4 fs-xl-5">Jika mimpimu <strong>BELUM TERCAPAI </strong>, jangan ubah mimpimu, tapi <strong>ubahlah strategimu.</strong>
                       <br class="" style="align-right">-Bj.Habibie </h1>
@@ -41,13 +41,13 @@
                   </div>
                 </div>
               </div>
-              <div class="col-3 position-absolute start-100 py-0">
+              {{-- <div class="col-xl-2 col-sm-2 col-lg-2 position-absolute start-100 py-0">
                 <div class="carousel-indicators custom-indicators">
                   <button class="active" type="button" data-bs-target="#hero-carousel" data-bs-slide-to="0" aria-current="true" aria-label="Slide 1"></button>
                   <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
                   <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="2" aria-label="Slide 3"> </button>
                 </div>
-              </div>
+              </div> --}}
               <div class="row g-0">
                 <div class="col-12 position-relative">
                   <div class="card" style="background-color:#10203F;">
@@ -130,15 +130,15 @@
         <section class="bg-primary py-0">
             <div class="container">
               <div class="row">
-                <div class="col-2 col-sm-2 col-lg-2 mt-3 mb-2 d-flex justify-content-start">
+                <div class="col-xl-2 col-sm-2 col-lg-2 mt-3 mb-2 d-flex justify-content-start">
                   <a class="text-decoration-none" href="/">
-                    <img src="./assets/img/logos/tubes.png" height="150" alt="..." />
+                    <img class="img-fluid"  src="./assets/img/logos/tubes.png" />
                   </a>
                 </div>
-                <div class="col-6 col-sm-6 col-lg-6 mb-5 mt-5 ">
+                <div class="col-xl-6 col-sm-6 col-lg-6 mb-5 mt-5 ">
                   <p class="text-light">NSC merupakan platform yang berisi kumpulan berita <br class="d-none d-sm-block" />atau informasi mengenai beasiswa maupun kompetisi <br class="d-none d-sm-block" />yang akan diselenggarakan kedepannya di seluruh Indonesia<br class="d-none d-sm-block" /></p>
                 </div>
-                <div class="col-2 col-sm-2 col-lg-2 mt-3 mb-3">
+                <div class="col-xl-2 col-sm-2 col-lg-2 mt-3 mb-3">
                   <h3 class="lh-lg fw-bold mb-1 text-light font-sans-serif">Information</h3>
                   <ul class="list-unstyled mb-md-4 mb-lg-0">
                     <li class="lh-lg"><a class="text-light" href="#!">About us</a></li>
@@ -147,7 +147,7 @@
                     <li class="lh-lg"><a class="text-light" href="#!">Facebook</a></li>
                   </ul>
                 </div>
-                <div class="col-2 col-sm-2 col-lg-2 mt-3 mb-3">
+                <div class="col-xl-2 col-sm-2 col-lg-2 mt-3 mb-3">
                   <h3 class="lh-lg fw-bold text-light mb-1 font-sans-serif">Help</h3>
                   <ul class="list-unstyled mb-md-4 mb-lg-0">
                     <li class="lh-lg"><a class="text-light" href="#!">Services</a></li>
