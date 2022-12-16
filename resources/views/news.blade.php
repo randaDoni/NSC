@@ -27,7 +27,7 @@
             <h6>Region : {{$berita->region}}</h6>
             <hr>
             <h6>Deskripsi : </h6>
-            <p>{{$berita->deskripsi}}</p>
+            <p>{!!$berita->deskripsi!!}</p>
           </div>
           <hr>
           <div class="post-body">
@@ -47,13 +47,13 @@
           </div>
           <div class="section-content">
             <ul class="nice-list">
-              @foreach ($urutan as $urutans)
+              @foreach ($latest as $latests)
+                <li>
+                    <div class="left"><a href="{{route('news.show',['id_news'=>$latests->id_news])}}">{{$latests->judul}}</a></div>
+                    <div class="right">{{$latests->tanggal}}</div>
+                    <div class="clearer">&nbsp;</div>
+                  </li>
               <li>
-                <div class="left"><a href="#">{{$urutans->judul}}</a></div>
-                <div class="right">{{$urutans->tanggal}}</div>
-                <div class="clearer">&nbsp;</div>
-              </li>
-              <li><a href="#" class="more">Browse all &#187;</a></li>
               @endforeach
             </ul>
           </div>

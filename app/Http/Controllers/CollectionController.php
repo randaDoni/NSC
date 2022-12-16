@@ -110,6 +110,6 @@ class CollectionController extends Controller
                 'foto_profile' => $foto_profile,
             ]);
 
-            return redirect()->back();
+            return redirect('/dashboarduser');
         }
     }

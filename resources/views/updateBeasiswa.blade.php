@@ -111,7 +111,7 @@
                   <div class="m-2">
                     {{-- Link Pendaftaran --}}
                       <label class="form-label" for="jenis">Link Pendaftaran</label>
-                      <input class="form-control" type="text" name="linkPendaftaran" placeholder="https://www.example.com" value="{{$update->linkPendaftaran}}">
+                      <input class="form-control" type="text" name="linkPendaftaran" placeholder="www.example.com" value="{{$update->linkPendaftaran}}">
                       @error('linkPendaftaran')
                       <div class="text-danger">{{ $message }}</div>
                       @enderror

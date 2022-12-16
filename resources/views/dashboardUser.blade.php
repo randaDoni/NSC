@@ -34,15 +34,7 @@
       <div class="row justify-content-center">
         <div class="rounded-4 card_profile shadow-lg">
                 <div class="d-flex justify-content-center ">
-                        <form action="" method="post" enctype="multipart/form-data">
-                            @csrf
-                            <div class="d-flex flex-column text-center image-upload">
-                            <label for="file-input">
                                 <img class="foto_profil rounded-circle border border-light border-4" src="@if(!empty(Auth::user()->foto_profile)) {{asset(Auth::user()->foto_profile)}} @else https://avatars.dicebear.com/api/initials/{{ Auth::user()->name  ?? null}}.svg?margin=10 @endif" width="200px" height="200px">
-                            </label>
-                            <input id="file-input" type="file" />
-                            </div>
-                        </form>
                   </div>
           <div class="detail_profil d-flex justify-content-center">
             <div class="detail_profil_wrap text-center">
@@ -66,7 +58,34 @@
           <h1 class="header-title display-4 fw-bold text-primary font-sans-serif header text-center">WAITING RESPONSE</h1>
           @endif
           @foreach ($null as $nulls => $row)
-          <div class="col-xl-3 col-lg-4 col-md-6">
+          <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+            <div class="card border-100 h-100 shadow">
+              <div class="card-body p-4 h-100"><img class="w-100" src="{{$row->gambar}}" alt="" />
+                <div class="d-flex justify-content-between mt-3 border-bottom border-100 py-2"><span class="badge bg-soft-info rounded-1 text-info fw-normal p-2">{{$row->jenisBerita}}</span>
+                  <p class="mb-0 text-500">{{$row->created_at}}</p>
+                </div>
+                {{$row->id_news}}
+                <h3 class="fw-normal fs-lg-1 fs-xxl-2 lh-sm mt-3">{{$row->judul}}</h3><a class="text-secondary" href="{{route('news.show',$row->id_news)}}">Read More</a>
+              </div>
+              <div class="row">
+                 <div class="col-4 m-4">
+                    <a href="{{route('update.berita',$row->id_news)}}">
+                       @csrf
+                       <button type="submit" class="btn btn-success">Update</button>
+                    </a>
+                 </div>
+                 <div class="col-4 m-4">
+                    <form action="{{route('delete.news',['id_news'=>$row->id_news])}}" method="POST">
+                        @method('delete')
+                        @csrf
+                       <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                 </div>
+              </div>
+            </div>
+          </div>
+          @endforeach
+          {{-- <div class="col-xl-3 col-lg-4 col-md-6">
             <div class="card gallery-item h-100">
               <img src="{{$row->gambar}}" class="img-fluid" alt="">
               <div class="card-body">
@@ -79,35 +98,39 @@
                         @csrf
                         <button type="submit"><i class="bi bi-trash details-link"></i></button>
                     </form>
-
-
               </div>
             </div>
-          </div>
-          @endforeach
+          </div> --}}
+
 
           @if(count($approve) >= 1)
           <h1 class="header-title display-4 fw-bold text-primary font-sans-serif header text-center">APPROVED</h1>
           @endif
 
           @foreach ($approve as $approves => $row)
-          <div class="col-xl-3 col-lg-4 col-md-6">
-            <div class="card gallery-item h-100">
-              <img src="{{$row->gambar}}" class="img-fluid" alt="">
-              <div class="card-body">
-                <h5 style="color:black" class="card-title">{{$row->judul}}</h5>
+          <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+            <div class="card border-100 h-100 shadow">
+              <div class="card-body p-4 h-100"><img class="w-100" src="{{$row->gambar}}" alt="" />
+                <div class="d-flex justify-content-between mt-3 border-bottom border-100 py-2"><span class="badge bg-soft-info rounded-1 text-info fw-normal p-2">{{$row->jenisBerita}}</span>
+                  <p class="mb-0 text-500">{{$row->created_at}}</p>
+                </div>
+                {{$row->id_news}}
+                <h3 class="fw-normal fs-lg-1 fs-xxl-2 lh-sm mt-3">{{$row->judul}}</h3><a class="text-secondary" href="{{route('news.show',$row->id_news)}}">Read More</a>
               </div>
-              <div class="gallery-links d-flex align-items-center justify-content-center">
-                <a href="{{route('update.berita',$row->id)}}" class="details-link"><i class="bi bi-arrow-up-circle"></i></a>
-                <a href="{{route('delete.news',['id_news' =>$row->id_news])}}">
-                    <form action="{{route('delete.news',['id_news' =>$row->id_news])}}" method="POST">
+              <div class="row">
+                 <div class="col-4 m-4">
+                    <a href="{{route('update.berita',$row->id_news)}}">
+                       @csrf
+                       <button type="submit" class="btn btn-success">Update</button>
+                    </a>
+                 </div>
+                 <div class="col-4 m-4">
+                    <form action="{{route('delete.news',['id_news'=>$row->id_news])}}" method="POST">
                         @method('delete')
                         @csrf
-                        <button type="submit"><i class="bi bi-trash details-link"></i></button>
+                       <button type="submit" class="btn btn-danger">Delete</button>
                     </form>
-                </a>
-
-
+                 </div>
               </div>
             </div>
           </div>
@@ -118,28 +141,34 @@
           @endif
 
           @foreach ($decline as $declines => $row)
-          <div class="col-xl-3 col-lg-4 col-md-6">
-            <div class="card gallery-item h-100">
-              <img src="{{$row->gambar}}" class="img-fluid" alt="">
-              <div class="card-body">
-                <h5 style="color:black" class="card-title">{{$row->judul}}</h5>
+          <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+            <div class="card border-100 h-100 shadow">
+              <div class="card-body p-4 h-100"><img class="w-100" src="{{$row->gambar}}" alt="" />
+                <div class="d-flex justify-content-between mt-3 border-bottom border-100 py-2"><span class="badge bg-soft-info rounded-1 text-info fw-normal p-2">{{$row->jenisBerita}}</span>
+                  <p class="mb-0 text-500">{{$row->created_at}}</p>
+                </div>
+                {{$row->id_news}}
+                <h3 class="fw-normal fs-lg-1 fs-xxl-2 lh-sm mt-3">{{$row->judul}}</h3><a class="text-secondary" href="{{route('news.show',$row->id_news)}}">Read More</a>
               </div>
-              <div class="gallery-links d-flex align-items-center justify-content-center">
-                <a href="{{route('update.berita',$row->id)}}" class="details-link"><i class="bi bi-arrow-up-circle"></i></a>
-                <a href="{{route('delete.news',['id_news' =>$row->id_news])}}">
-                    <form action="{{route('delete.news',['id_news' =>$row->id_news])}}" method="POST">
+              <div class="row">
+                 <div class="col-4 m-4">
+                    <a href="{{route('update.berita',$row->id_news)}}">
+                       @csrf
+                       <button type="submit" class="btn btn-success">Update</button>
+                    </a>
+                 </div>
+                 <div class="col-4 m-4">
+                    <form action="{{route('delete.news',['id_news'=>$row->id_news])}}" method="POST">
                         @method('delete')
                         @csrf
-                        <button type="submit"><i class="bi bi-trash details-link"></i></button>
+                       <button type="submit" class="btn btn-danger">Delete</button>
                     </form>
-                </a>
-
+                 </div>
               </div>
             </div>
           </div>
           @endforeach
         </div>
-
       </div>
     </section><!-- End Gallery Section -->
 

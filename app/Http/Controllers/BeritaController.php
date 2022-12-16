@@ -35,8 +35,8 @@ class BeritaController extends Controller
                 "deskripsi" => $request->deskripsi,
                 "kategoriBeasiswa" =>$request->kategoriBeasiswa,
                 "tanggal"=>$request->tanggal,
-                "tanggalPembukaan" => $request->PembukaanPendaftaran,
-                "tanggalPenutupan" => $request->PenutupanPenutupan,
+                "tanggalPembukaan" => $request->tanggalPembukaan,
+                "tanggalPenutupan" => $request->tanggalPenutupan,
                 "tanggalPengumuman" => $request->tanggalPengumuman,
                 "jenisBeasiswa"=>$request->jenisBeasiswa,
                 "gambar"=>$publicPath,
@@ -60,7 +60,7 @@ class BeritaController extends Controller
         $id = Auth::id();
         $berita = berita::all();
         $profile = $user->where('id','=',$id)->first();
-        $null = $berita->where('id','=',$id)->where('approve','');
+        $null = $berita->where('id','=',$id)->where('approve','')->sortByDesc('id_news');
         $approve = $berita->where('id','=',$id)->where('approve','1');
         $decline = $berita->where('id','=',$id)->where('approve','0');
         return view('dashboardUser',['profile'=>$profile,'user' => $user,'id'=>$id,'null'=>$null,'approve'=>$approve,'decline'=>$decline]);
@@ -84,7 +84,14 @@ class BeritaController extends Controller
         $berita = $beritas->where('id_news','=',$id_news)->first();
         $urutan = $news->where('tanggalPembukaan','=', $now)->get();
         $uploader = $user->where('id','=',$berita->id)->first();
-        return view('news',['berita'=>$berita,'urutan'=>$urutan,'uploader'=>$uploader,'id_news'=>$id_news]);
+        $latest = $beritas->sortByDesc('id_news');
+        if($berita->jenisBerita == 'beasiswa'){
+            return view('news',['berita'=>$berita,'urutan'=>$urutan,'uploader'=>$uploader,'id_news'=>$id_news, 'latest'=>$latest]);
+        }
+        else{
+            return view('newsKompetisi',['berita'=>$berita,'urutan'=>$urutan,'uploader'=>$uploader,'id_news'=>$id_news,'latest'=>$latest]);
+        }
+
     }
     public function uploadNews(){
         return view('upload');
@@ -124,8 +131,8 @@ class BeritaController extends Controller
             DB::table('beritas')->insert([
                 "judul" => $request->judul,
                 "tingkatKompetisi" => $request->tingkatKompetisi,
-                "tanggalPembukaan" => $request->PembukaanPendaftaran,
-                "tanggalPenutupan" => $request->PenutupanPenutupan,
+                "tanggalPembukaan" => $request->tanggalPembukaan,
+                "tanggalPenutupan" => $request->tanggalPenutupan,
                 "tanggalPengumuman" => $request->tanggalPengumuman,
                 "deskripsi" => $request->deskripsi,
                 "tanggal"=> now(),
@@ -212,8 +219,8 @@ class BeritaController extends Controller
                 "deskripsi" => $request->deskripsi,
                 "kategoriBeasiswa" =>$request->kategoriBeasiswa,
                 "jenisBeasiswa" => $request->jenisBeasiswa,
-                "tanggalPembukaan" => $request->PembukaanPendaftaran,
-                "tanggalPenutupan" => $request->PenutupanPenutupan,
+                "tanggalPembukaan" => $request->tanggalPembukaan,
+                "tanggalPenutupan" => $request->tanggalPenutupan,
                 "tanggal"=>now(),
                 "gambar"=>$publicPath,
                 "region"=>$request->region,
@@ -245,8 +252,8 @@ class BeritaController extends Controller
             DB::table('beritas')->where('id_news',$id_news)->update([
                 "judul" => $request->judul,
                 "tingkatKompetisi" => $request->tingkatKompetisi,
-                "tanggalPembukaan" => $request->PembukaanPendaftaran,
-                "tanggalPenutupan" => $request->PenutupanPenutupan,
+                "tanggalPembukaan" => $request->tanggalPembukaan,
+                "tanggalPenutupan" => $request->tanggalPenutupan,
                 "tanggalPengumuman" => $request->tanggalPengumuman,
                 "deskripsi" => $request->deskripsi,
                 "tanggal"=> now(),

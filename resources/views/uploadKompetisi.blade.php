@@ -99,7 +99,7 @@
                   <div class="m-2">
                     {{-- Link Pendaftaran --}}
                       <label class="form-label" for="jenis">Link Pendaftaran</label>
-                      <input class="form-control" type="text" name="linkPendaftaran" placeholder="https://www.example.com" >
+                      <input class="form-control" type="text" name="linkPendaftaran" placeholder="www.example.com" >
                       @error('linkPendaftaran')
                       <div class="text-danger">{{ $message }}</div>
                       @enderror
@@ -113,7 +113,7 @@
                     @enderror
                 </div>
                 <center>
-                <button class="btn mb-3 mt-3 text-white" style="background-color:#102744;" type="submit" name="tambah">Update</button>
+                <button class="btn mb-3 mt-3 text-white" style="background-color:#102744;" type="submit" name="tambah">Upload</button>
                 </center>
                 </div>
               </div>
