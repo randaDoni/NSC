@@ -11,6 +11,10 @@
     <div class="main" id="main-two-columns">
       <div class="left" id="main-left">
           <div class="post">
+            <br>
+            <br>
+            <br>
+            <br>
             <div class="post-title text-dark">
               <h1>{{$berita->judul}}</h1>
             </div>
@@ -39,6 +43,10 @@
     {{-- iklan --}}
       <div class="right sidebar" id="sidebar">
         <div class="section">
+            <br>
+            <br>
+            <br>
+            <br>
             <div class="section-title">
               <div class="left">Latest News</div>
               <div class="right"><img src="img/icon-time.gif" width="14" height="14" alt="" /></div>
@@ -60,6 +68,8 @@
       <div class="clearer">&nbsp;</div>
 </div>
 </div>
+<br>
+<br>
     {{-- <div id="dashboard">
       <div class="column left" id="column-1">
         <div class="column-content">
