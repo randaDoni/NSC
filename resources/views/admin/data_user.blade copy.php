@@ -80,6 +80,7 @@
 
                         <div class="right_topbar">
                            <div class="icon_info">
+
                               <ul class="user_profile_dd">
                                  <li>
                                     <img class="img-responsive rounded-circle" style="width: 35px; height: 35px;" src="assets/img/logos/tubes.png" alt="#" /><span class="name_user">NSC</span>
@@ -98,32 +99,60 @@
                      <div class="row column_title">
                         <div class="col-md-12">
                            <div class="page_title">
-                              <h2>Dashboard</h2>
+                              <h2>Data User</h2>
                            </div>
                         </div>
                      </div>
-                     <div class="container-fluid">
-                        <div class="letter">
-                           <br>
-                           <br>
-                           <br>
-                           <br>
-                           <br>
-                           <br>
-                           <br>
-                           <h1 class="text-center" style="font-size:35px">Selamat Datang, Admin!!<svg class="bi bi-suit-heart-fill" xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="#F95C19" viewBox="0 0 16 16">
-                              <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z"></path>
-                              </svg></h1>
+                     <div class="row column3">
+
+                     </div>
+                     <div class="row column4 graph">
+                        <div class="col-md-12">
+                            <!-- tempat tabel user -->
+                            <div class="container mt-3 my-1">
+                                <div class="row">
+                                  <div class="col-12">
+                                  <div class="py-4">
+                                    <h2>Tabel User</h2>
+                                  </div>
+                                  <table class="table table-striped">
+                                    <thead>
+                                      <tr>
+                                        <th>No</th>
+                                        <th>Nama</th>
+                                        <th>email</th>
+                                        <th>Option</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      @forelse ($user as $users)
+                                      <tr>
+                                        <th>{{$loop->iteration}}</th>
+                                        <td>{{$users->name}}</td>
+                                        <td>{{$users->email}}</td>
+                                        <td>
+                                            <form action="{{route('user.delete',['users' =>$users->id])}}" method="POST">
+                                            @method('delete')
+                                            @csrf
+                                            <button type="submit" class="btn btn-danger">Delete</button>
+                                            </form>
+                                        </td>
+                                      </tr>
+                                      @empty
+                                        <td colspan="6" class="text-center">Tidak ada data...</td>
+                                      @endforelse
+                                    </tbody>
+                                  </table>
+                                  </div>
+                                </div>
+                              </div>
+                              <!-- end tabel user-->
                         </div>
                      </div>
                   </div>
-                  <br>
-                  <br>
-                  <br>
-
                   <!-- footer -->
                   <div class="container-fluid">
-                     <div class="footer">
+                     <div class="footer fixed">
                         <p>All rights Reserved &copy; NSC, 2022</p>
                         <p class="fs--1 fw-light my-2 text-center text-md-end text-200"> Made with&nbsp;
                            <svg class="bi bi-suit-heart-fill" xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="#F95C19" viewBox="0 0 16 16">

@@ -63,6 +63,7 @@
         <div class="row gy-4 justify-content-center">
           <h1 class="header-title display-4 fw-bold text-primary font-sans-serif header text-center">WAITING RESPONSE</h1>
           @foreach ($null as $nulls => $row)
+          {{$row->id_news}}
           <div class="col-xl-3 col-lg-4 col-md-6">
             <div class="card gallery-item h-100">
               <img src="{{$row->gambar}}" class="img-fluid" alt="">
@@ -70,8 +71,14 @@
                 <h5 style="color:black" class="card-title">{{$row->judul}}</h5>
               </div>
               <div class="gallery-links d-flex align-items-center justify-content-center">
-                <a href="{{url('/updateBeritabyUser/{id}',$row->id)}}" title="Gallery 1" class="glightbox preview-link"><i class="bi bi-link-45deg"></i></a>
-                <a href="{{route('news.show',$row->id)}}" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <a href="{{route('update.berita',$row->id_news)}}" class="details-link"><i class="bi bi-arrow-up-circle"></i></a>
+                    <form action="{{route('delete.news',['id_news'=>$row->id_news])}}" method="POST">
+                        @method('delete')
+                        @csrf
+                        <button type="submit"><i class="bi bi-trash details-link"></i></button>
+                    </form>
+
+
               </div>
             </div>
           </div>
@@ -87,7 +94,15 @@
               </div>
               <div class="gallery-links d-flex align-items-center justify-content-center">
                 <a href="{{route('update.berita',$row->id)}}" class="details-link"><i class="bi bi-arrow-up-circle"></i></a>
-                <a href="{{route('news.show',$row->id)}}" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <a href="{{route('delete.news',['id_news' =>$row->id_news])}}">
+                    <form action="{{route('delete.news',['id_news' =>$row->id_news])}}" method="POST">
+                        @method('delete')
+                        @csrf
+                        <button type="submit"><i class="bi bi-trash details-link"></i></button>
+                    </form>
+                </a>
+
+
               </div>
             </div>
           </div>
@@ -101,8 +116,15 @@
                 <h5 style="color:black" class="card-title">{{$row->judul}}</h5>
               </div>
               <div class="gallery-links d-flex align-items-center justify-content-center">
-                <a href="{{route('update.berita',$row->id)}}" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                <a href="{{route('news.show',$row->id)}}" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                <a href="{{route('update.berita',$row->id)}}" class="details-link"><i class="bi bi-arrow-up-circle"></i></a>
+                <a href="{{route('delete.news',['id_news' =>$row->id_news])}}">
+                    {{$row->id_news}}
+                    <form action="{{route('delete.news',['id_news' =>$row->id_news])}}" method="POST">
+                        @method('delete')
+                        @csrf
+                        <button type="submit"><i class="bi bi-trash details-link"></i></button>
+                    </form>
+                </a>
 
               </div>
             </div>

@@ -174,11 +174,11 @@ class BeritaController extends Controller
     }
     public function updateBerita($id_news){
         $select = berita::all();
-        $update = $select->where('id_news',$id_news)->first();
-        if($select->where('id_news',$id_news)->where('jenisBerita','beasiswa')){
-            return view('updateBeasiswa',['update' => $update]);
+        $result = $select->where('id_news',$id_news)->first();
+        if($result->jenisBerita == "beasiswa"){
+            return view('updateBeasiswa',['update' => $result]);
         }else{
-            return view('updateKompetisi');
+            return view('updateKompetisi',['update'=>$result]);
         }
     }
     public function prosesUpdateBerita($id_news, Request $request){
@@ -194,7 +194,7 @@ class BeritaController extends Controller
             'required' => ':attribute wajib diisi'
         ]);
         if($validator->fails()){
-            return redirect('/updateBeritabyUser')->withErrors($validator)->withInput();
+            return redirect()->back()->withErrors($validator)->withInput();
         }else{
         $extFile = $request->gambar->getClientOriginalExtension();
         $namaFile = Auth::id().'kompetisi'.time().".".$extFile;
@@ -213,7 +213,49 @@ class BeritaController extends Controller
                 "linkPendaftaran"=>$request->linkPendaftaran,
                 "approve"=>''
         ]);
-        return redirect('/dashboardUser');
+        return redirect('/dashboarduser');
     }
+    }
+
+    public function prosesUpdateKompetisi($id_news, Request $request){
+        $validator = validator::make($request->all(),[
+            'judul' => 'required|min:3',
+            'deskripsi' => 'required',
+            'tanggalPembukaan' => 'required',
+            'tanggalPenutupan' => 'required',
+            'gambar' => 'file|image|required',
+            'linkPendaftaran' => ' required',
+        ],[
+            'required' => ':attribute wajib diisi'
+        ]);
+        if($validator->fails()){
+            return redirect('/uploadKompetisi')->withErrors($validator)->withInput();
+        }else{
+            $extFile = $request->gambar->getClientOriginalExtension();
+            $namaFile = Auth::id().'kompetisi'.time().".".$extFile;
+            $path = $request->gambar->storeAs('public',$namaFile);
+            $publicPath = 'storage/'.$namaFile;
+            DB::table('beritas')->where('id_news',$id_news)->update([
+                "judul" => $request->judul,
+                "tingkatKompetisi" => $request->tingkatKompetisi,
+                "tanggalPembukaan" => $request->PembukaanPendaftaran,
+                "tanggalPenutupan" => $request->PenutupanPenutupan,
+                "tanggalPengumuman" => $request->tanggalPengumuman,
+                "deskripsi" => $request->deskripsi,
+                "tanggal"=> now(),
+                "gambar"=>$publicPath,
+                "linkPendaftaran"=>$request->linkPendaftaran,
+                "id"=>Auth::id(),
+                "created_at" => now(),
+                "updated_at" => now(),
+                "jenisBerita" => "Kompetisi"
+            ]);
+            return redirect('/dashboarduser');
+            }
+    }
+
+    public function deleteNews($id_news){
+        berita::where('id_news',$id_news)->first()->delete();
+        return redirect()->back();
     }
 };

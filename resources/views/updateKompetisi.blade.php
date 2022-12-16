@@ -1,6 +1,5 @@
 @extends('layouts.master')
 @section('content')
-<body>
 
   <!-- Favicons -->
   <link href="{{asset('/assets/img/favicon.png')}}" rel="icon">
@@ -19,87 +18,76 @@
   <link href="{{asset('/assets/vendor/aos/aos.css')}}" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="/main.css" rel="stylesheet">
+  <link href="main.css" rel="stylesheet">
 
 
 
+
+<body>
 
   <!-- ======= Header ======= -->
 
 
 <main id="main" data-aos="fade" data-aos-delay="1500" class="pt-3">
-  <h3 class="mt-3" style="margin-left: 25px" ><i class="fa-solid fa-table"></i> Input Beasiswa </h3>
-    <form action="{{url('/prosesUploadNews')}}" method="POST" enctype="multipart/form-data">
+  <h3 class="mt-3" style="margin-left: 25px" ><i class="fa-solid fa-table"></i> Input Informasi Kompetisi </h3>
+    <form action="{{route('proses.update.kompetisi',['id_news'=>$update->id_news])}}" method="POST" enctype="multipart/form-data">
 @csrf
 <div class="pt-2 mb-5" style="margin-top: 10px;">
     <div class="row justify-content-center">
         <div class="col-lg-9">
             <div class="card">
             <div class="card-header"style="background-color: #102744">
-                <h3 class="text-white" style="text-align:center;">TAMBAH BERITA</h3>
+                <h3 class="text-white" style="text-align:center;">TAMBAH INFORMASI KOMPETISI</h3>
             </div>
              <div class="card-body">
               {{-- form pertama --}}
                     <div class="m-2">
-                      {{-- Beasiswa --}}
+                      {{-- Kompetisi --}}
                         <label class="form-label " for="judul">Judul</label>
-                        <input class="form-control" type="text" name="judul" class="form-control" >
+                        <input class="form-control" type="text" name="judul" class="form-control"  value="{{$update->judul}}">
                         @error('judul')
                         <div class="text-danger">{{ $message }}</div>
                         @enderror
                     </div>
-                    {{-- Kategori Beasiswa --}}
+                    {{-- Tingkat Kompetisi --}}
                     <div class="m-2">
-                      <label class="form-label" for="kategoriBeasiswa">Kategori Beasiswa</label>
-                      <select class="selectpicker form-control" name="kategoriBeasiswa" id="kategoriBeasiswa" data-live-search="true">
-                        <option value="s1">Beasiswa Kuliah S1</option>
-                        <option value="s2">Beasiswa Kuliah S2</option>
-                        <option value="s3">Beasiswa Kuliah S3</option>
+                      <label class="form-label" for="tingkatKompetisi">Tingkat Kompetisi</label>
+                      <select class="selectpicker form-control" name="tingkatKompetisi" id="tingkatKompetisi" data-live-search="true">
+                        <option value="umum">Umum</option>
+                        <option value="SMP">SMP/Sederajat</option>
+                        <option value="SMA">SMA/SMK/MA/Sederajat</option>
+                        <option value="S1">D1/D2/D3/D4/S1</option>
                     </select>
-                      @error('kategoriBeasiswa')
+                      @error('tingkatKompetisi')
                       <div class="text-danger">{{ $message }}</div>
                       @enderror
                   </div>
-                  {{-- Jenis Beasiswa --}}
+                  {{-- Tanggal Kompetisi --}}
                   <div class="m-2">
-                    <label class="form-label" for="jenisBeasiswa">Jenis Beasiswa</label>
-                    <select class="selectpicker form-control" name="jenisBeasiswa" id="jenisBeasiswa" data-live-search="true">
-                      <option value="penuh">Beasiswa Penuh</option>
-                      <option value="sebagian">Beasiswa Sebagian</option>
-                  </select>
-                    @error('jenisBeasiswa')
+                    <label class="form-label" for="date">Tanggal Pendaftaran</label>
+                    <div class="row">
+                    <div class="col-md-6">
+                    <input class="form-control" type="date" name="tanggalPembukaan" aria-label="With textarea" value="{{$update->tanggalPembukaan}}">
+                    @error('PembukaanPendaftaran')
+                    <div class="text-danger">{{ $message }}</div>
+                    @enderror
+                    </div>
+                    <div class="col-md-6">
+                    <input class="form-control" type="date" name="tanggalPenutupan" aria-label="With textarea" value="{{$update->tanggalPenutupan}}">
+                    @error('PenutupanPendaftaran')
+                    <div class="text-danger">{{ $message }}</div>
+                    @enderror
+                    </div>
+                </div>
+                </div>
+                {{-- Tangal Pengumuman --}}
+                  <div class="m-2">
+                    <label class="form-label" for="tanggalPengumuman">Pengumuman Pemenang</label>
+                    <input class="form-control" type="date" name="tanggalPengumuman" aria-label="With textarea" value="{{$update->tanggalPengumuman}}">
+                    @error('tanggalPengumuman')
                     <div class="text-danger">{{ $message }}</div>
                     @enderror
                 </div>
-                  {{-- Kawasan Beasiswa --}}
-                  <div class="m-2">
-                    <label class="form-label" for="region">Region</label>
-                    <select class="selectpicker form-control" name="region" id="region" data-live-search="true">
-                      <option value="Beasiswa Dalam Negeri">Beasiswa Dalam Negeri</option>
-                      <option value="Beasiswa Luar Negeri">Beasiswa Luar Negeri </option>
-                  </select>
-                    @error('region')
-                    <div class="text-danger">{{ $message }}</div>
-                    @enderror
-                </div>
-                  {{-- Tanggal Pendaftaran --}}
-                <div class="m-2">
-                  <label class="form-label" for="date">Tanggal Pendaftaran</label>
-                  <div class="row">
-                  <div class="col-md-6">
-                  <input class="form-control" type="date" name="tanggalPembukaan" aria-label="With textarea">
-                  @error('tanggalPembukaan')
-                  <div class="text-danger">{{ $message }}</div>
-                  @enderror
-                  </div>
-                  <div class="col-md-6">
-                  <input class="form-control" type="date" name="tanggalPenutupan" aria-label="With textarea">
-                  @error('tanggalPenutupan')
-                  <div class="text-danger">{{ $message }}</div>
-                  @enderror
-                  </div>
-              </div>
-              </div>
                     {{-- Upload Gambar --}}
                     <div class="m-2">
                       <label class="form-label" for="gambar">Upload Gambar</label>
@@ -111,7 +99,7 @@
                   <div class="m-2">
                     {{-- Link Pendaftaran --}}
                       <label class="form-label" for="jenis">Link Pendaftaran</label>
-                      <input class="form-control" type="text" name="linkPendaftaran" placeholder="https://www.example.com">
+                      <input class="form-control" type="text" name="linkPendaftaran" placeholder="https://www.example.com" value="{{$update->linkPendaftaran}}">
                       @error('linkPendaftaran')
                       <div class="text-danger">{{ $message }}</div>
                       @enderror
@@ -119,13 +107,13 @@
                   {{-- Deskripsi --}}
                   <div class="m-2">
                     <label class="form-label" for="deskripsi">Deskripsi</label>
-                    <textarea class="form-control" type="text-field" id="summernote" name="deskripsi" aria-label="With textarea"></textarea>
+                    <textarea class="form-control summernote" type="text-field" name="deskripsi" aria-label="With textarea" value="{{$update->deskripsi}}"></textarea>
                     @error('deskripsi')
                     <div class="text-danger">{{ $message }}</div>
                     @enderror
                 </div>
                 <center>
-                <button class="btn mb-3 mt-3 text-white" style="background-color:#102744;" type="submit"name="tambah">Upload</button>
+                <button class="btn mb-3 mt-3 text-white" style="background-color:#102744;" type="submit" name="tambah">Upload</button>
                 </center>
                 </div>
               </div>
@@ -136,21 +124,21 @@
   </form>
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="{{asset('/assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  <script src="{{asset('/assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
+  <script src="{{asset('/assets/vendor/glightbox/js/glightbox.min.js')}}"></script>
+  <script src="{{asset('/assets/vendor/aos/aos.js')}}"></script>
+  <script src="{{asset('/assets/vendor/php-email-form/validate.js')}}"></script>
 
   <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="{{asset('/assets/js/main.js')}}"></script>
+  <script src="{{asset('/https://code.jquery.com/jquery-3.6.0.js')}}" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+  <script src="{{asset('/https://code.jquery.com/jquery-3.5.1.min.js')}}"></script>
+<script src="{{asset('/https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js')}}"></script>
 
 <!-- include summernote css/js -->
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+<script src="{{asset('/https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js')}}"></script>
 <script>
   $(document).ready(function() {
       $('#summernote').summernote();

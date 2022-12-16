@@ -119,7 +119,7 @@
                   {{-- Deskripsi --}}
                   <div class="m-2">
                     <label class="form-label" for="deskripsi">Deskripsi</label>
-                    <textarea class="form-control" type="text-field" id="summernote" name="deskripsi" aria-label="With textarea"></textarea>
+                    <textarea class="form-control summernote" type="text-field" id="summernote" name="deskripsi" aria-label="With textarea"></textarea>
                     @error('deskripsi')
                     <div class="text-danger">{{ $message }}</div>
                     @enderror

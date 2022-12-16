@@ -119,7 +119,7 @@
                   {{-- Deskripsi --}}
                   <div class="m-2">
                     <label class="form-label" for="deskripsi">Deskripsi</label>
-                    <textarea class="form-control" type="text-field" id="summernote" name="deskripsi" aria-label="With textarea" >{{$update->deskripsi}}</textarea>
+                    <textarea class="form-control summernote" type="text-field" id="summernote" name="deskripsi" aria-label="With textarea" >{{$update->deskripsi}}</textarea>
                     @error('deskripsi')
                     <div class="text-danger">{{ $message }}</div>
                     @enderror
@@ -136,7 +136,7 @@
   </form>
 
   <!-- Vendor JS Files -->
-  {{-- <script src="{{asset('/assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  <script src="{{asset('/assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
   <script src="{{asset('/assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
   <script src="{{asset('/assets/vendor/glightbox/js/glightbox.min.js')}}"></script>
   <script src="{{asset('/assets/vendor/aos/aos.js')}}"></script>
@@ -155,7 +155,7 @@
   $(document).ready(function() {
       $('#summernote').summernote();
   });
-</script> --}}
+</script>
 
 </body>
 </html>

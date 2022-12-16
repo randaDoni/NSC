@@ -44,7 +44,7 @@
                     <div class="m-2">
                       {{-- Kompetisi --}}
                         <label class="form-label " for="judul">Judul</label>
-                        <input class="form-control" type="text" name="judul" class="form-control" >
+                        <input class="form-control" type="text" name="judul" class="form-control>
                         @error('judul')
                         <div class="text-danger">{{ $message }}</div>
                         @enderror
@@ -67,13 +67,13 @@
                     <label class="form-label" for="date">Tanggal Pendaftaran</label>
                     <div class="row">
                     <div class="col-md-6">
-                    <input class="form-control" type="date" name="tanggalPembukaan" aria-label="With textarea">
+                    <input class="form-control" type="date" name="tanggalPembukaan" aria-label="With textarea" >
                     @error('PembukaanPendaftaran')
                     <div class="text-danger">{{ $message }}</div>
                     @enderror
                     </div>
                     <div class="col-md-6">
-                    <input class="form-control" type="date" name="tanggalPenutupan" aria-label="With textarea">
+                    <input class="form-control" type="date" name="tanggalPenutupan" aria-label="With textarea" >
                     @error('PenutupanPendaftaran')
                     <div class="text-danger">{{ $message }}</div>
                     @enderror
@@ -83,7 +83,7 @@
                 {{-- Tangal Pengumuman --}}
                   <div class="m-2">
                     <label class="form-label" for="tanggalPengumuman">Pengumuman Pemenang</label>
-                    <input class="form-control" type="date" name="tanggalPengumuman" aria-label="With textarea">
+                    <input class="form-control" type="date" name="tanggalPengumuman" aria-label="With textarea" >
                     @error('tanggalPengumuman')
                     <div class="text-danger">{{ $message }}</div>
                     @enderror
@@ -99,7 +99,7 @@
                   <div class="m-2">
                     {{-- Link Pendaftaran --}}
                       <label class="form-label" for="jenis">Link Pendaftaran</label>
-                      <input class="form-control" type="text" name="linkPendaftaran" placeholder="https://www.example.com">
+                      <input class="form-control" type="text" name="linkPendaftaran" placeholder="https://www.example.com" >
                       @error('linkPendaftaran')
                       <div class="text-danger">{{ $message }}</div>
                       @enderror
@@ -107,13 +107,13 @@
                   {{-- Deskripsi --}}
                   <div class="m-2">
                     <label class="form-label" for="deskripsi">Deskripsi</label>
-                    <textarea class="form-control" type="text-field" name="deskripsi" aria-label="With textarea"></textarea>
+                    <textarea class="form-control summernote" type="text-field" name="deskripsi" aria-label="With textarea"></textarea>
                     @error('deskripsi')
                     <div class="text-danger">{{ $message }}</div>
                     @enderror
                 </div>
                 <center>
-                <button class="btn mb-3 mt-3 text-white" style="background-color:#102744;" type="submit" name="tambah">Upload</button>
+                <button class="btn mb-3 mt-3 text-white" style="background-color:#102744;" type="submit" name="tambah">Update</button>
                 </center>
                 </div>
               </div>

@@ -62,6 +62,7 @@
                   <ul class="list-unstyled components">
                      <li class="active"><a href="/data_user"><i class="fa fa-briefcase blue1_color"></i> <span>Data User</span></a></li>
                      <li class="active"><a href="/post"><i class="fa fa-map purple_color2"></i> <span>Post</span></a></li>
+                     <li class="active"><a href="/deletePost"><i class="fa fa-cog yellow_color"></i> <span>deletePost</span></a></li>
                      <li class="active"><a href="/logout"><i class="fa fa-cog yellow_color"></i> <span>Logout</span></a></li>
                   </ul>
                </div>
@@ -79,7 +80,7 @@
 
                         <div class="right_topbar">
                            <div class="icon_info">
-               
+
                               <ul class="user_profile_dd">
                                  <li>
                                     <img class="img-responsive rounded-circle" style="width: 35px; height: 35px;" src="assets/img/logos/tubes.png" alt="#" /><span class="name_user">NSC</span>
@@ -118,22 +119,23 @@
                                     <thead>
                                       <tr>
                                         <th>No</th>
-                                        <th>Nama</th>
-                                        <th>email</th>
-                                        <th>Option</th>
+                                        <th>judul</th>
+                                        <th>lihat berita</th>
+                                        <th>Jenis Berita</th>
+                                        <th>Delete</th>
                                       </tr>
                                     </thead>
                                     <tbody>
-                                      @forelse ($user as $users)
+                                      @forelse ($berita as $beritas)
                                       <tr>
                                         <th>{{$loop->iteration}}</th>
-                                        <td>{{$users->name}}</td>
-                                        <td>{{$users->email}}</td>
+                                        <td>{{$beritas->judul}}</td>
+                                        <td>{{$beritas->jenisBerita}}</td>
                                         <td>
-                                            <form action="{{route('user.delete',['users' =>$users->id])}}" method="POST">
-                                            @method('delete')
-                                            @csrf
-                                            <button type="submit" class="btn btn-danger">Delete</button>
+                                            <form action="{{route('delete.news',['id_news'=>$beritas->id_news])}}" method="POST">
+                                                @method('delete')
+                                                @csrf
+                                                <button type="submit" class="btn btn-danger">Delete</button>
                                             </form>
                                         </td>
                                       </tr>

@@ -32,6 +32,7 @@ Route::post('/proses-login',[CollectionController::class,'prosesLogin']);
 
 
 Route::get('/data_user',[CollectionController::class,'dataUser'])->name('user.data');
+Route::get('/deletePost',[AdminController::class,'dataBerita'])->name('data.berita');
 Route::get('/post',function(){
     return view('admin.post');
 });
@@ -60,7 +61,6 @@ Route::get('/email/verify/need-verification',[VerificationController::class,'not
 Route::get('/email/verify/{id}/{hash}',[VerificationController::class,'verify'])->middleware('auth','signed')->name('verification.verify');
 Route::middleware((['auth','auth.session','verified']))->group(function(){
     Route::get('/dashboarduser',[BeritaController::class,'dashboardUser'])->name('dashboard.user');
-    Route::get('/dashboarduser/{id}',[BeritaController::class,'dashboardUserShow'])->name('dashboard.user.show');
     Route::get('/test/{id}',[AuthController::class,'test']);
     Route::get('/logout',[AuthController::class,'logout']);
     Route::get('/dashboarduser/{id}/upload_foto_profil',[BeritaController::class,'uploadFotoProfil'])->name('upload.foto.profil');
@@ -70,6 +70,9 @@ Route::middleware((['auth','auth.session','verified']))->group(function(){
     Route::post('/prosesUploadKompetisi',[BeritaController::class,'prosesUploadKompetisi'])->name('proses.upload.kompetisi');
     Route::get('/updateBeritabyUser/{id_news}',[BeritaController::class,'updateBerita'])->name('update.berita');
     Route::post('/prosesUpdateBeasiswa/{id_news}',[BeritaController::class,'prosesUpdateBerita'])->name('proses.update.berita');
+    Route::post('/prosesUpdateKompetisi/{id_news}',[BeritaController::class,'prosesUpdateKompetisi'])->name('proses.update.kompetisi');
+    Route::delete('/dashboarduser/delete_berita/{id_news}',[BeritaController::class,'deleteNews'])->name('delete.news');
+
 });
 Route::get('/beasiswaS1',[BeritaController::class,'beasiswaS1'])->name('beasiswa.s1');
 Route::get('/beasiswaS2',[BeritaController::class,'beasiswaS2'])->name('beasiswa.s2');
