@@ -384,11 +384,11 @@ h6 {
 # Desktop Navigation
 --------------------------------------------------------------*/
 @media (min-width: 1280px) {
-  .navbar {
+  bukan {
     padding: 0;
   }
 
-  .navbar ul {
+  bukan ul {
     margin: 0;
     padding: 0;
     display: flex;
@@ -396,12 +396,12 @@ h6 {
     align-items: center;
   }
 
-  .navbar li {
+  bukan li {
     position: relative;
   }
 
-  .navbar a,
-  .navbar a:focus {
+  bukan a,
+  bukan a:focus {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -416,21 +416,21 @@ h6 {
     transition: 0.3s;
   }
 
-  .navbar a i,
-  .navbar a:focus i {
+  bukan a i,
+  bukan a:focus i {
     font-size: 12px;
     line-height: 0;
     margin-left: 5px;
   }
 
-  .navbar a:hover,
-  .navbar .active,
-  .navbar .active:focus,
-  .navbar li:hover>a {
+  bukan a:hover,
+  bukan .active,
+  bukan .active:focus,
+  bukan li:hover>a {
     color: #fff;
   }
 
-  .navbar .dropdown ul {
+  bukan  ul {
     display: block;
     position: absolute;
     left: 14px;
@@ -445,40 +445,40 @@ h6 {
     border-radius: 4px;
   }
 
-  .navbar .dropdown ul li {
+  bukan  ul li {
     min-width: 200px;
   }
 
-  .navbar .dropdown ul a {
+  bukan  ul a {
     padding: 10px 20px;
     font-size: 15px;
     text-transform: none;
     font-weight: 400;
   }
 
-  .navbar .dropdown ul a i {
+  bukan  ul a i {
     font-size: 12px;
   }
 
-  .navbar .dropdown ul a:hover,
-  .navbar .dropdown ul .active:hover,
-  .navbar .dropdown ul li:hover>a {
+  bukan  ul a:hover,
+  bukan  ul .active:hover,
+  bukan  ul li:hover>a {
     color: #fff;
   }
 
-  .navbar .dropdown:hover>ul {
+  bukan :hover>ul {
     opacity: 1;
     top: 100%;
     visibility: visible;
   }
 
-  .navbar .dropdown .dropdown ul {
+  bukan   ul {
     top: 0;
     left: calc(100% - 30px);
     visibility: hidden;
   }
 
-  .navbar .dropdown .dropdown:hover>ul {
+  bukan  :hover>ul {
     opacity: 1;
     top: 0;
     left: 100%;
@@ -487,11 +487,11 @@ h6 {
 }
 
 @media (min-width: 1280px) and (max-width: 1366px) {
-  .navbar .dropdown .dropdown ul {
+  bukan   ul {
     left: -90%;
   }
 
-  .navbar .dropdown .dropdown:hover>ul {
+  bukan  :hover>ul {
     left: -100%;
   }
 }
@@ -508,7 +508,7 @@ h6 {
 # Mobile Navigation
 --------------------------------------------------------------*/
 @media (max-width: 1279px) {
-  .navbar {
+  bukan {
     position: fixed;
     top: 0;
     right: -100%;
@@ -519,7 +519,7 @@ h6 {
     z-index: 9997;
   }
 
-  .navbar ul {
+  bukan ul {
     position: absolute;
     inset: 0;
     padding: 50px 0 10px 0;
@@ -530,8 +530,8 @@ h6 {
     z-index: 9998;
   }
 
-  .navbar a,
-  .navbar a:focus {
+  bukan a,
+  bukan a:focus {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -546,22 +546,22 @@ h6 {
     transition: 0.3s;
   }
 
-  .navbar a i,
-  .navbar a:focus i {
+  bukan a i,
+  bukan a:focus i {
     font-size: 12px;
     line-height: 0;
     margin-left: 5px;
   }
 
-  .navbar a:hover,
-  .navbar .active,
-  .navbar .active:focus,
-  .navbar li:hover>a {
+  bukan a:hover,
+  bukan .active,
+  bukan .active:focus,
+  bukan li:hover>a {
     color: #fff;
   }
 
-  .navbar .dropdown ul,
-  .navbar .dropdown .dropdown ul {
+  bukan  ul,
+  bukan   ul {
     position: static;
     display: none;
     padding: 10px 0;
@@ -570,8 +570,8 @@ h6 {
     border: 1px solid black;
   }
 
-  .navbar .dropdown>.dropdown-active,
-  .navbar .dropdown .dropdown>.dropdown-active {
+  bukan >-active,
+  bukan  >-active {
     display: block;
   }
 
@@ -601,11 +601,11 @@ h6 {
     overflow: hidden;
   }
 
-  .mobile-nav-active .navbar {
+  .mobile-nav-active bukan {
     right: 0;
   }
 
-  .mobile-nav-active .navbar:before {
+  .mobile-nav-active bukan:before {
     content: "";
     position: fixed;
     inset: 0;

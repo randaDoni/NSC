@@ -151,7 +151,7 @@
                 <div class="col-xl-2 col-sm-2 col-lg-2 mt-3 mb-3">
                   <h3 class="lh-lg fw-bold mb-1 text-light font-sans-serif">Information</h3>
                   <ul class="list-unstyled mb-md-4 mb-lg-0">
-                    <li class="lh-lg"><a class="text-light" href="#About_Us">About us</a></li>
+                    <li class="lh-lg"><a class="text-light" href="About_Us">About us</a></li>
                     <li class="lh-lg"><a class="text-light" href="#!">Instagram</a></li>
                     <li class="lh-lg"><a class="text-light" href="#!">Twitter</a></li>
                     <li class="lh-lg"><a class="text-light" href="#!">Facebook</a></li>

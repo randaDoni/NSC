@@ -1,8 +1,7 @@
 @extends('layouts.master')
 @section('content')
-@section('menuHome')
-<body>
-  <meta charset="utf-8">
+
+  {{-- <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
 
@@ -26,7 +25,7 @@
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
   <!-- Template Main CSS File -->
-  <link href="{{URL::asset('/assets/css/main.css')}}" rel="stylesheet">
+  <link href="{{URL::asset('/assets/css/main.css')}}" rel="stylesheet"> --}}
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="hero d-flex flex-column justify-content-center align-items-center" data-aos="fade" data-aos-delay="1500">
@@ -51,8 +50,8 @@
 
     <!-- ======= Gallery Section ======= -->
     <section id="gallery" class="gallery">
-      <div class="container-fluid">
-
+      <div class="container-fluid   container">
+{{-- col-xl-6 col-sm-6 col-lg-6 mb-5 mt-5 --}}
         <div class="row gy-4 justify-content-center">
           @if(count($null) >= 1)
           <h1 class="header-title display-4 fw-bold text-primary font-sans-serif header text-center">WAITING RESPONSE</h1>
@@ -196,12 +195,7 @@
     <div class="line"></div>
   </div>
 
-  <!-- Vendor JS Files -->
-  <script src="dashboard/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="dashboard/swiper/swiper-bundle.min.js"></script>
-  <script src="dashboard/glightbox/js/glightbox.min.js"></script>
-  <script src="dashboard/aos/aos.js"></script>
-  <script src="dashboard/php-email-form/validate.js"></script>
+
 
   <!-- Template Main JS File -->
   <script src="/assets/js/main.js"></script>
