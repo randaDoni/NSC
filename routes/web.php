@@ -51,7 +51,7 @@ Route::get('/kompetisi',function(){
 Route::get('/dashboardadmin',function(){
     return view('admin.dashboard');
 });
-Route::get('/aboutus',function(){
+Route::get('/About_Us',function(){
     return view('aboutus');
 });
 
