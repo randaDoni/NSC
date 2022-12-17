@@ -4,6 +4,11 @@
       <div class="py-7 py-sm-8 py-lg-10 py-xxl-9 py-xxl-11" style="background-image: url('{{ asset('img/bg.jpg')}}');">
       </div>
       <section class="mb-n9 mb-lg-n11 p-0" style="transform: translateY(calc(-50% - 25px));">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
         <div class="container-fluid">
           <div class="position-relative hero-carousel-container" id="heroCarouselContainer">
             <div class="position-absolute translate-middle d-none d-xxl-block"><img src="assets/img/illustrations/bg-circle.png" alt="" /></div>
@@ -23,18 +28,18 @@
                   </ul>
                 </div>
                 <div class="carousel-inner" id="heroCarouselInner">
-                  <div class="carousel-item active"><img class="d-block w-100 img-fluid" src="assets/img/gallery/header-slider-1.jpg" height="500" alt="..." />
+                  <div class="carousel-item active"><img class="d-block w-100 img-fluid" src="assets/img/logos/image1.png" height="500" alt="..." />
                     <div class="carousel-caption d-none d-sm-block">
                       <h1 class="display-4 text-light text-start fw-light fs-2 fs-md-3 fs-lg-4 fs-xl-5">Jika mimpimu <strong>BELUM TERCAPAI </strong>, jangan ubah mimpimu, tapi <strong>ubahlah strategimu.</strong>
                       <br class="" style="align-right">-Bj.Habibie </h1>
                     </div>
                   </div>
-                  <div class="carousel-item"><img class="d-block w-100 img-fluid" src="assets/img/gallery/beasiswa.jpg" height="500" alt="..." />
+                  <div class="carousel-item"><img class="d-block w-100 img-fluid" src="assets/img/logos/image2.png" height="500" alt="..." />
                     <div class="carousel-caption d-none d-sm-block">
                       <h1 class="display-4 text-light text-start fw-light fs-2 fs-md-3 fs-lg-4 fs-xl-5">Temukan beasiswa impianmu di <strong>NSC</strong><br class="d-none d-xxl-block" />eksplor banyak beasiswa yang ada di Indonesia</h1>
                     </div>
                   </div>
-                  <div class="carousel-item"><img class="d-block w-100 img-fluid" src="assets/img/gallery/kompetisi.jpg" height="500" alt="..." />
+                  <div class="carousel-item"><img class="d-block w-100 img-fluid" src="assets/img/logos/image3.png" height="500" alt="..." />
                     <div class="carousel-caption d-none d-sm-block">
                       <h1 class="display-4 text-light text-start fw-light fs-2 fs-md-3 fs-lg-4 fs-xl-5"><strong>Tantang dirimu</strong> dengan mengikuti <strong>KOMPETISI</strong><br />agar mimpimu semakin mudah dicapai</h1>
                     </div>
@@ -146,7 +151,7 @@
                 <div class="col-xl-2 col-sm-2 col-lg-2 mt-3 mb-3">
                   <h3 class="lh-lg fw-bold mb-1 text-light font-sans-serif">Information</h3>
                   <ul class="list-unstyled mb-md-4 mb-lg-0">
-                    <li class="lh-lg"><a class="text-light" href="#!">About us</a></li>
+                    <li class="lh-lg"><a class="text-light" href="#About_Us">About us</a></li>
                     <li class="lh-lg"><a class="text-light" href="#!">Instagram</a></li>
                     <li class="lh-lg"><a class="text-light" href="#!">Twitter</a></li>
                     <li class="lh-lg"><a class="text-light" href="#!">Facebook</a></li>
