@@ -51,6 +51,10 @@ Route::get('/kompetisi',function(){
 Route::get('/dashboardadmin',function(){
     return view('admin.dashboard');
 });
+Route::get('/aboutus',function(){
+    return view('aboutus');
+});
+
 Route::delete('/data_user/userdelete/{users}',[CollectionController::class,'destroy'])->name('user.delete');
 
 Route::get('/login',[AuthController::class,'get_login'])->name('login');

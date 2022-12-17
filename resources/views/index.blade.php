@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('content')
 @section('menuHome','active')
-      <div class="py-7 py-sm-8 py-lg-10 py-xxl-9 py-xxl-11" style="background-image: url('{{ asset('img/bg.jpg')}}');">>
+      <div class="py-7 py-sm-8 py-lg-10 py-xxl-9 py-xxl-11" style="background-image: url('{{ asset('img/bg.jpg')}}');">
       </div>
       <section class="mb-n9 mb-lg-n11 p-0" style="transform: translateY(calc(-50% - 25px));">
         <div class="container-fluid">
