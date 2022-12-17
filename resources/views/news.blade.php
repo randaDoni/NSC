@@ -25,6 +25,7 @@
             </div>
           </div>
           <div class="post-body">
+            <h6>Upload by : {{$uploader->name}}</h6>
             <h6>Tanggal Pendaftaran : {{$berita->tanggalPembukaan}} s/d {{$berita->tanggalPenutupan}}</h6>
             <h6>Kategori : {{$berita->kategoriBeasiswa}}</h6>
             <h6>Jenis : {{$berita->jenisBeasiswa}}</h6>

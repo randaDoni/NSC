@@ -44,7 +44,7 @@
                     <div class="m-2">
                       {{-- Kompetisi --}}
                         <label class="form-label " for="judul">Judul</label>
-                        <input class="form-control" type="text" name="judul" class="form-control>
+                        <input class="form-control" type="text" name="judul" class="form-control">
                         @error('judul')
                         <div class="text-danger">{{ $message }}</div>
                         @enderror
