@@ -71,13 +71,14 @@
       </section>
       {{-- ========================================== --}}
       @if (!Auth::check())
+
       <section class=" mb-5 pt-5 pb-3" style="background-image: url('{{ asset('img/bg.jpg')}}');" >
         <div class="row">
           <div class="col-sm-7">
-            <div class="container ms-4" style=" text-align:left">
-              <h1 class="container ms-4 text-white">LETS MAKE IT HAPPEN!</h1>
-              <div class="card-body text-white d-flex" style="text-align: justify">
-                <h5 class="ms-4"> NSC merupakan platform yang berisi kumpulan berita <br class="d-none d-sm-block" />atau informasi mengenai beasiswa maupun kompetisi <br class="d-none d-sm-block" />yang akan diselenggarakan kedepannya di seluruh Indonesia<br class="d-none d-sm-block" /></p>
+            <div class="container ms-2">
+              <h1 class="container text-white">LETS MAKE IT HAPPEN!</h1>
+              <div class="card-body text-white d-flex container-fluid justify-content-center" >
+                <h5 class="ms-4"> NSC merupakan platform yang berisi kumpulan berita atau informasi mengenai beasiswa maupun kompetisi yang akan diselenggarakan kedepannya di seluruh Indonesia</p>
               </div>
             </div>
            <a href="{{url('/register')}}"><button type="button position-absolute start-0" class="btn btn-light d-flex " style="margin-left: 10%">Sign Up Here</button></a>
@@ -86,6 +87,7 @@
             <img src="assets/img/logos/NSC.gif" alt="" style="width:350px; height:350px;">
           </div>
         </div>
+
       </section>
       @endif
 
@@ -94,7 +96,6 @@
       <!-- ============================================-->
       <!-- <section> begin ============================-->
         <section class="pt-0 pb-5">
-
           <div class="container">
             <div class="row">
               <div class="col-12">

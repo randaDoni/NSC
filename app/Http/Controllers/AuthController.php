@@ -19,10 +19,7 @@ class AuthController extends Controller
         return view('register');
     }
     public function post_login(Request $request){
-        $request->validate([
-            'email' => ['required', 'email'],
-            'password' => ['required'],
-        ]);
+
         $credentials = $request->only('email','password');
         if (Auth::attempt($credentials)) {
             if(!Auth::user()->hasRole([
@@ -35,7 +32,7 @@ class AuthController extends Controller
             $request->session()->regenerate();
             return redirect()->intended();
         }else {
-            return redirect('/login');
+            return redirect('/login')->with(['warning' => 'Username atau Password salah']);
         }
     }
     public function post_register(Request $request){

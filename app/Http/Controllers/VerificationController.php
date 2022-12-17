@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class VerificationController extends Controller
 {
     public function notice(){
-        return " Mohon untuk melakukan verifikasi email terlebih dahulu";
+        return view('verify');
     }
     public function verify(EmailVerificationRequest $request){
         $request->fulfill();
