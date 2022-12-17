@@ -62,7 +62,7 @@
                   <ul class="list-unstyled components">
                      <li class="active"><a href="/data_user"><i class="fa fa-briefcase blue1_color"></i> <span>Data User</span></a></li>
                      <li class="active"><a href="/post"><i class="fa fa-map purple_color2"></i> <span>Post</span></a></li>
-                     <li class="active"><a href="/deletePost"><i class="fa fa-cog yellow_color"></i> <span>deletePost</span></a></li>
+                     <li class="active"><a href="/deletePost"><i class="fa fa-cog yellow_color"></i> <span>Delete Post</span></a></li>
                      <li class="active"><a href="/logout"><i class="fa fa-cog yellow_color"></i> <span>Logout</span></a></li>
                   </ul>
                </div>
@@ -99,7 +99,7 @@
                      <div class="row column_title">
                         <div class="col-md-12">
                            <div class="page_title">
-                              <h2>Data User</h2>
+                              <h2>Data Berita</h2>
                            </div>
                         </div>
                      </div>
@@ -120,7 +120,6 @@
                                       <tr>
                                         <th>No</th>
                                         <th>judul</th>
-                                        <th>lihat berita</th>
                                         <th>Jenis Berita</th>
                                         <th>Delete</th>
                                       </tr>
@@ -129,7 +128,7 @@
                                       @forelse ($berita as $beritas)
                                       <tr>
                                         <th>{{$loop->iteration}}</th>
-                                        <td>{{$beritas->judul}}</td>
+                                        <td><a href=" {{route('news.show',$beritas->id_news)}}">{{$beritas->judul}}</a></td>
                                         <td>{{$beritas->jenisBerita}}</td>
                                         <td>
                                             <form action="{{route('delete.news',['id_news'=>$beritas->id_news])}}" method="POST">

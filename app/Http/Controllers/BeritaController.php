@@ -104,7 +104,7 @@ class BeritaController extends Controller
         if(!empty($search)){
             $berita = $berita->where("judul","like","%".$search."%");
         }
-        $berita = $berita->paginate(1);
+        $berita = $berita->paginate(9);
         return view('index',['berita'=>$berita]);
     }
     public function uploadKompetisi(){

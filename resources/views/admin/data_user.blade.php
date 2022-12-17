@@ -62,7 +62,7 @@
                   <ul class="list-unstyled components">
                      <li class="active"><a href="/data_user"><i class="fa fa-briefcase blue1_color"></i> <span>Data User</span></a></li>
                      <li class="active"><a href="/post"><i class="fa fa-map purple_color2"></i> <span>Post</span></a></li>
-                     <li class="active"><a href="/deletePost"><i class="fa fa-cog yellow_color"></i> <span>deletePost</span></a></li>
+                     <li class="active"><a href="/deletePost"><i class="fa fa-cog yellow_color"></i> <span>Delete Post</span></a></li>
                      <li class="active"><a href="/logout"><i class="fa fa-cog yellow_color"></i> <span>Logout</span></a></li>
                   </ul>
                </div>
