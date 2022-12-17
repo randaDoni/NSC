@@ -78,6 +78,11 @@ Route::middleware((['auth','auth.session','verified']))->group(function(){
     Route::delete('/dashboarduser/delete_berita/{id_news}',[BeritaController::class,'deleteNews'])->name('delete.news');
     Route::get('/dashboarduser/edit',[CollectionController::class,'editUser'])->name('edit.user');
     Route::post('/dashboarduser/edit',[CollectionController::class,'updateUser'])->name('update.user');
+    Route::controller(AdminController::class)->group(function(){
+        Route::get('/post','adminPost');
+        Route::post('/beritaAccept/beritasupdate/{beritas}','beritaAccept')->name('berita.accept');
+        Route::post('/beritaDecline/beritasdecline/{beritas}','beritaDecline')->name('berita.decline');
+    });
 
 });
 Route::get('/beasiswaS1',[BeritaController::class,'beasiswaS1'])->name('beasiswa.s1');
@@ -91,8 +96,3 @@ Route::get('/kompetisiS1',[BeritaController::class,'kompetisiS1'])->name('kompet
 Route::get('/news/{id_news}',[BeritaController::class,'newsShow'])->name('news.show');
 Route::get('/',[BeritaController::class,'index'])->name('home');
 
-Route::controller(AdminController::class)->group(function(){
-    Route::get('/post','adminPost');
-    Route::post('/beritaAccept/beritasupdate/{beritas}','beritaAccept')->name('berita.accept');
-    Route::post('/beritaDecline/beritasdecline/{beritas}','beritaDecline')->name('berita.decline');
-});

@@ -1,11 +1,8 @@
 @extends('layouts.master')
 @section('content')
-{{-- <title>Detail Beasiswa</title>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-<link rel="stylesheet" type="text/css" href="{{URL::asset('/style1.css')}}" media="screen" />
-<link rel="stylesheet" href="{{URL::asset('/dashboard/bootstrap/css/bootstrap.min.css')}}"> --}}
 <br>
-<div id="site">
+<title>Detail Beasiswa</title>
+<div id="site" class="container">
   <div class="center-wrapper">
 
     <div class="main" id="main-two-columns">
@@ -18,8 +15,8 @@
             <div class="post-title">
               <h1>{{$berita->judul}}</h1>
             </div>
-                <div class="card mt-3 mb-3" style="width: 42 rem;">
-                    <img src="{{asset($berita->gambar)}}" class="card-img-top" alt="...">
+                <div >
+                    <img src="{{asset($berita->gambar)}}" class="card-img-top mx-10 px-10 w-75 p-3" alt="...">
                 </div>
 
           </div>
@@ -42,7 +39,7 @@
 
 
     {{-- iklan --}}
-    <div class= "d-none d-xl-block d-xxl-none">
+    <div class= "d-none d-lg-block d-xl-none">
       <div class="right sidebar" id="sidebar">
         <div class="section">
             <br>
@@ -75,5 +72,6 @@
 </div>
 <br>
 <br>
+<script src="{{url('https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js')}}" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="/assets/js/main.js"></script>
 </body>
-</html>
