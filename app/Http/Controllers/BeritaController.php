@@ -148,17 +148,17 @@ class BeritaController extends Controller
         }
     public function beasiswaS1(){
         $beasiswa = berita::all();
-        $berita = $beasiswa->where('kategoriBeasiswa','s1')->where('approve','1');
+        $berita = $beasiswa->where('kategoriBeasiswa','Beasiswa Kuliah S1')->where('approve','1');
         return view('listBeasiswaDanKompetisi',['berita' => $berita]);
     }
     public function beasiswaS2(){
         $beasiswa = berita::all();
-        $berita = $beasiswa->where('kategoriBeasiswa','s2')->where('approve','1');
+        $berita = $beasiswa->where('kategoriBeasiswa','Beasiswa Kuliah S2')->where('approve','1');
         return view('listBeasiswaDanKompetisi',['berita' => $berita]);
     }
     public function beasiswaS3(){
         $beasiswa = berita::all();
-        $berita = $beasiswa->where('kategoriBeasiswa','s3')->where('approve','1');
+        $berita = $beasiswa->where('kategoriBeasiswa','Beasiswa Kuliah S3')->where('approve','1');
         return view('listBeasiswaDanKompetisi',['berita' => $berita]);
     }
     public function luarNegeri(){
@@ -168,22 +168,22 @@ class BeritaController extends Controller
     }
     public function kompetisiUmum(){
         $beasiswa = berita::all();
-        $berita = $beasiswa->where('tingkatKompetisi','umum')->where('approve','1');
+        $berita = $beasiswa->where('tingkatKompetisi','Umum')->where('approve','1');
         return view('listBeasiswaDanKompetisi',['berita' => $berita]);
     }
     public function kompetisiSMP(){
         $beasiswa = berita::all();
-        $berita = $beasiswa->where('tingkatKompetisi','SMP')->where('approve','1');
+        $berita = $beasiswa->where('tingkatKompetisi','SMP/Sederajat')->where('approve','1');
         return view('listBeasiswaDanKompetisi',['berita' => $berita]);
     }
     public function kompetisiSMA(){
         $beasiswa = berita::all();
-        $berita = $beasiswa->where('tingkatKompetisi','SMA')->where('approve','1');
+        $berita = $beasiswa->where('tingkatKompetisi','SMA/SMK/MA/Sederajat')->where('approve','1');
         return view('listBeasiswaDanKompetisi',['berita' => $berita]);
     }
     public function kompetisiS1(){
         $beasiswa = berita::all();
-        $berita = $beasiswa->where('tingkatKompetisi','S1')->where('approve','1');
+        $berita = $beasiswa->where('tingkatKompetisi','D1/D2/D3/D4/S1')->where('approve','1');
         return view('listBeasiswaDanKompetisi',['berita' => $berita]);
     }
     public function updateBerita($id_news){

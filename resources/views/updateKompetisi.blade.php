@@ -53,10 +53,10 @@
                     <div class="m-2">
                       <label class="form-label" for="tingkatKompetisi">Tingkat Kompetisi</label>
                       <select class="selectpicker form-control" name="tingkatKompetisi" id="tingkatKompetisi" data-live-search="true">
-                        <option value="umum">Umum</option>
-                        <option value="SMP">SMP/Sederajat</option>
-                        <option value="SMA">SMA/SMK/MA/Sederajat</option>
-                        <option value="S1">D1/D2/D3/D4/S1</option>
+                        <option value="Umum">Umum</option>
+                        <option value="SMP/Sederajat">SMP/Sederajat</option>
+                        <option value="SMA/SMK/MA/Sederajat">SMA/SMK/MA/Sederajat</option>
+                        <option value="D1/D2/D3/D4/S1">D1/D2/D3/D4/S1</option>
                     </select>
                       @error('tingkatKompetisi')
                       <div class="text-danger">{{ $message }}</div>

@@ -25,6 +25,7 @@
             </div>
           </div>
           <div class="post-body">
+            <h6>Upload by : {{$uploader->name}}</h6>
             <h6>Tanggal Pendaftaran : {{$berita->tanggalPembukaan}} s/d {{$berita->tanggalPenutupan}} by {{$uploader->name}}</h6>
             <h6>Pengumuman : {{$berita->tanggalPengumuman}} </h6>
             <h6>Tingkat Kompetisi : {{$berita->tingkatKompetisi}}</h6>
