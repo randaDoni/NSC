@@ -52,9 +52,9 @@
                     <div class="m-2">
                       <label class="form-label" for="kategoriBeasiswa">Kategori Beasiswa</label>
                       <select class="selectpicker form-control" name="kategoriBeasiswa" id="kategoriBeasiswa" data-live-search="true">
-                        <option value="s1">Beasiswa Kuliah S1</option>
-                        <option value="s2">Beasiswa Kuliah S2</option>
-                        <option value="s3">Beasiswa Kuliah S3</option>
+                        <option value="S1">Beasiswa Kuliah S1</option>
+                        <option value="S2">Beasiswa Kuliah S2</option>
+                        <option value="S3">Beasiswa Kuliah S3</option>
                     </select>
                       @error('kategoriBeasiswa')
                       <div class="text-danger">{{ $message }}</div>
@@ -64,8 +64,8 @@
                   <div class="m-2">
                     <label class="form-label" for="jenisBeasiswa">Jenis Beasiswa</label>
                     <select class="selectpicker form-control" name="jenisBeasiswa" id="jenisBeasiswa" data-live-search="true">
-                      <option value="penuh">Beasiswa Penuh</option>
-                      <option value="sebagian">Beasiswa Sebagian</option>
+                      <option value="Beasiswa Penuh">Beasiswa Penuh</option>
+                      <option value="Beasiswa Sebagian">Beasiswa Sebagian</option>
                   </select>
                     @error('jenisBeasiswa')
                     <div class="text-danger">{{ $message }}</div>
@@ -103,7 +103,7 @@
                     {{-- Upload Gambar --}}
                     <div class="m-2">
                       <label class="form-label" for="gambar">Upload Gambar</label>
-                      <input class="form-control" type="file" name="gambar" id="gambar" value="{{$update->gambar}}>
+                      <input class="form-control" type="file" name="gambar" id="gambar" value="{{$update->gambar}}">
                       @error('gambar')
                       <div class="text-danger">{{ $message }}</div>
                       @enderror
