@@ -104,7 +104,7 @@ class BeritaController extends Controller
         if(!empty($search)){
             $berita = $berita->where("judul","like","%".$search."%");
         }
-        $berita = $berita->paginate(9);
+        $berita = $berita->paginate(4);
         return view('index',['berita'=>$berita]);
     }
     public function uploadKompetisi(){
@@ -189,11 +189,16 @@ class BeritaController extends Controller
     public function updateBerita($id_news){
         $select = berita::all();
         $result = $select->where('id_news',$id_news)->first();
-        if($result->jenisBerita == "beasiswa"){
-            return view('updateBeasiswa',['update' => $result]);
+        if(Auth::id() == $result->id){
+            if($result->jenisBerita == "beasiswa"){
+                return view('updateBeasiswa',['update' => $result]);
+            }else{
+                return view('updateKompetisi',['update'=>$result]);
+            }
         }else{
-            return view('updateKompetisi',['update'=>$result]);
+            return redirect('/dashboarduser');
         }
+
     }
     public function prosesUpdateBerita($id_news, Request $request){
         $validator = validator::make($request->all(),[

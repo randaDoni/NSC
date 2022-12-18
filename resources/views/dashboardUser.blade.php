@@ -67,13 +67,13 @@
                 <h3 class="fw-normal fs-lg-1 fs-xxl-2 lh-sm mt-3">{{$row->judul}}</h3><a class="text-secondary" href="{{route('news.show',$row->id_news)}}">Read More</a>
               </div>
               <div class="row">
-                 <div class="col-4 m-4">
+                 <div class="col-4 m-3">
                     <a href="{{route('update.berita',$row->id_news)}}">
                        @csrf
                        <button type="submit" class="btn btn-success">Update</button>
                     </a>
                  </div>
-                 <div class="col-4 m-4">
+                 <div class="col-4 m-3">
                     <form action="{{route('delete.news',['id_news'=>$row->id_news])}}" method="POST">
                         @method('delete')
                         @csrf
@@ -117,13 +117,13 @@
                 <h3 class="fw-normal fs-lg-1 fs-xxl-2 lh-sm mt-3">{{$row->judul}}</h3><a class="text-secondary" href="{{route('news.show',$row->id_news)}}">Read More</a>
               </div>
               <div class="row">
-                 <div class="col-4 m-4">
+                <div class="col-4 m-3">
                     <a href="{{route('update.berita',$row->id_news)}}">
                        @csrf
                        <button type="submit" class="btn btn-success">Update</button>
                     </a>
                  </div>
-                 <div class="col-4 m-4">
+                <div class="col-4 m-3">
                     <form action="{{route('delete.news',['id_news'=>$row->id_news])}}" method="POST">
                         @method('delete')
                         @csrf
@@ -150,13 +150,13 @@
                 <h3 class="fw-normal fs-lg-1 fs-xxl-2 lh-sm mt-3">{{$row->judul}}</h3><a class="text-secondary" href="{{route('news.show',$row->id_news)}}">Read More</a>
               </div>
               <div class="row container-sm">
-                 <div class="col-4 m-4">
+                <div class="col-4 m-3">
                     <a href="{{route('update.berita',$row->id_news)}}">
                        @csrf
                        <button type="submit" class="btn btn-success">Update</button>
                     </a>
                  </div>
-                 <div class="col-4 m-4">
+                <div class="col-4 m-3">
                     <form action="{{route('delete.news',['id_news'=>$row->id_news])}}" method="POST">
                         @method('delete')
                         @csrf

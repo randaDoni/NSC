@@ -41,7 +41,7 @@
     {{-- iklan --}}
     <div class= "d-none d-lg-block d-xl-none">
       <div class="right sidebar" id="sidebar">
-        <div class="section">
+        {{-- <div class="section">
             <br>
             <br>
             <br>
@@ -66,7 +66,7 @@
           </div>
 
         </div>
-      </div>
+      </div> --}}
       <div class="clearer">&nbsp;</div>
 </div>
 </div>
@@ -75,3 +75,4 @@
 <script src="{{url('https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js')}}" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="/assets/js/main.js"></script>
 </body>
+@endsection

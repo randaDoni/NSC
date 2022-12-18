@@ -38,7 +38,7 @@
 
 
     {{-- iklan --}}
-     <div class= "d-none d-lg-block d-xl-none">
+     {{-- <div class= "d-none d-lg-block d-xl-none">
       <div class="right sidebar" id="sidebar">
         <div class="section">
             <br>
@@ -53,7 +53,7 @@
             <div class="section-content">
                 <ul class="nice-list">
                     @foreach ($latest as $latests)
-                      <li>
+                      <li>j
                           <div class="left"><a href="{{route('news.show',['id_news'=>$latests->id_news])}}">{{$latests->judul}}</a></div>
                           <div class="right">{{$latests->tanggal}}</div>
                           <div class="clearer">&nbsp;</div>
@@ -63,7 +63,7 @@
             </div>
         </div>
           </div>
-      </div>
+      </div> --}}
       <div class="clearer">&nbsp;</div>
 </div>
 </div>

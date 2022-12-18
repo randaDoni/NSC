@@ -56,7 +56,7 @@
               </div>
             </form>
           </div>
-          <div class="signup-image">
+          <div class="signup-image py-0">
             <figure><img src="assets/img/logos/tubes.png" alt="sing up image" /></figure>
             <a href="/login" class="signup-image-link">I am already member</a>
           </div>
