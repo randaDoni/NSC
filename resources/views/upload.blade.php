@@ -52,9 +52,9 @@
                     <div class="m-2">
                       <label class="form-label" for="kategoriBeasiswa">Kategori Beasiswa</label>
                       <select class="selectpicker form-control" name="kategoriBeasiswa" id="kategoriBeasiswa" data-live-search="true">
-                        <option value="Beasiswa Kuliah S1">Beasiswa Kuliah S1</option>
-                        <option value="Beasiswa Kuliah S2">Beasiswa Kuliah S2</option>
-                        <option value="Beasiswa Kuliah S3">Beasiswa Kuliah S3</option>
+                        <option value="S1">Beasiswa Kuliah S1</option>
+                        <option value="S2">Beasiswa Kuliah S2</option>
+                        <option value="S3">Beasiswa Kuliah S3</option>
                     </select>
                       @error('kategoriBeasiswa')
                       <div class="text-danger">{{ $message }}</div>

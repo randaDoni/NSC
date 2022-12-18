@@ -20,27 +20,29 @@ class BeritaSeeder extends Seeder
         DB::table('beritas')->insert([
             'judul' => 'sample judul',
             'deskripsi' => 'sample deskripsi',
-            'gambar' => 'sample.jpg',
+            'gambar' => 'desain.jpg',
             'tanggalPembukaan' => now(),
             'tanggalPenutupan' => now(),
             'region' => 'sample region',
             'created_at'=>now(),
-            'kategoriBeasiswa' => 's1',
+            'kategoriBeasiswa' => 'S1',
             'linkPendaftaran' => 'www.sample.com',
             'id' => 1,
-            "jenisBerita" => "beasiswa"
+            "jenisBerita" => "beasiswa",
+            "approve" => "1"
         ]);
         DB::table('beritas')->insert([
             'judul' => 'sample judul kompetisi',
-            'tingkatKompetisi' => 'umum',
+            'tingkatKompetisi' => 'Umum',
             'tanggalPembukaan' => now(),
             'tanggalPenutupan' => now(),
             'tanggalPengumuman' =>now(),
-            'gambar' => 'sample.jpg',
+            'gambar' => 'gypem.jpg',
             'linkPendaftaran' => 'www.sample.com',
             'deskripsi' => 'sample deskripsi kompetisi',
             'id' => 1,
-            "jenisBerita" => "Kompetisi"
+            "jenisBerita" => "Kompetisi",
+            "approve" => "1"
         ]);
     }
 }

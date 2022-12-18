@@ -148,17 +148,17 @@ class BeritaController extends Controller
         }
     public function beasiswaS1(){
         $beasiswa = berita::all();
-        $berita = $beasiswa->where('kategoriBeasiswa','Beasiswa Kuliah S1')->where('approve','1');
+        $berita = $beasiswa->where('kategoriBeasiswa','S1')->where('approve','1');
         return view('listBeasiswaDanKompetisi',['berita' => $berita]);
     }
     public function beasiswaS2(){
         $beasiswa = berita::all();
-        $berita = $beasiswa->where('kategoriBeasiswa','Beasiswa Kuliah S2')->where('approve','1');
+        $berita = $beasiswa->where('kategoriBeasiswa','S2')->where('approve','1');
         return view('listBeasiswaDanKompetisi',['berita' => $berita]);
     }
     public function beasiswaS3(){
         $beasiswa = berita::all();
-        $berita = $beasiswa->where('kategoriBeasiswa','Beasiswa Kuliah S3')->where('approve','1');
+        $berita = $beasiswa->where('kategoriBeasiswa','S3')->where('approve','1');
         return view('listBeasiswaDanKompetisi',['berita' => $berita]);
     }
     public function luarNegeri(){
