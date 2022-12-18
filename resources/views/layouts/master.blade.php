@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>NSC | News Scholarship and Competitive</title>
-
+        <link href="/assets/css/main.css" rel="stylesheet">
 
         <!-- ===============================================-->
         <!--    Favicons-->
@@ -37,6 +37,31 @@
 
         <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+
+        <meta content="" name="description">
+        <meta content="" name="keywords">
+
+        <!-- Favicons -->
+
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Cardo:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+        <!-- Vendor CSS Files -->
+        <link href="{{URL::asset('/dashboard/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+        <link href="{{URL::asset('/dashboard/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
+        <link href="{{URL::asset('/dashboard/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
+        <link href="{{URL::asset('/dashboard/glightbox/css/glightbox.min.css')}}" rel="stylesheet">
+        <link href="{{URL::asset('/dashboard/aos/aos.css" rel="stylesheet')}}">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+        <!-- Template Main CSS File -->
+
       </head>
 <body>
 @include('layouts.header')
