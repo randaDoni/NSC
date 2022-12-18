@@ -56,10 +56,14 @@
               </div>
             </form>
           </div>
-          <div class="signup-image py-0">
+          <div class="signup-image py-0 my-0">
             <figure><img src="assets/img/logos/tubes.png" alt="sing up image" /></figure>
             <a href="/login" class="signup-image-link">I am already member</a>
           </div>
+          {{-- <div class="signup-image" style="width: 25%; height:25%;">
+            <figure><img src="assets/img/logos/tubes.png" alt="sing up image" /></figure>
+            <a href="/register" class="signup-image-link">Create an account</a>
+          </div> --}}
         </div>
       </div>
     </section>

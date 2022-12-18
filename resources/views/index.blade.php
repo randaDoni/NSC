@@ -77,11 +77,15 @@
           <div class="col-sm-7">
             <div class="container ms-2">
               <h1 class="container text-white">LETS MAKE IT HAPPEN!</h1>
+              <br>
               <div class="card-body text-white d-flex container-fluid justify-content-center" >
-                <h5 class="ms-4"> NSC merupakan platform yang berisi kumpulan berita atau informasi mengenai beasiswa maupun kompetisi yang akan diselenggarakan kedepannya di seluruh Indonesia</p>
+                <h5 class="ms-2">NSC mempunyai keunggulan lain yaitu menambahkan berita seputar kompetisi dan beasiswa yang akan kalian adakan. Dengan mempromosikan event kalian di NSC, maka akan semakin banyak orang yang mengetahui event kalian! Bergabunglah dengan NSC itu memperoleh keuntungan yang lebih banyak!</p>
               </div>
             </div>
-           <a href="{{url('/register')}}"><button type="button position-absolute start-0" class="btn btn-light d-flex " style="margin-left: 10%">Sign Up Here</button></a>
+            <div class="ms-2">
+                <a href="{{url('/register')}}"><button type="button position-absolute start-0" class="btn btn-light d-flex ms-3 mt-4 " >Sign Up Here</button></a>
+            </div>
+
           </div>
           <div class="col-sm-5">
             <img src="assets/img/logos/NSC.gif" alt="" style="width:350px; height:350px;">
