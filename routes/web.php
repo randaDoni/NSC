@@ -31,8 +31,7 @@ Route::post('/proses-form',[CustomAuthController::class,'customRegister']);
 Route::post('/proses-login',[CollectionController::class,'prosesLogin']);
 
 
-Route::get('/data_user',[CollectionController::class,'dataUser'])->name('user.data');
-Route::get('/deletePost',[AdminController::class,'dataBerita'])->name('data.berita');
+
 Route::get('/post',function(){
     return view('admin.post');
 });
@@ -48,9 +47,7 @@ Route::get('/beasiswa',function(){
 Route::get('/kompetisi',function(){
     return view('kompetisi');
 });
-Route::get('/dashboardadmin',function(){
-    return view('admin.dashboard');
-});
+
 Route::get('/About_Us',function(){
     return view('aboutus');
 });
@@ -78,11 +75,19 @@ Route::middleware((['auth','auth.session','verified']))->group(function(){
     Route::delete('/dashboarduser/delete_berita/{id_news}',[BeritaController::class,'deleteNews'])->name('delete.news');
     Route::get('/dashboarduser/edit',[CollectionController::class,'editUser'])->name('edit.user');
     Route::post('/dashboarduser/edit',[CollectionController::class,'updateUser'])->name('update.user');
-    Route::controller(AdminController::class)->group(function(){
-        Route::get('/post','adminPost');
-        Route::post('/beritaAccept/beritasupdate/{beritas}','beritaAccept')->name('berita.accept');
-        Route::post('/beritaDecline/beritasdecline/{beritas}','beritaDecline')->name('berita.decline');
+    Route::middleware((['role:Administrator']))->group(function(){
+        Route::controller(AdminController::class)->group(function(){
+            Route::get('/post','adminPost');
+            Route::post('/beritaAccept/beritasupdate/{beritas}','beritaAccept')->name('berita.accept');
+            Route::post('/beritaDecline/beritasdecline/{beritas}','beritaDecline')->name('berita.decline');
+            Route::get('/dashboardadmin',function(){
+                return view('admin.dashboard');
+            });
+            Route::get('/data_user',[CollectionController::class,'dataUser'])->name('user.data');
+                Route::get('/deletePost',[AdminController::class,'dataBerita'])->name('data.berita');
+        });
     });
+
 
 });
 Route::get('/beasiswaS1',[BeritaController::class,'beasiswaS1'])->name('beasiswa.s1');
